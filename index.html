@@ -381,16 +381,9 @@ footer .logo{color:var(--paper)}
 /* ===== первый экран: варианты ===== */
 .hero-media{position:absolute;inset:0;overflow:hidden;background:#1b1a18}
 .hero-media>*{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease}
-body[data-hero=forest] .h-forest,body[data-hero=cabin] .h-cabin,body[data-hero=city] .h-city,body[data-hero=room] .h-room,body[data-hero=land] .h-land,body[data-hero=concept] .h-concept,body[data-hero=video] .h-video,body[data-hero=split] .h-forest,body[data-hero=type] .h-cabin{opacity:1;animation:slowzoom 18s ease-out forwards}
+body[data-hero=forest] .h-forest,body[data-hero=room] .h-room,body[data-hero=bath] .h-bath,body[data-hero=teal] .h-teal,body[data-hero=apart] .h-apart,body[data-hero=lobby] .h-lobby,body[data-hero=rest] .h-rest,body[data-hero=bar] .h-bar,body[data-hero=concept] .h-concept,body[data-hero=land] .h-land,body[data-hero=split] .h-room{opacity:1;animation:slowzoom 18s ease-out forwards}
+body[data-hero=video] .h-video{opacity:1}
 body[data-hero=cycle] .hero-media img.on{opacity:1;animation:slowzoom 9s ease-out forwards}
-
-/* без фото: тёмный типографский экран, фото маленькой карточкой */
-body[data-hero=type] .hero{background:var(--ink)}
-body[data-hero=type] .hero:after{display:none}
-body[data-hero=type] .hero-media{inset:auto var(--gut) clamp(48px,9vh,110px) auto;width:min(30vw,420px);height:min(40vh,460px);border-radius:4px;background:none}
-body[data-hero=type] .hero h1{font-size:clamp(44px,6vw,96px);max-width:13ch}
-body[data-hero=type] .hero p.lead{max-width:480px}
-body[data-hero=type] .scroll-hint{display:none}
 
 /* текст и фото: текст на молочном слева, фото справа */
 body[data-hero=split] .hero{background:var(--cream);color:var(--ink)}
@@ -403,7 +396,6 @@ body[data-hero=split] .scroll-hint{display:none}
 body[data-hero=split] header:not(.solid){color:var(--ink)}
 body[data-hero=split] header:not(.solid) .btn{background:var(--ink);color:var(--paper)}
 @media (max-width:980px){
-  body[data-hero=type] .hero-media{display:none}
   body[data-hero=split] .hero-media{left:0;bottom:55%}
   body[data-hero=split] .hero-in>*{max-width:none}
   body[data-hero=split] header:not(.solid){color:var(--paper)}
@@ -484,13 +476,17 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
 <!-- 1. Первый экран -->
 <section class="hero" style="padding:0">
   <div class="hero-media">
-    <img class="h-forest" src="https://static.tildacdn.com/tild6262-6534-4964-b961-343234616561/DSC_5339.jpg" alt="Шатёр глэмпинга «Лосиный остров» в берёзовом лесу">
-    <img class="h-cabin" src="https://static.tildacdn.com/tild3938-6431-4164-a161-613539346236/DSC_5177.jpg" alt="Домик в берёзовом лесу">
-    <img class="h-city" src="https://static.tildacdn.com/tild6533-3033-4035-b336-656261633765/DSC_9033-1.jpg" alt="Фасад отеля «Кенсингтон» вечером">
-    <img class="h-land" src="img/altai-uchastok-rassvet.jpg" alt="Участок в сосновом лесу на рассвете">
-    <img class="h-concept" src="img/altai-koncept-reka.jpg" alt="Визуализация концепции комплекса у реки, Алтай">
-    <img class="h-room" src="https://static.tildacdn.com/tild6463-6363-4031-a561-386666393537/DSC_7482-1.jpg" alt="Гостиная апартаментов «СЛАВА»">
-    <video class="h-video" muted loop playsinline preload="none" poster="img/hero-wellness.jpg" data-src="img/hero-wellness.mp4"></video>
+    <img class="h-forest" src="library/sait/DSC_5337.jpg" alt="Шатёр глэмпинга «Лосиный остров» в берёзовом лесу">
+    <img class="h-room" data-src="library/sait/DSC_8919-1.jpg" alt="Номер отеля «Кенсингтон»: зелёные стены, ванна за стеклом">
+    <img class="h-bath" data-src="library/sait/DSC_8699-1_1.jpg" alt="Номер с отдельно стоящей ванной, «Кенсингтон»">
+    <img class="h-teal" data-src="library/sait/DSC_7900-1_1.jpg" alt="Номер отеля «Алеон»">
+    <img class="h-apart" data-src="library/sait/DSC_7482-1.jpg" alt="Гостиная апартаментов «СЛАВА»">
+    <img class="h-lobby" data-src="library/sait/IMG_1917.jpg" alt="Лобби апартаментов «СЛАВА»">
+    <img class="h-rest" data-src="library/sait/882d0e31-b8eb-4e2a-b.jpg" alt="Ресторан с кирпичными стенами">
+    <img class="h-bar" data-src="library/sait/DSC_8951-1.jpg" alt="Бар-кафе отеля">
+    <img class="h-concept" data-src="library/altai-koncept/Image1.jpg" alt="Визуализация концепции комплекса у реки, Алтай">
+    <img class="h-land" data-src="img/altai-uchastok-rassvet.jpg" alt="Участок в сосновом лесу на рассвете">
+    <video class="h-video" muted loop playsinline preload="none" poster="img/hero-wellness.jpg" data-src="img/hero-wellness.mp4" data-v="wellness"></video>
   </div>
   <div class="wrap hero-in">
     <div class="eyebrow">Глэмпинги · базы отдыха · отели</div>
@@ -914,7 +910,7 @@ document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=
 
 // ===== панель «Варианты оформления» (только в прототипе) =====
 (function(){
-  var HERO=[['forest','Шатёр в лесу'],['cabin','Домик в берёзах'],['city','Городской отель'],['room','Интерьер'],['land','Участок на рассвете'],['concept','Концепция у реки'],['cycle','Смена фото'],['video','Видео'],['split','Текст и фото'],['type','Без фото']];
+  var HERO=[['forest','Шатёр в лесу'],['room','Номер «Кенсингтон»'],['bath','Номер с ванной'],['teal','Номер «Алеон»'],['apart','Апартаменты'],['lobby','Лобби'],['rest','Ресторан'],['bar','Бар-кафе'],['concept','Концепция у реки'],['land','Участок на рассвете'],['cycle','Смена фото'],['video:wellness','Видео: велнес-отель'],['video:poselok','Видео: посёлок-отель'],['video:park','Видео: парк-отель'],['split','Текст и фото']];
   var PAL=[['cream','Молочный'],['white','Белый'],['stone','Тёплый серый'],['sage','Шалфей']];
   var hasHero=!!document.querySelector('.hero-media');
   function get(k,d){try{return localStorage.getItem('bk-'+k)||d}catch(e){return d}}
@@ -924,27 +920,28 @@ document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=
   var html='<div class="vbox">';
   if(hasHero){html+='<h5>Первый экран</h5><div class="vrow">'+HERO.map(function(x){return '<button class="v" data-h="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>'}
   html+='<h5>Цвет фона</h5><div class="vrow">'+PAL.map(function(x){return '<button class="v" data-p="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>';
-  html+='<p>Видео — отрывок вашей видеопрезентации велнес-отеля. Панель есть только в прототипе.</p></div><button class="vtoggle">Варианты оформления</button>';
+  html+='<p>Видео — отрывки ваших видеопрезентаций (это визуализации). Все фото — в библиотеке: photos.html. Панель есть только в прототипе.</p></div><button class="vtoggle">Варианты оформления</button>';
   el.innerHTML=html;document.body.appendChild(el);
   function mark(){
-    el.querySelectorAll('[data-h]').forEach(function(b){b.classList.toggle('on',b.dataset.h===document.body.dataset.hero)});
+    el.querySelectorAll('[data-h]').forEach(function(b){b.classList.toggle('on',b.dataset.h===document.body.dataset.heroFull)});
     el.querySelectorAll('[data-p]').forEach(function(b){b.classList.toggle('on',b.dataset.p===(document.body.dataset.pal||'cream'))});
   }
   function setHero(v){
-    document.body.dataset.hero=v;put('hero',v);
+    var vv=v.split(':');document.body.dataset.hero=vv[0];document.body.dataset.heroFull=v;put('hero',v);
     var vid=document.querySelector('.h-video');
-    if(vid){if(v==='video'){if(!vid.getAttribute('src'))vid.src=vid.dataset.src;var p=vid.play();if(p&&p.catch)p.catch(function(){})}else vid.pause()}
+    if(vid){if(vv[0]==='video'){var nm=vv[1]||'wellness';if(vid.dataset.v!==nm||!vid.getAttribute('src')){vid.dataset.v=nm;vid.poster='img/hero-'+nm+'.jpg';vid.preload='auto';vid.src='img/hero-'+nm+'.mp4';vid.load();}var p=vid.play();if(p&&p.catch)p.catch(function(){})}else vid.pause()}
     clearInterval(cycleT);
+    [].slice.call(document.querySelectorAll('.hero-media img[data-src]')).forEach(function(i){if(v==='cycle'||v==='split'?/h-(forest|room|teal|apart|rest|concept)/.test(i.className):i.classList.contains('h-'+vv[0])){i.src=i.dataset.src;i.removeAttribute('data-src')}});
     var imgs=[].slice.call(document.querySelectorAll('.hero-media img'));
     imgs.forEach(function(i){i.classList.remove('on')});
-    if(v==='cycle'&&imgs.length){var k=0;imgs[0].classList.add('on');cycleT=setInterval(function(){imgs[k].classList.remove('on');k=(k+1)%imgs.length;imgs[k].classList.add('on')},7000)}
+    if(v==='cycle'&&imgs.length){imgs=imgs.filter(function(i){return /h-(forest|room|teal|apart|rest|concept)/.test(i.className)})}if(v==='cycle'&&imgs.length){var k=0;imgs[0].classList.add('on');cycleT=setInterval(function(){imgs[k].classList.remove('on');k=(k+1)%imgs.length;imgs[k].classList.add('on')},7000)}
     mark();
   }
   function setPal(v){document.body.dataset.pal=v;put('pal',v);mark()}
   el.querySelector('.vtoggle').onclick=function(){el.classList.toggle('open')};
   el.querySelectorAll('[data-h]').forEach(function(b){b.onclick=function(){setHero(b.dataset.h)}});
   el.querySelectorAll('[data-p]').forEach(function(b){b.onclick=function(){setPal(b.dataset.p)}});
-  if(hasHero)setHero(get('hero','forest'));
+  var saved=get('hero','forest');if(!HERO.some(function(x){return x[0]===saved}))saved='forest';if(hasHero)setHero(saved);
   setPal(get('pal','cream'));
 })();
 

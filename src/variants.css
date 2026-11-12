@@ -2,16 +2,9 @@
 /* ===== первый экран: варианты ===== */
 .hero-media{position:absolute;inset:0;overflow:hidden;background:#1b1a18}
 .hero-media>*{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease}
-body[data-hero=forest] .h-forest,body[data-hero=cabin] .h-cabin,body[data-hero=city] .h-city,body[data-hero=room] .h-room,body[data-hero=land] .h-land,body[data-hero=concept] .h-concept,body[data-hero=video] .h-video,body[data-hero=split] .h-forest,body[data-hero=type] .h-cabin{opacity:1;animation:slowzoom 18s ease-out forwards}
+body[data-hero=forest] .h-forest,body[data-hero=room] .h-room,body[data-hero=bath] .h-bath,body[data-hero=teal] .h-teal,body[data-hero=apart] .h-apart,body[data-hero=lobby] .h-lobby,body[data-hero=rest] .h-rest,body[data-hero=bar] .h-bar,body[data-hero=concept] .h-concept,body[data-hero=land] .h-land,body[data-hero=split] .h-room{opacity:1;animation:slowzoom 18s ease-out forwards}
+body[data-hero=video] .h-video{opacity:1}
 body[data-hero=cycle] .hero-media img.on{opacity:1;animation:slowzoom 9s ease-out forwards}
-
-/* без фото: тёмный типографский экран, фото маленькой карточкой */
-body[data-hero=type] .hero{background:var(--ink)}
-body[data-hero=type] .hero:after{display:none}
-body[data-hero=type] .hero-media{inset:auto var(--gut) clamp(48px,9vh,110px) auto;width:min(30vw,420px);height:min(40vh,460px);border-radius:4px;background:none}
-body[data-hero=type] .hero h1{font-size:clamp(44px,6vw,96px);max-width:13ch}
-body[data-hero=type] .hero p.lead{max-width:480px}
-body[data-hero=type] .scroll-hint{display:none}
 
 /* текст и фото: текст на молочном слева, фото справа */
 body[data-hero=split] .hero{background:var(--cream);color:var(--ink)}
@@ -24,7 +17,6 @@ body[data-hero=split] .scroll-hint{display:none}
 body[data-hero=split] header:not(.solid){color:var(--ink)}
 body[data-hero=split] header:not(.solid) .btn{background:var(--ink);color:var(--paper)}
 @media (max-width:980px){
-  body[data-hero=type] .hero-media{display:none}
   body[data-hero=split] .hero-media{left:0;bottom:55%}
   body[data-hero=split] .hero-in>*{max-width:none}
   body[data-hero=split] header:not(.solid){color:var(--paper)}
