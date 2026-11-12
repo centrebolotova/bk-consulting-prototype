@@ -14,5 +14,11 @@ for f in sorted(src.glob('*.html')):
     s = s.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n' + NOINDEX, 1)  # прототип не должен попадать в поиск
     s = s.replace('<link rel="stylesheet" href="style.css">', '<style>\n' + css + '\n</style>')
     s = s.replace('<script src="app.js"></script>', '<script>\n' + js + '\n</script>')
+    # свои фото из img/ вшиваем в страницу, чтобы файл открывался без папки рядом
+    import base64
+    for img in (out / 'img').glob('*.jpg'):
+        ref = 'img/' + img.name
+        if ref in s:
+            s = s.replace(ref, 'data:image/jpeg;base64,' + base64.b64encode(img.read_bytes()).decode())
     (out / f.name).write_text(s, encoding='utf-8')
     print('собрано', f.name, len(s))
