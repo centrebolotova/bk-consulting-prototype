@@ -14,6 +14,28 @@ CDN_MAP = {i['note']: i['file'] for i in _json.loads((out / 'library' / 'photos.
 # первый экран выбран сразу при загрузке (без чёрной вспышки до запуска скриптов)
 EARLY_HERO = "<script>try{var h=localStorage.getItem('bk-hero')||'forest';document.body.dataset.hero=h.split(':')[0];document.body.dataset.heroFull=h}catch(e){document.body.dataset.hero='forest'}</script>"
 
+# ссылки из карточек кейсов на страницы проектов (порядок важен: частные раньше общих)
+CASE_KEYS = [('Горно-Алтайск', 'gorno-altaysk'), ('200 га', 'velnes-200-ga'), ('Оздоровительный', 'velnes-200-ga'), ('велнес', 'velnes-200-ga'),
+             ('Парк слонов', 'park-slonov'), ('посёлок', 'poselok-otel'), ('Галере', 'galereya'), ('Кенсингтон', 'kensington'),
+             ('Алеон', 'aleon'), ('Гостик', 'gostika'), ('Лофт', 'loft'), ('СЛАВА', 'slava'), ('Лосин', 'losiny-ostrov'),
+             ('Усть-Сем', 'altai'), ('Алтай', 'altai')]
+
+
+def link_cases(s, name):
+    if name.startswith('proekt-'):
+        return s
+    def art(m):
+        blk = m.group(0)
+        if 'case-link' in blk:
+            return blk
+        text = re.sub(r'<[^>]+>', ' ', blk)
+        slug = next((v for k, v in CASE_KEYS if k in text), None)
+        if not slug:
+            return blk
+        return blk[:blk.rindex('</article>')] + f'<a class="case-link" href="proekt-{slug}.html">Подробнее о проекте →</a></article>'
+    return re.sub(r'<article class="(?:case|vid)[^"]*"[^>]*>.*?</article>', art, s, flags=re.S)
+
+
 NOINDEX = '<meta name="robots" content="noindex, nofollow">'
 
 import re
@@ -65,6 +87,7 @@ for f in sorted(p for p in src.glob('*.html') if not p.name.startswith('_')):
         s = s.replace(u, loc)
     if 'hero-media' in s:
         s = s.replace('<body>', '<body>' + EARLY_HERO, 1)
+    s = link_cases(s, f.name)
     s = fix_links(s, f.name)
     (out / f.name).write_text(s, encoding='utf-8')
     print('собрано', f.name, len(s))

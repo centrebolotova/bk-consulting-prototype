@@ -31,6 +31,8 @@ P = [
 ]
 OFFS = {'mo': 'translate(16px,-14px)', 'mo200': 'translate(-16px,12px)'}
 OFFS = {k: 'transform:' + v for k, v in OFFS.items()}
+GEO_LINK = {'mo': 'losiny-ostrov', 'mo200': 'velnes-200-ga', 'sochi': 'park-slonov', 'altai': 'altai', 'ga': 'gorno-altaysk', 'msk': None}
+MSK = {'«Кенсингтон»': 'kensington', '«Алеон»': 'aleon', '«Галерея»': 'galereya', '«СЛАВА»': 'slava', '«Лофт» на Бауманской': 'loft'}
 TYPES = [('', 'Все'), ('hotel', 'Отели'), ('glamp', 'Глэмпинги и базы'), ('research', 'Исследования и концепции')]
 
 pins_html = ''.join(
@@ -38,9 +40,11 @@ pins_html = ''.join(
     f'aria-label="{html.escape(p["region"].replace(TODO.format(""), ""))}"><i></i></button>' for p in P)
 cards = ''
 for p in P:
-    lis = ''.join(f'<li><b>{a}</b>{f"<span>{b}</span>" if b else ""}</li>' for a, b in p['items'])
+    lis = ''.join(f'<li><b>{f"<a href=\"proekt-{MSK[a]}.html\">{a}</a>" if a in MSK else a}</b>{f"<span>{b}</span>" if b else ""}</li>' for a, b in p['items'])
+    lk = GEO_LINK.get(p['id'])
+    more = f'<a class="case-link" href="proekt-{lk}.html">Подробнее о проекте →</a>' if lk else ('<a class="case-link" href="proekty.html">Все проекты →</a>' if p['id'] == 'msk' else '')
     cards += (f'<article class="geo-card" data-id="{p["id"]}"><div class="ph"><img loading="lazy" src="{p["img"]}" alt=""></div>'
-              f'<div class="eyebrow">{p["region"]}</div><h3>{p["title"]}</h3><ul>{lis}</ul></article>')
+              f'<div class="eyebrow">{p["region"]}</div><h3>{p["title"]}</h3><ul>{lis}</ul>{more}</article>')
 chips = ''.join(f'<button class="{"on" if not k else ""}" data-f="{k}">{n}</button>' for k, n in TYPES)
 
 block = f'''<!-- География проектов -->

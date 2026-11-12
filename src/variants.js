@@ -80,3 +80,16 @@
   m.querySelector('.mnav-close').onclick=close;
   var q=m.querySelector('[data-quiz]');q.onclick=function(){close();var o=document.querySelector('[data-quiz]:not(.mnav [data-quiz])');if(o)o.click()};
 })();
+
+// просмотр фото проекта во весь экран
+(function(){
+  var items=[].slice.call(document.querySelectorAll('[data-lb]'));if(!items.length)return;
+  var lb=document.createElement('div');lb.className='lb';lb.innerHTML='<button class="p" aria-label="Назад">‹</button><img alt=""><button class="n" aria-label="Дальше">›</button>';document.body.appendChild(lb);
+  var im=lb.querySelector('img'),k=0;
+  function show(i){k=(i+items.length)%items.length;im.src=items[k].getAttribute('href');lb.classList.add('open')}
+  items.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();show(i)})});
+  lb.querySelector('.p').onclick=function(e){e.stopPropagation();show(k-1)};
+  lb.querySelector('.n').onclick=function(e){e.stopPropagation();show(k+1)};
+  lb.onclick=function(){lb.classList.remove('open')};
+  addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowLeft')show(k-1);if(e.key==='ArrowRight')show(k+1)});
+})();
