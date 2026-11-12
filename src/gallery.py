@@ -16,7 +16,7 @@ for n, i in enumerate(items, 1):
         f'<figcaption><b>{n:03d}</b> · {html.escape(i["kind"])} · {orient} {i["orig"]}<br><span>{html.escape(i["source"])} · {html.escape(name)}</span></figcaption></figure>')
 
 chips = ''.join(f'<button data-k="{html.escape(k)}">{html.escape(k)} · {sum(1 for i in items if i["kind"] == k)}</button>' for k in kinds)
-page = f'''<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow">
+page = f'''<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="description" content="Библиотека фото и визуализаций BK consulting: проекты отелей, глэмпингов и концепций.">
 <meta name="viewport" content="width=device-width, initial-scale=1"><title>Библиотека фото — BK consulting</title>
 <style>
 :root{{--cream:#F4EFE6;--ink:#1E1D1B;--stone:#8A847A;--line:#D9D1C3}}

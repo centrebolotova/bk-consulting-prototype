@@ -7,6 +7,10 @@ out = src.parent
 css = (src / 'style.css').read_text(encoding='utf-8') + (src / 'variants.css').read_text(encoding='utf-8')
 js = (src / 'app.js').read_text(encoding='utf-8') + (src / 'variants.js').read_text(encoding='utf-8')
 
+import json as _json
+# фото с Тильды → локальные копии из библиотеки (поле note в photos.json — исходный адрес)
+CDN_MAP = {i['note']: i['file'] for i in _json.loads((out / 'library' / 'photos.json').read_text(encoding='utf-8')) if i.get('note', '').startswith('http')}
+
 NOINDEX = '<meta name="robots" content="noindex, nofollow">'
 
 import re
@@ -54,6 +58,8 @@ for f in sorted(p for p in src.glob('*.html') if not p.name.startswith('_')):
     s = s.replace('<script src="app.js"></script>', '<script>\n' + js + '\n</script>')
     s = s.replace('<!--GEO-->', (src / '_geo.html').read_text(encoding='utf-8'))
     s = re.sub(r'<nav class="menu">.*?</nav>', lambda m: (src / '_nav.html').read_text(encoding='utf-8'), s, count=1, flags=re.S)
+    for u, loc in CDN_MAP.items():
+        s = s.replace(u, loc)
     s = fix_links(s, f.name)
     (out / f.name).write_text(s, encoding='utf-8')
     print('собрано', f.name, len(s))
