@@ -53,6 +53,7 @@ for f in sorted(p for p in src.glob('*.html') if not p.name.startswith('_')):
     s = s.replace('<link rel="stylesheet" href="style.css">', '<style>\n' + css + '\n</style>')
     s = s.replace('<script src="app.js"></script>', '<script>\n' + js + '\n</script>')
     s = s.replace('<!--GEO-->', (src / '_geo.html').read_text(encoding='utf-8'))
+    s = re.sub(r'<nav class="menu">.*?</nav>', lambda m: (src / '_nav.html').read_text(encoding='utf-8'), s, count=1, flags=re.S)
     s = fix_links(s, f.name)
     (out / f.name).write_text(s, encoding='utf-8')
     print('собрано', f.name, len(s))

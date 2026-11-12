@@ -60,3 +60,23 @@
   }});
   sel('msk');
 })();
+
+// мобильное меню: собирается из пунктов основного меню, открывается бургером
+(function(){
+  var b=document.querySelector('.burger'),menu=document.querySelector('.menu');if(!b||!menu)return;
+  var m=document.createElement('div');m.className='mnav';
+  var h='<div class="mnav-top"><a href="index.html" class="logo" style="color:var(--ink)">BK consulting</a><button class="mnav-close" aria-label="Закрыть">×</button></div>';
+  [].slice.call(menu.children).forEach(function(el){
+    if(el.classList.contains('dd')){
+      var top=el.querySelector('.ddl');h+='<details><summary>'+top.textContent+'</summary>';
+      el.querySelectorAll('.ddc').forEach(function(c){var t=c.querySelector('h6');h+='<h6>'+(t?t.textContent:'')+'</h6>';c.querySelectorAll('a').forEach(function(a){h+='<a href="'+a.getAttribute('href')+'">'+(a.querySelector('b')?a.querySelector('b').textContent:a.textContent)+'</a>'})});
+      h+='</details>';
+    } else h+='<a href="'+el.getAttribute('href')+'">'+el.textContent+'</a>';
+  });
+  h+='<button class="btn" data-quiz>Обсудить проект <span class="arrow">→</span></button><a class="mphone" href="tel:+74996505134">+7 499 650-51-34</a>';
+  m.innerHTML=h;document.body.appendChild(m);
+  function close(){m.classList.remove('open');document.body.classList.remove('mlock')}
+  b.onclick=function(){m.classList.add('open');document.body.classList.add('mlock')};
+  m.querySelector('.mnav-close').onclick=close;
+  var q=m.querySelector('[data-quiz]');q.onclick=function(){close();var o=document.querySelector('[data-quiz]:not(.mnav [data-quiz])');if(o)o.click()};
+})();

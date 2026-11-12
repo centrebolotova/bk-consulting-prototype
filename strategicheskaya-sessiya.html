@@ -485,6 +485,49 @@ body.notodo mark.todo{background:none;color:inherit;padding:0}
 .geo-card li span{color:rgba(250,247,241,.55);text-align:right}
 @media (max-width:980px){.geo-grid{grid-template-columns:1fr}.geo-side{min-height:0}.geo-pin{width:26px;height:26px;margin:-13px 0 0 -13px}}
 
+/* ===== выпадающее меню ===== */
+.menu{align-items:center}
+.dd{position:static}
+.ddl{display:inline-flex;align-items:center;gap:6px;padding:28px 0}
+.ddl:after{content:"";width:6px;height:6px;border-right:1px solid currentColor;border-bottom:1px solid currentColor;transform:rotate(45deg) translateY(-2px);opacity:.7;transition:transform .3s}
+.dd:hover .ddl:after,.dd:focus-within .ddl:after{transform:rotate(225deg) translateY(-1px)}
+.ddm{position:absolute;left:0;right:0;top:100%;background:var(--paper);color:var(--ink);border-top:1px solid var(--line);box-shadow:0 30px 60px -30px rgba(30,29,27,.35);opacity:0;visibility:hidden;transform:translateY(-6px);transition:opacity .25s,transform .25s,visibility 0s .25s}
+.dd:hover .ddm,.dd:focus-within .ddm{opacity:1;visibility:visible;transform:none;transition:opacity .25s,transform .25s}
+.ddm-in{display:grid;grid-template-columns:1.2fr 1fr 1fr 1.1fr;gap:40px;padding-top:36px;padding-bottom:40px}
+.ddc h6{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);font-weight:500;margin:0 0 14px}
+.ddc a{display:block;padding:9px 0;border-bottom:1px solid var(--line);opacity:1}
+.ddc a b{display:block;font-family:var(--serif);font-weight:400;font-size:21px;line-height:1.2;transition:color .2s}
+.ddc a span{display:block;font-size:13px;color:var(--stone);margin-top:2px}
+.ddc a:hover b{color:var(--forest)}
+.ddc a.all{border-bottom:0;font-size:14px;color:var(--ink-2);margin-top:6px}
+.ddf{position:relative;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;padding:20px;border-radius:6px;overflow:hidden;min-height:230px;color:var(--paper)}
+.ddf img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.ddf:hover img{transform:scale(1.04)}
+.ddf:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 30%,rgba(20,18,15,.75))}
+.ddf span,.ddf b{position:relative;z-index:2}
+.ddf span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.8}
+.ddf b{font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.15}
+header:has(.dd:hover),header:has(.dd:focus-within){background:rgba(250,247,241,.98);color:var(--ink);border-color:var(--line)}
+header:has(.dd:hover) .btn,header:has(.dd:focus-within) .btn{background:var(--ink);color:var(--paper)}
+
+/* ===== мобильное меню ===== */
+.mnav{position:fixed;inset:0;z-index:95;background:var(--paper);color:var(--ink);transform:translateX(100%);transition:transform .4s cubic-bezier(.2,.7,.2,1);overflow-y:auto;padding:22px var(--gut) 40px}
+.mnav.open{transform:none}
+.mnav-top{display:flex;justify-content:space-between;align-items:center;height:40px;margin-bottom:22px}
+.mnav-close{font-size:30px;line-height:1;color:var(--stone)}
+.mnav details{border-bottom:1px solid var(--line)}
+.mnav summary{list-style:none;display:flex;justify-content:space-between;padding:18px 0;font-family:var(--serif);font-size:28px;cursor:pointer}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav summary:after{content:"+";font-family:var(--sans);font-weight:300}
+.mnav details[open] summary:after{content:"−"}
+.mnav details a{display:block;padding:10px 0 10px 4px;font-size:16px;color:var(--ink-2)}
+.mnav details h6{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);font-weight:500;margin:12px 0 4px}
+.mnav > a{display:block;padding:18px 0;border-bottom:1px solid var(--line);font-family:var(--serif);font-size:28px}
+.mnav .btn{margin-top:28px;width:100%;justify-content:center}
+.mnav .mphone{display:block;margin-top:18px;text-align:center;font-size:16px}
+body.mlock{overflow:hidden}
+@media (max-width:980px){.ddm{display:none}}
+
 </style>
 </head>
 <body>
@@ -495,8 +538,40 @@ body.notodo mark.todo{background:none;color:inherit;padding:0}
   <div class="wrap nav">
     <a href="index.html" class="logo">BK consulting<span>отельный консалтинг</span></a>
     <nav class="menu">
-      <a href="glamping.html">Глэмпинги</a>
-      <a href="hotel.html">Отели</a>
+      <div class="dd"><a href="glamping.html" class="ddl">Глэмпинги и базы</a>
+        <div class="ddm"><div class="wrap ddm-in">
+          <div class="ddc"><h6>С чего начать</h6>
+            <a href="glamping-marketing.html"><b>Исследование и окупаемость</b><span>Что строить и сколько принесёт</span></a>
+            <a href="proverka-uchastka.html"><b>Проверка участка</b><span>Можно ли строить, сколько домиков</span></a>
+            <a href="strategicheskaya-sessiya.html"><b>Стратегическая сессия</b><span>2 часа с Юлией Гоффер</span></a></div>
+          <div class="ddc"><h6>Проект</h6>
+            <a href="glamping-conception.html"><b>Концепция и мастер-план</b></a>
+            <a href="glamping-business-plan.html"><b>Бизнес-план и финмодель</b></a>
+            <a href="granty.html"><b>Гранты и субсидии</b></a>
+            <a href="glamping-design.html"><b>Дизайн и архитектура</b></a></div>
+          <div class="ddc"><h6>Запуск и работа</h6>
+            <a href="glamping-pod-kluch.html"><b>Глэмпинг под ключ</b></a>
+            <a href="glamping-zagruzka.html"><b>Загрузка и управление</b></a>
+            <a href="baza-otdyha.html"><b>База отдыха и турбаза</b></a>
+            <a href="glamping.html" class="all">Все услуги направления →</a></div>
+          <a class="ddf" href="glamping-marketing.html"><img src="library/sait/DSC_5337.jpg" alt=""><span>Главная услуга</span><b>Исследование рынка и расчёт окупаемости глэмпинга</b></a>
+        </div></div></div>
+      <div class="dd"><a href="hotel.html" class="ddl">Отели</a>
+        <div class="ddm"><div class="wrap ddm-in">
+          <div class="ddc"><h6>С чего начать</h6>
+            <a href="marketing.html"><b>Исследование рынка</b><span>Какой отель открыть и когда окупится</span></a>
+            <a href="strategicheskaya-sessiya.html"><b>Стратегическая сессия</b><span>2 часа с Юлией Гоффер</span></a></div>
+          <div class="ddc"><h6>Проект</h6>
+            <a href="conception.html"><b>Концепция отеля</b></a>
+            <a href="business-plan.html"><b>Бизнес-план гостиницы</b></a>
+            <a href="design.html"><b>Дизайн-проект</b></a>
+            <a href="modulnaya-gostinica.html"><b>Модульная гостиница</b></a></div>
+          <div class="ddc"><h6>Запуск и работа</h6>
+            <a href="hotel-pod-kluch.html"><b>Гостиница под ключ</b></a>
+            <a href="hotel-upravlenie.html"><b>Управление и загрузка</b></a>
+            <a href="hotel.html" class="all">Все услуги направления →</a></div>
+          <a class="ddf" href="marketing.html"><img src="library/sait/DSC_8919-1.jpg" alt=""><span>Главная услуга</span><b>Маркетинговое исследование рынка гостиниц</b></a>
+        </div></div></div>
       <a href="proekty.html">Проекты</a>
       <a href="o-kompanii.html">О компании</a>
     </nav>
@@ -881,6 +956,26 @@ document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=
     if(first)sel(first);
   }});
   sel('msk');
+})();
+
+// мобильное меню: собирается из пунктов основного меню, открывается бургером
+(function(){
+  var b=document.querySelector('.burger'),menu=document.querySelector('.menu');if(!b||!menu)return;
+  var m=document.createElement('div');m.className='mnav';
+  var h='<div class="mnav-top"><a href="index.html" class="logo" style="color:var(--ink)">BK consulting</a><button class="mnav-close" aria-label="Закрыть">×</button></div>';
+  [].slice.call(menu.children).forEach(function(el){
+    if(el.classList.contains('dd')){
+      var top=el.querySelector('.ddl');h+='<details><summary>'+top.textContent+'</summary>';
+      el.querySelectorAll('.ddc').forEach(function(c){var t=c.querySelector('h6');h+='<h6>'+(t?t.textContent:'')+'</h6>';c.querySelectorAll('a').forEach(function(a){h+='<a href="'+a.getAttribute('href')+'">'+(a.querySelector('b')?a.querySelector('b').textContent:a.textContent)+'</a>'})});
+      h+='</details>';
+    } else h+='<a href="'+el.getAttribute('href')+'">'+el.textContent+'</a>';
+  });
+  h+='<button class="btn" data-quiz>Обсудить проект <span class="arrow">→</span></button><a class="mphone" href="tel:+74996505134">+7 499 650-51-34</a>';
+  m.innerHTML=h;document.body.appendChild(m);
+  function close(){m.classList.remove('open');document.body.classList.remove('mlock')}
+  b.onclick=function(){m.classList.add('open');document.body.classList.add('mlock')};
+  m.querySelector('.mnav-close').onclick=close;
+  var q=m.querySelector('[data-quiz]');q.onclick=function(){close();var o=document.querySelector('[data-quiz]:not(.mnav [data-quiz])');if(o)o.click()};
 })();
 
 </script>
