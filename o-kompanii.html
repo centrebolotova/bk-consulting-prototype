@@ -613,6 +613,20 @@ header:not(.solid){background:linear-gradient(180deg,rgba(20,18,15,.45),rgba(20,
 body[data-hero=split] header:not(.solid){background:none}
 header:has(.dd:hover),header:has(.dd:focus-within){background:rgba(250,247,241,.98)}
 
+/* панель вариантов: шире, в колонки, с прокруткой — всё помещается и нажимается */
+.vbox{width:min(620px,calc(100vw - 32px));max-height:calc(100vh - 100px);overflow-y:auto;padding:22px 22px 18px}
+.vbox .vrow{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.vbox button.v{padding:10px 12px;text-align:left;border-radius:10px;font-size:13px;line-height:1.25}
+.vbox h5{margin-top:6px}
+@media (max-width:600px){
+  .vpanel .vbox{position:fixed;left:0;right:0;bottom:0;top:auto;width:100%;max-height:72vh;border-radius:16px 16px 0 0;padding:20px 16px 28px;box-shadow:0 -20px 50px rgba(0,0,0,.3)}
+  .vbox .vrow{grid-template-columns:1fr 1fr}
+  .vbox button.v{padding:12px}
+  .vpanel.open .vtoggle{position:fixed;right:12px;bottom:calc(72vh + 10px);z-index:91}
+}
+.vbox{position:absolute}.vclose{position:absolute;top:10px;right:14px;font-size:24px;line-height:1;color:var(--stone)}
+@media (max-width:600px){.vpanel .vbox{position:fixed}}
+
 </style>
 <link rel="icon" type="image/png" href="img/favicon.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"></head>
 <body><script>try{var h=localStorage.getItem('bk-hero')||'forest';document.body.dataset.hero=h.split(':')[0];document.body.dataset.heroFull=h}catch(e){document.body.dataset.hero='forest'}</script>
@@ -962,7 +976,7 @@ document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=
   if(hasHero){html+='<h5>Первый экран</h5><div class="vrow">'+HERO.map(function(x){return '<button class="v" data-h="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>'}
   html+='<h5>Цвет фона</h5><div class="vrow">'+PAL.map(function(x){return '<button class="v" data-p="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>';
   html+='<h5>Пометки</h5><div class="vrow"><button class="v on" data-todo>Жёлтым — что подтвердить</button></div>';
-  html+='<p>Видео — отрывки ваших видеопрезентаций (это визуализации). Все фото — в библиотеке: photos.html. Панель есть только в прототипе.</p></div><button class="vtoggle">Варианты оформления</button>';
+  html+='<button class="vclose" aria-label="Закрыть">×</button><p>Видео — отрывки ваших видеопрезентаций (это визуализации). Все фото — в библиотеке: photos.html. Панель есть только в прототипе.</p></div><button class="vtoggle">Варианты оформления</button>';
   el.innerHTML=html;document.body.appendChild(el);
   function mark(){
     el.querySelectorAll('[data-h]').forEach(function(b){b.classList.toggle('on',b.dataset.h===document.body.dataset.heroFull)});
@@ -981,6 +995,7 @@ document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=
   }
   function setPal(v){document.body.dataset.pal=v;put('pal',v);mark()}
   var tb=el.querySelector('[data-todo]');if(tb)tb.onclick=function(){document.body.classList.toggle('notodo');tb.classList.toggle('on',!document.body.classList.contains('notodo'))};
+  el.querySelector('.vclose').onclick=function(){el.classList.remove('open')};
   el.querySelector('.vtoggle').onclick=function(){el.classList.toggle('open')};
   el.querySelectorAll('[data-h]').forEach(function(b){b.onclick=function(){setHero(b.dataset.h)}});
   el.querySelectorAll('[data-p]').forEach(function(b){b.onclick=function(){setPal(b.dataset.p)}});
