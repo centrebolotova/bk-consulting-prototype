@@ -45,3 +45,18 @@
   var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){if(!v.getAttribute('src'))v.src=v.dataset.src;var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:.4});
   vs.forEach(function(v){io.observe(v)});
 })();
+
+// География проектов: точка → карточка, фильтр по типу
+(function(){
+  var g=document.getElementById('geo');if(!g)return;
+  var pins=[].slice.call(g.querySelectorAll('.geo-pin')),cards=[].slice.call(g.querySelectorAll('.geo-card'));
+  function sel(id){pins.forEach(function(p){p.classList.toggle('on',p.dataset.id===id)});cards.forEach(function(c){c.classList.toggle('on',c.dataset.id===id)})}
+  pins.forEach(function(p){p.addEventListener('mouseenter',function(){sel(p.dataset.id)});p.addEventListener('click',function(){sel(p.dataset.id)})});
+  g.querySelectorAll('.geo-chips button').forEach(function(b){b.onclick=function(){
+    g.querySelectorAll('.geo-chips button').forEach(function(x){x.classList.toggle('on',x===b)});
+    var f=b.dataset.f,first=null;
+    pins.forEach(function(p){var ok=!f||p.dataset.type===f;p.classList.toggle('dim',!ok);if(ok&&!first)first=p.dataset.id});
+    if(first)sel(first);
+  }});
+  sel('msk');
+})();

@@ -47,11 +47,12 @@ def fix_links(s, name):
         s = s.replace('<a class="link" href="#">Все проекты', '<a class="link" href="proekty.html">Все проекты')
     return s
 
-for f in sorted(src.glob('*.html')):
+for f in sorted(p for p in src.glob('*.html') if not p.name.startswith('_')):
     s = f.read_text(encoding='utf-8')
     s = s.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n' + NOINDEX, 1)  # прототип не должен попадать в поиск
     s = s.replace('<link rel="stylesheet" href="style.css">', '<style>\n' + css + '\n</style>')
     s = s.replace('<script src="app.js"></script>', '<script>\n' + js + '\n</script>')
+    s = s.replace('<!--GEO-->', (src / '_geo.html').read_text(encoding='utf-8'))
     s = fix_links(s, f.name)
     (out / f.name).write_text(s, encoding='utf-8')
     print('собрано', f.name, len(s))
