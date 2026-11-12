@@ -36,6 +36,11 @@ def link_cases(s, name):
     return re.sub(r'<article class="(?:case|vid)[^"]*"[^>]*>.*?</article>', art, s, flags=re.S)
 
 
+# логотип: светлый поверх фото, тёмный на светлой шапке; в подвале — полный со слоганом
+LOGO_HDR = '<a href="index.html" class="logo" aria-label="BK consulting"><img class="logo-l" src="img/logo-light.png" alt="BK consulting"><img class="logo-d" src="img/logo-dark.png" alt=""></a>'
+LOGO_FTR = '<div class="logo"><img src="img/logo-full-light.png" alt="BK consulting — ключ для вашего бизнеса" style="height:64px;width:auto"></div>'
+ICONS = '<link rel="icon" type="image/png" href="img/favicon.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">'
+
 NOINDEX = '<meta name="robots" content="noindex, nofollow">'
 
 import re
@@ -88,6 +93,9 @@ for f in sorted(p for p in src.glob('*.html') if not p.name.startswith('_')):
     if 'hero-media' in s:
         s = s.replace('<body>', '<body>' + EARLY_HERO, 1)
     s = link_cases(s, f.name)
+    s = re.sub(r'<a href="[^"]*" class="logo">.*?</a>', LOGO_HDR, s, count=1, flags=re.S)
+    s = s.replace('<div class="logo">BK consulting</div>', LOGO_FTR)
+    s = s.replace('</head>', ICONS + '</head>', 1)
     s = fix_links(s, f.name)
     (out / f.name).write_text(s, encoding='utf-8')
     print('собрано', f.name, len(s))

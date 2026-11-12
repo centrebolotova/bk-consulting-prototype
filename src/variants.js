@@ -65,7 +65,7 @@
 (function(){
   var b=document.querySelector('.burger'),menu=document.querySelector('.menu');if(!b||!menu)return;
   var m=document.createElement('div');m.className='mnav';
-  var h='<div class="mnav-top"><a href="index.html" class="logo" style="color:var(--ink)">BK consulting</a><button class="mnav-close" aria-label="Закрыть">×</button></div>';
+  var h='<div class="mnav-top"><a href="index.html" class="logo"><img src="img/logo-dark.png" alt="BK consulting"></a><button class="mnav-close" aria-label="Закрыть">×</button></div>';
   [].slice.call(menu.children).forEach(function(el){
     if(el.classList.contains('dd')){
       var top=el.querySelector('.ddl');h+='<details><summary>'+top.textContent+'</summary>';

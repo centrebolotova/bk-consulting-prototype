@@ -218,3 +218,18 @@ body:not([data-hero]) .h-forest{opacity:1}
 .geo-card .case-link{color:var(--paper)}
 .geo-card li a{border-bottom:1px solid rgba(250,247,241,.35)}
 .geo-card li a:hover{border-color:var(--paper)}
+
+/* ===== логотип ===== */
+.logo{display:flex;align-items:center}
+.logo img{height:34px;width:auto;display:block}
+.logo .logo-d{display:none}
+header.solid .logo-l,header:has(.dd:hover) .logo-l,header:has(.dd:focus-within) .logo-l{display:none}
+header.solid .logo-d,header:has(.dd:hover) .logo-d,header:has(.dd:focus-within) .logo-d{display:block}
+body[data-hero=split] header:not(.solid) .logo-l{display:none}
+body[data-hero=split] header:not(.solid) .logo-d{display:block}
+@media (max-width:980px){body[data-hero=split] header:not(.solid) .logo-l{display:block}body[data-hero=split] header:not(.solid) .logo-d{display:none}}
+.mnav .logo img{height:30px}
+@media (max-width:600px){.logo img{height:28px}}
+header:not(.solid){background:linear-gradient(180deg,rgba(20,18,15,.45),rgba(20,18,15,0))}
+body[data-hero=split] header:not(.solid){background:none}
+header:has(.dd:hover),header:has(.dd:focus-within){background:rgba(250,247,241,.98)}

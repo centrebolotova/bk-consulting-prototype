@@ -17,7 +17,7 @@ for n, i in enumerate(items, 1):
 
 chips = ''.join(f'<button data-k="{html.escape(k)}">{html.escape(k)} · {sum(1 for i in items if i["kind"] == k)}</button>' for k in kinds)
 page = f'''<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="robots" content="noindex, nofollow"><meta name="description" content="Библиотека фото и визуализаций BK consulting: проекты отелей, глэмпингов и концепций.">
-<meta name="viewport" content="width=device-width, initial-scale=1"><title>Библиотека фото — BK consulting</title>
+<meta name="viewport" content="width=device-width, initial-scale=1"><title>Библиотека фото — BK consulting</title><link rel="icon" type="image/png" href="img/favicon.png">
 <style>
 :root{{--cream:#F4EFE6;--ink:#1E1D1B;--stone:#8A847A;--line:#D9D1C3}}
 *{{box-sizing:border-box;margin:0}}body{{background:var(--cream);color:var(--ink);font:15px/1.5 -apple-system,"Segoe UI",sans-serif;padding:32px 16px 80px}}
@@ -29,7 +29,7 @@ page = f'''<!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name
 figure img{{width:100%;display:block}}figcaption{{padding:10px 12px;font-size:12px;color:#3A3834}}figcaption span{{color:var(--stone);word-break:break-all}}
 a.back{{font-size:14px;color:var(--ink)}}
 </style></head><body><div class="wrap">
-<a class="back" href="index.html">← Прототип сайта</a>
+<a class="back" href="index.html"><img src="img/logo-dark.png" alt="BK consulting" style="height:30px;display:block;margin-bottom:18px"></a><a class="back" href="index.html">← Прототип сайта</a>
 <h1>Библиотека фото</h1>
 <p class="lead">Все фото и визуализации, которые есть у BK consulting: с текущего сайта, с Яндекс Диска Юли (ссылки из писем) и из документов. Всего {len(items)}. Номер слева — чтобы сказать «берём 014 на первый экран». Клик открывает фото в полном размере. Часть картинок на Диске сделана нейросетью — их не выдаём за реальные объекты.</p>
 <div class="chips"><button class="on" data-k="">Все · {len(items)}</button>{chips}</div>
