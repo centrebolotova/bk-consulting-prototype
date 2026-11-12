@@ -627,6 +627,14 @@ header:has(.dd:hover),header:has(.dd:focus-within){background:rgba(250,247,241,.
 .vbox{position:absolute}.vclose{position:absolute;top:10px;right:14px;font-size:24px;line-height:1;color:var(--stone)}
 @media (max-width:600px){.vpanel .vbox{position:fixed}}
 
+/* кнопка вариантов: всегда с надписью */
+@media (max-width:600px){
+  .vtoggle{width:auto;height:auto;padding:10px 14px;border-radius:999px;font-size:12px;display:inline-block}
+  .vtoggle:before{content:none}
+  .vpanel{left:12px;right:auto;bottom:84px}
+  .vpanel.open .vtoggle{right:auto;left:12px}
+}
+
 </style>
 <link rel="icon" type="image/png" href="img/favicon.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"></head>
 <body><script>try{var h=localStorage.getItem('bk-hero')||'forest';document.body.dataset.hero=h.split(':')[0];document.body.dataset.heroFull=h}catch(e){document.body.dataset.hero='forest'}</script>
