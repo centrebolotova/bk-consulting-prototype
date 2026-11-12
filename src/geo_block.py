@@ -29,10 +29,12 @@ P = [
     {'id': 'ga', 'type': 'research', 'region': 'Горно-Алтайск', 'title': 'Вместо глэмпинга — отель на 30 номеров',
      'img': 'library/altai-koncept/Image20.jpg', 'items': [('Маркетинговое исследование', 'спрос и конкуренты'), ('Рекомендация формата', 'отель с велнес-зоной')]},
 ]
+OFFS = {'mo': 'translate(16px,-14px)', 'mo200': 'translate(-16px,12px)'}
+OFFS = {k: 'transform:' + v for k, v in OFFS.items()}
 TYPES = [('', 'Все'), ('hotel', 'Отели'), ('glamp', 'Глэмпинги и базы'), ('research', 'Исследования и концепции')]
 
 pins_html = ''.join(
-    f'<button class="geo-pin" data-id="{p["id"]}" data-type="{p["type"]}" style="left:{pins[p["id"]][0]}%;top:{pins[p["id"]][1]}%" '
+    f'<button class="geo-pin" data-id="{p["id"]}" data-type="{p["type"]}" style="left:{pins[p["id"]][0]}%;top:{pins[p["id"]][1]}%;{OFFS.get(p["id"], "")}" '
     f'aria-label="{html.escape(p["region"].replace(TODO.format(""), ""))}"><i></i></button>' for p in P)
 cards = ''
 for p in P:
@@ -51,7 +53,7 @@ block = f'''<!-- География проектов -->
     <div class="geo-stats rv"><div><b>8</b>точек на карте</div><div><b>5</b>регионов</div><div><b>30+</b>проектов</div></div>
     <div class="geo-chips rv">{chips}</div>
     <div class="geo-grid">
-      <div class="geo-map rv">{svg}{pins_html}</div>
+      <div class="geo-map rv"><div class="geo-canvas">{svg}{pins_html}</div></div>
       <div class="geo-side rv">{cards}</div>
     </div>
   </div>

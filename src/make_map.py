@@ -33,13 +33,14 @@ for f in d['features']:
 xs = [p[0] for r in rings for p in r]
 ys = [p[1] for r in rings for p in r]
 minx, maxx, miny, maxy = min(xs), max(xs), min(ys), max(ys)
+PAD = 30
 W = 1000
-S = W / (maxx - minx)
-H = (maxy - miny) * S
+S = (W - 2 * PAD) / (maxx - minx)
+H = (maxy - miny) * S + 2 * PAD
 
 
 def tr(p):
-    return (p[0] - minx) * S, (maxy - p[1]) * S
+    return (p[0] - minx) * S + PAD, (maxy - p[1]) * S + PAD
 
 
 paths = []
@@ -63,7 +64,7 @@ out.write_text(svg, encoding='utf-8')
 
 # координаты точек проектов → проценты от размеров карты
 PINS = {
-    'msk': (37.62, 55.75), 'mo': (40.6, 57.7), 'mo200': (35.0, 53.9), 'sochi': (39.72, 43.6),
+    'msk': (37.62, 55.75), 'mo': (37.75, 55.86), 'mo200': (36.9, 55.4), 'sochi': (39.72, 43.6),
     'krd': (39.6, 44.9), 'karelia': (34.3, 62.0), 'altai': (85.8, 51.4), 'ga': (86.4, 52.4),
 }
 pins = {k: (round(tr(proj(*v))[0] / W * 100, 2), round(tr(proj(*v))[1] / H * 100, 2)) for k, v in PINS.items()}
