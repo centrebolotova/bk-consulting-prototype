@@ -2,7 +2,7 @@
 /* ===== первый экран: варианты ===== */
 .hero-media{position:absolute;inset:0;overflow:hidden;background:#1b1a18}
 .hero-media>*{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease}
-body[data-hero=forest] .h-forest,body[data-hero=cabin] .h-cabin,body[data-hero=city] .h-city,body[data-hero=room] .h-room,body[data-hero=land] .h-land,body[data-hero=video] .h-video,body[data-hero=split] .h-forest,body[data-hero=type] .h-cabin{opacity:1;animation:slowzoom 18s ease-out forwards}
+body[data-hero=forest] .h-forest,body[data-hero=cabin] .h-cabin,body[data-hero=city] .h-city,body[data-hero=room] .h-room,body[data-hero=land] .h-land,body[data-hero=concept] .h-concept,body[data-hero=video] .h-video,body[data-hero=split] .h-forest,body[data-hero=type] .h-cabin{opacity:1;animation:slowzoom 18s ease-out forwards}
 body[data-hero=cycle] .hero-media img.on{opacity:1;animation:slowzoom 9s ease-out forwards}
 
 /* без фото: тёмный типографский экран, фото маленькой карточкой */
@@ -61,3 +61,20 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
 .p-rows span{color:var(--stone)}
 .p-rows b{font-weight:500;text-align:right}
 .p-foot{margin-top:22px;font-size:11px;color:var(--stone);text-align:right}
+
+/* до и после: участок → концепция */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,22px)}
+.ba figure{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/3;margin:0}
+.ba img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.ba figure:hover img{transform:scale(1.03)}
+.ba figcaption{position:absolute;left:16px;bottom:16px;background:rgba(250,247,241,.92);color:var(--ink);font-size:13px;padding:7px 12px;border-radius:999px}
+@media (max-width:700px){.ba{grid-template-columns:1fr}}
+
+/* исследования с видео */
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+.vid .ph{border-radius:4px;overflow:hidden;aspect-ratio:16/10;background:var(--mist)}
+.vid video{width:100%;height:100%;object-fit:cover;display:block}
+.vid .meta{margin-top:18px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);font-weight:500}
+.vid h3{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.12;margin:8px 0 10px}
+.vid p{font-size:15px;color:var(--ink-2)}
+@media (max-width:980px){.vids{grid-template-columns:1fr}}
