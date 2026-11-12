@@ -1,0 +1,853 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Бизнес-план гостиницы и финмодель отеля — от 150 000 ₽</title>
+<meta name="description" content="Бизнес-план гостиницы или отеля под ваш объект: финмодель на 10 лет, 3 сценария, загрузка и цены по рынку, расчёт по ЮНИДО. Для банка и инвестора.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#F4EFE6; --paper:#FAF7F1; --mist:#E8E1D5; --line:#D9D1C3;
+  --ink:#1E1D1B; --ink-2:#3A3834; --stone:#8A847A; --forest:#3F5544;
+  --serif:"Cormorant Garamond", Georgia, serif;
+  --sans:"Inter Tight", -apple-system, "Segoe UI", sans-serif;
+  --gut:clamp(20px,5vw,72px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:var(--sans);font-weight:300;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.wrap{padding:0 var(--gut);max-width:1440px;margin:0 auto}
+.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:500;color:var(--stone)}
+.serif{font-family:var(--serif);font-weight:300;letter-spacing:-.01em;line-height:1.08}
+h2.serif{font-size:clamp(36px,4.6vw,64px)}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:16px 26px;border-radius:999px;background:var(--ink);color:var(--paper);font-size:15px;font-weight:400;transition:background .3s,transform .3s}
+.btn:hover{background:var(--forest)}
+.btn.light{background:var(--paper);color:var(--ink)}
+.btn.light:hover{background:#fff}
+.link{border-bottom:1px solid currentColor;padding-bottom:2px;font-size:15px;transition:opacity .3s}
+.link:hover{opacity:.6}
+.arrow{transition:transform .3s}
+a:hover .arrow,button:hover .arrow{transform:translateX(4px)}
+
+/* шапка */
+header{position:fixed;inset:0 0 auto 0;z-index:50;transition:background .4s,color .4s,border-color .4s;color:var(--paper);border-bottom:1px solid transparent}
+header.solid{background:rgba(244,239,230,.94);backdrop-filter:blur(10px);color:var(--ink);border-color:var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{font-family:var(--serif);font-size:26px;font-weight:400;letter-spacing:.01em}
+.logo span{font-family:var(--sans);font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:400;margin-left:10px;opacity:.7}
+.menu{display:flex;gap:36px;font-size:15px}
+.menu a{opacity:.85;transition:opacity .3s}.menu a:hover{opacity:1}
+.nav-right{display:flex;align-items:center;gap:24px;font-size:15px}
+header .btn{padding:11px 20px;font-size:14px;background:var(--paper);color:var(--ink)}
+header.solid .btn{background:var(--ink);color:var(--paper)}
+header.solid .btn:hover{background:var(--forest)}
+.burger{display:none;width:28px;height:14px;position:relative}
+.burger:before,.burger:after{content:"";position:absolute;left:0;right:0;height:1px;background:currentColor}
+.burger:before{top:0}.burger:after{bottom:0}
+
+/* первый экран */
+.hero{position:relative;height:100svh;min-height:640px;overflow:hidden;color:var(--paper)}
+
+@keyframes slowzoom{from{transform:scale(1.08)}to{transform:scale(1)}}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,15,.35) 0%,rgba(20,18,15,.05) 35%,rgba(20,18,15,.55) 100%)}
+.hero-in{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:clamp(48px,9vh,110px)}
+.hero h1{font-size:clamp(38px,5vw,78px);max-width:15ch;margin:18px 0 24px}
+.hero p.lead{max-width:560px;font-size:clamp(16px,1.3vw,19px);opacity:.92}
+.hero .actions{display:flex;align-items:center;gap:28px;margin-top:36px;flex-wrap:wrap}
+.hero .eyebrow{color:rgba(250,247,241,.8)}
+.scroll-hint{position:absolute;right:var(--gut);bottom:clamp(48px,9vh,110px);z-index:2;font-size:12px;letter-spacing:.14em;text-transform:uppercase;writing-mode:vertical-rl;opacity:.7}
+
+/* цифры */
+.facts{border-bottom:1px solid var(--line)}
+.facts .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.fact{padding:40px 24px 36px 0;border-right:1px solid var(--line)}
+.fact:last-child{border-right:0}
+.fact b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(40px,4vw,58px);line-height:1}
+.fact span{display:block;margin-top:10px;font-size:14px;color:var(--ink-2);max-width:22ch}
+.fact:not(:first-child){padding-left:24px}
+
+section{padding:clamp(80px,11vw,160px) 0}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:clamp(40px,5vw,72px)}
+.head p{max-width:520px;color:var(--ink-2);justify-self:end}
+
+/* развилка */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,2vw,28px)}
+.door{position:relative;display:block;overflow:hidden;border-radius:4px;color:var(--paper);min-height:640px}
+.door img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.door:hover img{transform:scale(1.04)}
+.door:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,15,.05) 30%,rgba(20,18,15,.72) 100%)}
+.door-in{position:absolute;inset:auto 0 0 0;z-index:2;padding:clamp(24px,3vw,44px)}
+.door h3{font-size:clamp(34px,3.4vw,52px);margin:10px 0 18px}
+.door ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 8px;margin-bottom:26px}
+.door li{font-size:13px;padding:6px 12px;border:1px solid rgba(250,247,241,.4);border-radius:999px}
+.door .eyebrow{color:rgba(250,247,241,.75)}
+
+/* лестница */
+.steps-wrap{background:var(--paper)}
+.ladder{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.rung{padding:32px 28px 36px 0;border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:330px}
+.rung+.rung{padding-left:28px}
+.rung:last-child{border-right:0}
+.rung .n{font-family:var(--serif);font-size:22px;color:var(--stone)}
+.rung h3{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1.1;margin:22px 0 12px}
+.rung p{font-size:15px;color:var(--ink-2)}
+.rung .price{margin-top:auto;padding-top:26px;font-size:15px}
+.rung .price b{font-weight:500}
+.rung.key{background:var(--ink);color:var(--paper);padding-left:28px;border-radius:4px}
+.rung.key p{color:rgba(250,247,241,.75)}
+.rung.key .n{color:rgba(250,247,241,.5)}
+.rung.key + .rung{border-left:0}
+.tag{display:inline-block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:500;padding:4px 10px;border-radius:999px;background:var(--forest);color:var(--paper);margin-top:10px;align-self:flex-start}
+
+/* кейсы */
+.cases{display:grid;grid-template-columns:repeat(12,1fr);gap:clamp(16px,2vw,28px);row-gap:clamp(56px,6vw,96px)}
+.case{grid-column:span 4}
+.case.wide{grid-column:span 8}
+.case .ph{overflow:hidden;border-radius:4px;aspect-ratio:4/5;background:var(--mist)}
+.case.wide .ph{aspect-ratio:16/10}
+.case img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.case:hover img{transform:scale(1.04)}
+.case .meta{margin-top:20px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);font-weight:500}
+.case h3{font-family:var(--serif);font-weight:400;font-size:clamp(28px,2.4vw,36px);line-height:1.1;margin:10px 0 12px}
+.case p{font-size:15px;color:var(--ink-2);max-width:48ch}
+.case .nums{display:flex;gap:28px;margin-top:18px;flex-wrap:wrap}
+.case .nums div{font-size:13px;color:var(--ink-2)}
+.case .nums b{display:block;font-family:var(--serif);font-weight:400;font-size:30px;color:var(--ink);line-height:1.1}
+
+/* калькулятор */
+.calc{background:var(--ink);color:var(--paper)}
+.calc .head p{color:rgba(250,247,241,.7)}
+.calc-box{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,80px);align-items:start}
+.seg{display:inline-flex;border:1px solid rgba(250,247,241,.25);border-radius:999px;padding:4px;margin-bottom:44px;flex-wrap:wrap}
+.seg button{padding:10px 20px;border-radius:999px;font-size:15px;color:rgba(250,247,241,.7);transition:all .3s}
+.seg button.on{background:var(--paper);color:var(--ink)}
+.calc label{display:flex;justify-content:space-between;font-size:15px;color:rgba(250,247,241,.75);margin-bottom:18px}
+.calc label b{font-family:var(--serif);font-weight:300;font-size:40px;color:var(--paper);line-height:1}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:1px;background:rgba(250,247,241,.35);outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--paper);cursor:pointer;box-shadow:0 0 0 6px rgba(250,247,241,.12)}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--paper);border:0;cursor:pointer}
+.ticks{display:flex;justify-content:space-between;font-size:12px;color:rgba(250,247,241,.45);margin-top:12px}
+.result{border-left:1px solid rgba(250,247,241,.2);padding-left:clamp(24px,4vw,60px)}
+.result .big{font-family:var(--serif);font-weight:300;font-size:clamp(56px,7vw,104px);line-height:1;margin:14px 0 8px}
+.result .eyebrow{color:rgba(250,247,241,.55)}
+.result ul{list-style:none;margin:28px 0 34px;font-size:15px;color:rgba(250,247,241,.8)}
+.result li{padding:11px 0;border-bottom:1px solid rgba(250,247,241,.12)}
+.result small{display:block;margin-top:22px;font-size:13px;color:rgba(250,247,241,.5);max-width:44ch}
+
+/* основатель */
+.founder{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,110px);align-items:center}
+.founder .ph{border-radius:4px;overflow:hidden;aspect-ratio:4/5}
+.founder .ph img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:grayscale(.15)}
+.founder blockquote{font-family:var(--serif);font-weight:300;font-size:clamp(30px,3.2vw,46px);line-height:1.18;margin:26px 0 34px}
+.founder .sign{font-size:15px;color:var(--ink-2)}
+.founder .sign b{font-weight:500;color:var(--ink)}
+.creds{display:grid;grid-template-columns:1fr 1fr;gap:18px 40px;margin-top:40px;padding-top:32px;border-top:1px solid var(--line);font-size:15px;color:var(--ink-2)}
+
+/* путь */
+.path{display:flex;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.path div{flex:1 0 170px;padding:26px 20px 28px 0;font-size:15px;position:relative}
+.path div+div{padding-left:20px;border-left:1px solid var(--line)}
+.path span{display:block;font-family:var(--serif);color:var(--stone);font-size:18px;margin-bottom:8px}
+
+/* FAQ */
+.faq{max-width:920px}
+details{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;gap:24px;padding:28px 0;font-family:var(--serif);font-size:clamp(22px,2vw,28px);font-weight:400}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-family:var(--sans);font-weight:300;font-size:24px;transition:transform .3s}
+details[open] summary:after{transform:rotate(45deg)}
+details p{padding:0 0 28px;color:var(--ink-2);max-width:70ch}
+
+/* финальная заявка */
+.cta{position:relative;color:var(--paper);overflow:hidden}
+.cta img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cta:after{content:"";position:absolute;inset:0;background:rgba(20,18,15,.6)}
+.cta .wrap{position:relative;z-index:2;display:grid;grid-template-columns:1.2fr 1fr;gap:60px;align-items:end}
+.cta h2{font-size:clamp(40px,5vw,76px)}
+.next{list-style:none;counter-reset:n}
+.next li{counter-increment:n;padding:16px 0;border-bottom:1px solid rgba(250,247,241,.2);font-size:15px;display:flex;gap:18px}
+.next li:before{content:"0" counter(n);font-family:var(--serif);font-size:18px;opacity:.6}
+
+footer{background:var(--ink);color:rgba(250,247,241,.7);font-size:14px;padding:72px 0 40px}
+footer .grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+footer h4{font-weight:500;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:rgba(250,247,241,.45);margin-bottom:18px}
+footer a{display:block;padding:4px 0}
+footer a:hover{color:var(--paper)}
+footer .logo{color:var(--paper)}
+.legal{margin-top:64px;padding-top:24px;border-top:1px solid rgba(250,247,241,.12);display:flex;justify-content:space-between;font-size:12px;color:rgba(250,247,241,.4)}
+
+/* появление при прокрутке */
+.rv{opacity:0;transform:translateY(28px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none}.hero-media>*{animation:none!important}}
+
+/* квиз */
+.quiz{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;background:rgba(20,18,15,.55);backdrop-filter:blur(6px);padding:16px}
+.quiz.open{display:flex}
+.qbox{background:var(--paper);width:min(560px,100%);border-radius:14px;padding:32px 32px 26px;min-height:560px;display:flex;flex-direction:column;animation:pop .4s cubic-bezier(.2,.7,.2,1)}
+@keyframes pop{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.qtop{display:flex;align-items:center;gap:14px}
+.qtop img{width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:center 20%}
+.qtop p{font-size:14px;line-height:1.35;color:var(--ink-2)}
+.qtop p b{display:block;color:var(--ink);font-weight:500}
+.qclose{margin-left:auto;font-size:26px;line-height:1;color:var(--stone)}
+.qbar{height:2px;background:var(--mist);margin:24px 0 30px;border-radius:2px;overflow:hidden}
+.qbar i{display:block;height:100%;background:var(--ink);width:0;transition:width .5s cubic-bezier(.2,.7,.2,1)}
+.qstep{display:none;flex:1;flex-direction:column}
+.qstep.on{display:flex;animation:fade .4s ease}
+@keyframes fade{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
+.qstep h3{font-family:var(--serif);font-weight:400;font-size:32px;line-height:1.1;margin-bottom:8px}
+.qstep .hint{font-size:14px;color:var(--stone);margin-bottom:22px}
+.opts{display:grid;gap:10px}
+.opts.two{grid-template-columns:1fr 1fr}
+.opt{text-align:left;padding:16px 18px;border:1px solid var(--line);border-radius:10px;font-size:15px;transition:border-color .2s,background .2s}
+.opt:hover{border-color:var(--ink)}
+.opt.sel{border-color:var(--ink);background:var(--cream)}
+.field{display:block;margin-bottom:16px}
+.field span{font-size:13px;color:var(--stone)}
+.field input,.field select{width:100%;border:0;border-bottom:1px solid var(--line);background:transparent;padding:10px 0;font:inherit;font-size:17px;outline:none}
+.field input:focus{border-color:var(--ink)}
+.qnav{display:flex;justify-content:space-between;align-items:center;margin-top:24px}
+.qnav .back{font-size:14px;color:var(--stone)}
+.qnav .btn{padding:13px 22px}
+.qnav .btn[disabled]{opacity:.3;pointer-events:none}
+.done{text-align:center;justify-content:center;align-items:center}
+.done h3{margin-top:10px}
+.done p{color:var(--ink-2);max-width:36ch;margin:0 auto}
+
+/* мобильная кнопка */
+.sticky{display:none}
+
+/* пометка прототипа */
+
+
+@media (max-width:980px){
+  .menu,.nav-right .phone{display:none}
+  .burger{display:block}
+  .facts .wrap{grid-template-columns:1fr 1fr}
+  .fact:nth-child(2){border-right:0}
+  .fact:nth-child(3){padding-left:0}
+  .fact:nth-child(n+3){border-top:1px solid var(--line)}
+  .head,.split,.calc-box,.founder,.cta .wrap{grid-template-columns:1fr}
+  .head p{justify-self:start}
+  .door{min-height:520px}
+  .ladder{grid-template-columns:1fr 1fr}
+  .rung{min-height:auto;border-bottom:1px solid var(--line)}
+  .rung:nth-child(2n){border-right:0}
+  .rung:nth-child(3){padding-left:0}
+  .rung.key{padding-left:28px}
+  .case,.case.wide{grid-column:span 12}
+  .result{border-left:0;padding-left:0;border-top:1px solid rgba(250,247,241,.2);padding-top:32px}
+  footer .grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .nav-right .btn{display:none}
+  .logo span{display:none}
+  .ladder{grid-template-columns:1fr}
+  .rung,.rung+.rung{padding-left:0;border-right:0}
+  .rung.key{padding-left:24px;padding-right:24px}
+  .creds{grid-template-columns:1fr}
+  .opts.two{grid-template-columns:1fr}
+  .qbox{padding:24px 20px 20px;min-height:auto}
+  .scroll-hint{display:none}
+  .sticky{display:flex;position:fixed;left:12px;right:12px;bottom:12px;z-index:70;justify-content:center;transform:translateY(120%);transition:transform .4s}
+  .sticky.show{transform:none}
+  .sticky .btn{width:100%;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+}
+
+/* ===== страница услуги ===== */
+.svc-hero{position:relative;min-height:92svh;color:var(--paper);overflow:hidden;display:flex}
+.svc-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;animation:slowzoom 18s ease-out forwards}
+.svc-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,18,15,.45) 0%,rgba(20,18,15,.15) 40%,rgba(20,18,15,.7) 100%)}
+.svc-hero .wrap{position:relative;z-index:2;width:100%;display:flex;flex-direction:column;justify-content:flex-end;padding-top:140px;padding-bottom:clamp(40px,7vh,80px)}
+.crumbs{font-size:13px;opacity:.8;margin-bottom:22px}
+.crumbs a{border-bottom:1px solid rgba(250,247,241,.4)}
+.svc-hero h1{font-size:clamp(38px,5vw,76px);max-width:16ch;margin-bottom:22px}
+.svc-hero .lead{max-width:600px;font-size:clamp(16px,1.3vw,19px);opacity:.92}
+.keys{display:grid;grid-template-columns:repeat(4,1fr);margin-top:48px;border-top:1px solid rgba(250,247,241,.3)}
+.keys div{padding:20px 20px 0 0;font-size:14px;color:rgba(250,247,241,.75)}
+.keys div+div{padding-left:20px;border-left:1px solid rgba(250,247,241,.3)}
+.keys b{display:block;font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.2vw,32px);color:var(--paper);line-height:1.15;margin-bottom:4px}
+.svc-hero .actions{display:flex;gap:28px;align-items:center;margin-top:40px;flex-wrap:wrap}
+
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+.who div{background:var(--paper);border-radius:4px;padding:34px 30px 38px}
+.who span{font-family:var(--serif);color:var(--stone);font-size:20px}
+.who h3{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.12;margin:18px 0 12px}
+.who p{font-size:15px;color:var(--ink-2)}
+
+.toc{display:grid;grid-template-columns:5fr 7fr;gap:clamp(32px,6vw,100px);align-items:start}
+.doc{position:sticky;top:110px}
+.doc .ph{border-radius:4px;overflow:hidden;background:var(--paper);box-shadow:0 30px 60px -30px rgba(30,29,27,.35);transform:rotate(-1.5deg)}
+.doc .ph img{width:100%}
+.doc small{display:block;margin-top:22px;font-size:13px;color:var(--stone)}
+.toc ol{list-style:none;counter-reset:t;border-top:1px solid var(--line)}
+.toc li{counter-increment:t;display:grid;grid-template-columns:56px 1fr;padding:26px 0;border-bottom:1px solid var(--line)}
+.toc li:before{content:counter(t,decimal-leading-zero);font-family:var(--serif);font-size:20px;color:var(--stone)}
+.toc h3{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.15;margin-bottom:6px}
+.toc p{font-size:15px;color:var(--ink-2)}
+.format{display:flex;gap:40px;margin-top:34px;flex-wrap:wrap;font-size:15px;color:var(--ink-2)}
+.format b{display:block;font-weight:500;color:var(--ink)}
+
+.text2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,5vw,80px)}
+.text2 h3{font-family:var(--serif);font-weight:400;font-size:28px;margin:0 0 14px;line-height:1.15}
+.text2 p{color:var(--ink-2);margin-bottom:16px}
+.text2 ul{list-style:none;margin:6px 0 18px}
+.text2 li{padding:10px 0;border-bottom:1px solid var(--line);font-size:15px;display:flex;justify-content:space-between;gap:16px}
+.text2 li em{font-style:normal;color:var(--stone);white-space:nowrap}
+
+.timeline{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line)}
+.timeline div{padding:28px 24px 0 0}
+.timeline div+div{padding-left:24px;border-left:1px solid var(--line)}
+.timeline .d{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);font-weight:500}
+.timeline h3{font-family:var(--serif);font-weight:400;font-size:26px;margin:14px 0 10px;line-height:1.15}
+.timeline p{font-size:15px;color:var(--ink-2)}
+
+.price-card{display:grid;grid-template-columns:1.3fr 1fr;background:var(--ink);color:var(--paper);border-radius:6px;overflow:hidden}
+.price-card .l{padding:clamp(32px,4vw,60px)}
+.price-card .r{position:relative}
+.price-card .r img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.price-card .big{font-family:var(--serif);font-weight:300;font-size:clamp(52px,6vw,88px);line-height:1;margin:16px 0 10px}
+.price-card ul{list-style:none;margin:26px 0 34px}
+.price-card li{padding:12px 0;border-bottom:1px solid rgba(250,247,241,.14);font-size:15px;color:rgba(250,247,241,.82)}
+.price-card .eyebrow{color:rgba(250,247,241,.55)}
+
+.story{display:grid;grid-template-columns:7fr 5fr;gap:clamp(32px,5vw,80px);align-items:center}
+.story .ph{border-radius:4px;overflow:hidden;aspect-ratio:16/11}
+.story .ph img{width:100%;height:100%;object-fit:cover}
+.story h3{font-family:var(--serif);font-weight:300;font-size:clamp(32px,3.2vw,48px);line-height:1.1;margin:14px 0 18px}
+.story p{color:var(--ink-2);margin-bottom:14px}
+
+.more{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
+.more a{padding:28px 24px 30px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:baseline;gap:16px;font-family:var(--serif);font-size:26px;transition:color .3s}
+.more a:nth-child(3n+2),.more a:nth-child(3n){padding-left:24px;border-left:1px solid var(--line)}
+.more a:hover{color:var(--forest)}
+.more a span{font-family:var(--sans);font-size:18px}
+
+@media (max-width:980px){
+  .keys{grid-template-columns:1fr 1fr}
+  .keys div:nth-child(3){padding-left:0;border-left:0}
+  .who,.toc,.text2,.price-card,.story{grid-template-columns:1fr}
+  .doc{position:static}
+  .timeline{grid-template-columns:1fr 1fr;row-gap:32px}
+  .timeline div:nth-child(3){padding-left:0;border-left:0}
+  .price-card .r{min-height:260px}
+  .more{grid-template-columns:1fr}
+  .more a,.more a:nth-child(3n+2),.more a:nth-child(3n){padding-left:0;border-left:0}
+}
+@media (max-width:600px){
+  .timeline{grid-template-columns:1fr}
+  .timeline div,.timeline div+div{padding-left:0;border-left:0}
+}
+
+/* ===== услуги на главной ===== */
+.tabs{display:inline-flex;border:1px solid var(--line);border-radius:999px;padding:4px;margin-bottom:40px;flex-wrap:wrap}
+.tabs button{padding:12px 24px;border-radius:999px;font-size:15px;color:var(--ink-2);transition:all .3s}
+.tabs button.on{background:var(--ink);color:var(--paper)}
+.tabpane{display:none}
+.tabpane.on{display:block;animation:fade .5s ease}
+.feat{display:grid;grid-template-columns:1fr 1fr;background:var(--paper);border-radius:6px;overflow:hidden;margin-bottom:clamp(16px,2vw,28px)}
+.feat .ph{position:relative;min-height:560px}
+.feat .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feat .txt{padding:clamp(28px,4vw,60px);display:flex;flex-direction:column}
+.feat h3{font-size:clamp(34px,3.4vw,50px);margin:14px 0 16px}
+.feat p{color:var(--ink-2);max-width:46ch}
+.feat ul{list-style:none;margin:24px 0 26px;border-top:1px solid var(--line)}
+.feat li{padding:11px 0;border-bottom:1px solid var(--line);font-size:15px}
+.feat-meta{display:flex;gap:24px;flex-wrap:wrap;font-size:15px;color:var(--ink-2)}
+.feat-meta b{font-weight:500;color:var(--ink)}
+.feat-act{display:flex;align-items:center;gap:28px;margin-top:30px;flex-wrap:wrap}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+.svc{background:var(--paper);border-radius:6px;padding:30px 28px 28px;display:flex;flex-direction:column;min-height:300px;border:1px solid transparent;transition:border-color .3s,transform .3s}
+.svc:hover{border-color:var(--ink);transform:translateY(-3px)}
+.svc .n{font-family:var(--serif);font-size:18px;color:var(--stone)}
+.svc h4{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.12;margin:16px 0 10px}
+.svc p{font-size:15px;color:var(--ink-2)}
+.svc .m{margin-top:auto;padding-top:22px;display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--ink-2);border-bottom:1px solid var(--line);padding-bottom:14px}
+.svc .m b{font-weight:500;color:var(--ink)}
+.svc .go{margin-top:14px;font-size:14px}
+@media (max-width:980px){.feat{grid-template-columns:1fr}.feat .ph{min-height:300px}.svc-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.svc-grid{grid-template-columns:1fr}.svc{min-height:auto}}
+@media (min-width:981px){.svc-grid .svc:last-child:nth-child(3n+1){grid-column:1/-1;min-height:auto}}
+
+/* ===== первый экран: варианты ===== */
+.hero-media{position:absolute;inset:0;overflow:hidden;background:#1b1a18}
+.hero-media>*{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease}
+body[data-hero=forest] .h-forest,body[data-hero=room] .h-room,body[data-hero=bath] .h-bath,body[data-hero=teal] .h-teal,body[data-hero=apart] .h-apart,body[data-hero=lobby] .h-lobby,body[data-hero=rest] .h-rest,body[data-hero=bar] .h-bar,body[data-hero=concept] .h-concept,body[data-hero=land] .h-land,body[data-hero=split] .h-room{opacity:1;animation:slowzoom 18s ease-out forwards}
+body[data-hero=video] .h-video{opacity:1}
+body[data-hero=cycle] .hero-media img.on{opacity:1;animation:slowzoom 9s ease-out forwards}
+
+/* текст и фото: текст на молочном слева, фото справа */
+body[data-hero=split] .hero{background:var(--cream);color:var(--ink)}
+body[data-hero=split] .hero:after{display:none}
+body[data-hero=split] .hero-media{left:50%;background:none}
+body[data-hero=split] .hero-in>*{max-width:42vw}
+body[data-hero=split] .hero .eyebrow{color:var(--stone)}
+body[data-hero=split] .hero .btn.light{background:var(--ink);color:var(--paper)}
+body[data-hero=split] .scroll-hint{display:none}
+body[data-hero=split] header:not(.solid){color:var(--ink)}
+body[data-hero=split] header:not(.solid) .btn{background:var(--ink);color:var(--paper)}
+@media (max-width:980px){
+  body[data-hero=split] .hero-media{left:0;bottom:55%}
+  body[data-hero=split] .hero-in>*{max-width:none}
+  body[data-hero=split] header:not(.solid){color:var(--paper)}
+}
+
+/* цвет фона */
+body[data-pal=white]{--cream:#F6F6F4;--paper:#FFFFFF;--mist:#ECECE9;--line:#E2E2DE}
+body[data-pal=stone]{--cream:#E7E3DC;--paper:#F1EEE8;--mist:#DCD6CC;--line:#CFC8BC}
+body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C8}
+
+/* панель вариантов */
+.vpanel{position:fixed;left:16px;bottom:16px;z-index:90;font-size:13px;font-family:var(--sans)}
+.vtoggle{background:var(--forest);color:var(--paper);padding:10px 16px;border-radius:999px;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+.vbox{display:none;position:absolute;left:0;bottom:52px;width:300px;background:var(--paper);color:var(--ink);border-radius:12px;padding:18px;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.vpanel.open .vbox{display:block}
+.vbox h5{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--stone);font-weight:500;margin:4px 0 10px}
+.vbox .vrow{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.vbox button.v{padding:7px 11px;border:1px solid var(--line);border-radius:999px;font-size:13px}
+.vbox button.v.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.vbox p{font-size:12px;color:var(--stone);line-height:1.4}
+@media (max-width:600px){.vpanel{bottom:auto;top:84px}.vbox{bottom:auto;top:48px;width:min(300px,calc(100vw - 32px))}}
+
+/* первый экран страницы услуги: текст читается на светлых фото */
+.svc-hero:after{background:linear-gradient(90deg,rgba(20,18,15,.72) 0%,rgba(20,18,15,.4) 55%,rgba(20,18,15,.15) 100%),linear-gradient(180deg,rgba(20,18,15,.35) 0%,transparent 30%,rgba(20,18,15,.55) 100%)}
+
+/* обложка заключения на странице «Проверка участка» */
+.paper{background:#fff;color:var(--ink);border-radius:4px;padding:34px 32px 26px;box-shadow:0 40px 70px -35px rgba(30,29,27,.45);transform:rotate(-1.2deg);font-size:13px}
+.p-top{display:flex;justify-content:space-between;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);padding-bottom:18px;border-bottom:1px solid var(--line)}
+.p-title{font-family:var(--serif);font-size:34px;line-height:1.05;margin:26px 0 10px}
+.p-sub{color:var(--stone);font-size:12px}
+.p-verdict{margin:24px 0;padding:16px 18px;background:var(--cream);border-left:2px solid var(--forest);font-size:14px;line-height:1.45}
+.p-verdict span{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--forest);font-weight:500;margin-bottom:6px}
+.p-rows div{display:flex;justify-content:space-between;gap:12px;padding:9px 0;border-bottom:1px solid var(--line)}
+.p-rows span{color:var(--stone)}
+.p-rows b{font-weight:500;text-align:right}
+.p-foot{margin-top:22px;font-size:11px;color:var(--stone);text-align:right}
+
+/* до и после: участок → концепция */
+.ba{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.6vw,22px)}
+.ba figure{position:relative;border-radius:4px;overflow:hidden;aspect-ratio:4/3;margin:0}
+.ba img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.2,.7,.2,1)}
+.ba figure:hover img{transform:scale(1.03)}
+.ba figcaption{position:absolute;left:16px;bottom:16px;background:rgba(250,247,241,.92);color:var(--ink);font-size:13px;padding:7px 12px;border-radius:999px}
+@media (max-width:700px){.ba{grid-template-columns:1fr}}
+
+/* исследования с видео */
+.vids{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,28px)}
+.vid .ph{border-radius:4px;overflow:hidden;aspect-ratio:16/10;background:var(--mist)}
+.vid video{width:100%;height:100%;object-fit:cover;display:block}
+.vid .meta{margin-top:18px;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--stone);font-weight:500}
+.vid h3{font-family:var(--serif);font-weight:400;font-size:28px;line-height:1.12;margin:8px 0 10px}
+.vid p{font-size:15px;color:var(--ink-2)}
+@media (max-width:980px){.vids{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+
+
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="index.html" class="logo">BK consulting<span>отельный консалтинг</span></a>
+    <nav class="menu">
+      <a href="glamping.html">Глэмпинги</a>
+      <a href="hotel.html">Отели</a>
+      <a href="proekty.html">Проекты</a>
+      <a href="o-kompanii.html">О компании</a>
+    </nav>
+    <div class="nav-right">
+      <a class="phone" href="tel:+74996505134">+7 499 650-51-34</a>
+      <button class="btn" data-quiz="1">Обсудить бизнес-план</button>
+      <button class="burger" aria-label="Меню"></button>
+    </div>
+  </div>
+</header>
+
+<!-- 1. Первый экран: заголовок с ключом, что получите, ключевые условия -->
+<section class="svc-hero" style="padding:0">
+  <img src="library/sait/0018.jpg" alt="Ресепшн мини-отеля на Бауманской, Москва">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Главная</a> · <a href="hotel.html">Отели</a> · Бизнес-план гостиницы</div>
+    <h1 class="serif">Бизнес-план и финансовая модель гостиницы</h1>
+    <p class="lead">Документ под ваш объект, а не шаблон: сколько вложить, какую выручку ждать по месяцам и когда отель выйдет в плюс — в цифрах, которые выдерживают вопросы банка и инвестора.</p>
+    <div class="actions">
+      <button class="btn light" data-quiz="1">Обсудить бизнес-план <span class="arrow">→</span></button>
+      <a class="link" href="#get">Что входит в бизнес-план</a>
+    </div>
+    <div class="keys">
+      <div><b>1–3 недели</b>срок разработки</div>
+      <div><b>от 150 000 ₽</b>экспресс-план</div>
+      <div><b>10 лет</b>финмодель в трёх сценариях</div>
+      <div><b>ЮНИДО</b>стандарт для банка и инвестора</div>
+    </div>
+  </div>
+</section>
+
+<!-- 2. Для кого -->
+<section>
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow rv">Для кого</div><h2 class="serif rv" style="margin-top:14px">Бизнес-план отеля под ваш объект, а не шаблон с расчётами</h2></div>
+      <p class="rv">Шаблон из интернета не отвечает на главный вопрос банка: откуда взяты загрузка и цена номера. Мы берём их из рынка вашего города и проверяем опытом собственных отелей.</p>
+    </div>
+    <div class="who">
+      <div class="rv"><span>01</span><h3>Есть здание</h3><p>Посчитаем реконструкцию или переделку помещения, аренду или покупку, выручку и срок возврата вложений.</p></div>
+      <div class="rv"><span>02</span><h3>Есть участок</h3><p>Финмодель строительства отеля по этапам: вложения, ввод номеров, выход на плановую загрузку.</p></div>
+      <div class="rv"><span>03</span><h3>Банк или инвестор</h3><p>Полный бизнес-план по ЮНИДО: NPV, IRR, сценарии и анализ рисков, с подготовкой к защите.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 3. Что получаете: оглавление документа -->
+<section id="get" class="steps-wrap">
+  <div class="wrap toc">
+    <div class="doc rv">
+      <div class="paper">
+        <div class="p-top"><span>BK consulting</span><span>Бизнес-план · финмодель</span></div>
+        <div class="p-title">Бизнес-план<br>мини-отеля</div>
+        <div class="p-sub">Москва · 18 номеров · аренда здания 600 м²</div>
+        <div class="p-verdict"><span>Вывод</span>В базовом сценарии отель выходит на безубыточность на девятый месяц работы и обслуживает кредит при падении загрузки до 55 %.</div>
+        <div class="p-rows">
+          <div><span>Вложения, CAPEX</span><b>32 млн ₽</b></div>
+          <div><span>Средняя цена номера</span><b>6 800 ₽</b></div>
+          <div><span>Загрузка, базовый сценарий</span><b>72 %</b></div>
+          <div><span>Выручка от номеров</span><b>32 млн ₽ в год</b></div>
+          <div><span>NPV, IRR, окупаемость</span><b>3 сценария</b></div>
+        </div>
+        <div class="p-foot">стр. 1 из 64</div>
+      </div>
+      <small>Так выглядит первая страница бизнес-плана. Цифры условные, для примера.</small>
+    </div>
+    <div>
+      <div class="eyebrow rv">Что вы получаете</div>
+      <h2 class="serif rv" style="margin:14px 0 36px">Что входит и в каком виде вы получаете</h2>
+      <ol>
+        <li class="rv"><div><h3>Резюме проекта</h3><p>Суть, вложения и ключевые показатели на одной странице — то, что банк читает первым.</p></div></li>
+        <li class="rv"><div><h3>Рынок и конкуренты</h3><p>Спрос, цены и загрузка конкурентов — основа прогноза выручки.</p></div></li>
+        <li class="rv"><div><h3>Концепция и номерной фонд</h3><p>Формат, категории номеров, дополнительные услуги и их вклад в выручку.</p></div></li>
+        <li class="rv"><div><h3>Вложения</h3><p>CAPEX по статьям: ремонт или стройка, инженерия, оснащение номеров, предоткрытие, резерв.</p></div></li>
+        <li class="rv"><div><h3>Операционная модель</h3><p>Персонал и ФОТ, коммунальные расходы, комиссии каналов продаж, OPEX по месяцам.</p></div></li>
+        <li class="rv"><div><h3>Финансовая модель на 10 лет</h3><p>Выручка по направлениям, денежный поток, точка безубыточности, срок окупаемости, NPV и IRR.</p></div></li>
+        <li class="rv"><div><h3>Сценарии и риски</h3><p>Осторожный, базовый и оптимистичный сценарии, чувствительность к цене и загрузке, план действий при отклонениях.</p></div></li>
+      </ol>
+      <div class="format rv">
+        <div><b>Бизнес-план</b>50–80 страниц, ЮНИДО</div>
+        <div><b>Финмодель</b>Excel, параметры меняются</div>
+        <div><b>Презентация</b>для инвестора</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. SEO-блок: финмодель и форматы -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv">Финансовая модель отеля</div>
+    <h2 class="serif rv" style="margin:14px 0 48px;max-width:20ch">Финансовая модель гостиницы на 10 лет: три сценария</h2>
+    <div class="text2">
+      <div class="rv">
+        <h3>Три сценария вместо одной красивой цифры</h3>
+        <p>Финансовая модель отеля показывает, что будет, если цена номера или загрузка окажутся ниже плана. Вы видите запас прочности проекта до вложений, а банк — что кредит обслуживается и в осторожном сценарии.</p>
+        <ul>
+          <li>Выручка по направлениям <em>номера, питание, услуги</em></li>
+          <li>ADR и RevPAR <em>по сезонам</em></li>
+          <li>Точка безубыточности <em>месяц и загрузка</em></li>
+          <li>Денежный поток <em>помесячно</em></li>
+          <li>NPV, IRR, срок окупаемости <em>в трёх сценариях</em></li>
+        </ul>
+      </div>
+      <div class="rv">
+        <h3>Мини-отель, загородный, апарт-отель: что учитываем</h3>
+        <p>В мини-отеле решают аренда и плотность номеров, в загородном — сезонность и ресторан, в апарт-отеле — отношения с собственниками апартаментов. Бизнес-план мини-гостиницы и бизнес-план загородного отеля строятся по-разному, и цифры из одного в другой мы не переносим.</p>
+        <p>Бизнес-план гостевого дома считаем по той же логике, что и мини-отель: номерной фонд, цена, загрузка, расходы на персонал.</p>
+        <a class="link" href="marketing.html">Сначала нужен анализ рынка? <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Как проходит -->
+<section class="steps-wrap">
+  <div class="wrap">
+    <div class="eyebrow rv">Как проходит</div>
+    <h2 class="serif rv" style="margin:14px 0 48px">От исходных данных до защиты</h2>
+    <div class="timeline">
+      <div class="rv"><div class="d">Дни 1–3</div><h3>Данные</h3><p>Концепция, анализ рынка, смета или бюджет, ваши ожидания и условия финансирования.</p></div>
+      <div class="rv"><div class="d">Недели 1–2</div><h3>Расчёт</h3><p>Финмодель на 10 лет и текст бизнес-плана по стандарту ЮНИДО.</p></div>
+      <div class="rv"><div class="d">Недели 2–3</div><h3>Сценарии</h3><p>Три сценария, чувствительность к цене и загрузке, анализ рисков.</p></div>
+      <div class="rv"><div class="d">Финал</div><h3>Разбор</h3><p>Созвон: проходим цифры и готовим вас к вопросам банка или инвестора.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. Стоимость -->
+<section>
+  <div class="wrap">
+    <div class="price-card rv">
+      <div class="l">
+        <div class="eyebrow">Сроки и стоимость</div>
+        <div class="big">от 150 000 ₽</div>
+        <p style="color:rgba(250,247,241,.75)">Экспресс-план для собственного решения: понять экономику проекта. Срок 1–2 недели.</p>
+        <ul>
+          <li>Полный бизнес-план по ЮНИДО, 50–80 страниц — от 300 000 ₽, 2–3 недели</li>
+          <li>Бизнес-план, финмодель и презентация для инвестора — от 400 000 ₽, с подготовкой к защите</li>
+          <li>Финмодель в Excel остаётся у вас: параметры можно менять</li>
+        </ul>
+        <button class="btn light" data-quiz="1">Обсудить бизнес-план <span class="arrow">→</span></button>
+      </div>
+      <div class="r"><img src="library/sait/026.jpg" alt="Номер с кухней в мини-отеле на Бауманской"></div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. История из практики -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="story">
+      <div class="ph rv"><img src="library/sait/23.jpg" alt="Номер в стиле лофт, мини-отель на Бауманской"></div>
+      <div class="rv">
+        <div class="eyebrow">Из практики · Москва · Бауманская</div>
+        <h3>Мини-отель в столетнем здании за 15 миллионов</h3>
+        <p>Заказчик пришёл с жёстким ограничением: 15 млн ₽ на весь проект. Мы нашли здание на 500 м² — без перекрытий и коммуникаций — и договорились с собственниками: они вошли в финансирование реновации.</p>
+        <p>Дальше — проект реконструкции, работа с целевой аудиторией и дополнительные услуги: в отеле есть кафе и SPA с сауной и бассейном.</p>
+        <div class="format">
+          <div><b>500 м²</b>площадь здания</div>
+          <div><b>15 млн ₽</b>бюджет заказчика</div>
+          <div><b>Кафе и SPA</b>в составе отеля</div>
+        </div>
+        <p style="margin-top:24px"><a class="link" href="index.html#cases">Все проекты →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Вопросы -->
+<section class="steps-wrap">
+  <div class="wrap">
+    <div class="eyebrow rv">Вопросы</div>
+    <h2 class="serif rv" style="margin:14px 0 40px">Вопросы о бизнес-плане гостиницы</h2>
+    <div class="faq rv">
+      <details><summary>Сколько стоит бизнес-план гостиницы?</summary><p>Экспресс-план — от 150 000 ₽, полный бизнес-план по ЮНИДО — от 300 000 ₽, пакет с финмоделью и презентацией для инвестора — от 400 000 ₽. Точная цена зависит от объекта и готовности исходных данных.</p></details>
+      <details><summary>Чем ваш бизнес-план отличается от готового шаблона с расчётами?</summary><p>Шаблон считает средний отель. Мы считаем ваш: цены и загрузку берём у конкурентов в вашем городе, расходы — из практики работающих отелей, вложения — из сметы или бюджета проекта.</p></details>
+      <details><summary>Примет ли банк ваш бизнес-план?</summary><p>Решение принимает банк. Мы готовим документ по стандарту ЮНИДО, который отвечает на типичные вопросы кредитного комитета: обоснование формата, загрузки, расходов и сценарии. Перед встречей с банком помогаем подготовиться к защите.</p></details>
+      <details><summary>Что нужно от меня для разработки?</summary><p>Адрес или участок, описание проекта, бюджет или смета, если есть. Концепция и анализ рынка ускоряют работу; если их нет, начнём с исследования.</p></details>
+      <details><summary>Можно ли без маркетингового исследования?</summary><p>Экспресс-план — да, на основе открытых данных. Для банка и инвестора рекомендуем сначала исследование: прогноз выручки должен опираться на рынок.</p></details>
+      <details><summary>Делаете бизнес-план мини-отеля или гостевого дома?</summary><p>Да. Мини-отели — основная часть наших проектов в Москве. Гостевой дом считаем по той же логике: номерной фонд, цена, загрузка, персонал.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Другие услуги ветки -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow rv" style="margin-bottom:24px">Следующие шаги</div>
+    <div class="more rv">
+      <a href="marketing.html">Исследование рынка и окупаемость <span>→</span></a>
+      <a href="conception.html">Концепция отеля <span>→</span></a>
+      <a href="design.html">Дизайн-проект <span>→</span></a>
+      <a href="hotel-pod-kluch.html">Открытие под ключ <span>→</span></a>
+      <a href="hotel-upravlenie.html">Управление и загрузка <span>→</span></a>
+      <a href="modulnaya-gostinica.html">Модульная гостиница <span>→</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Заявка -->
+<section class="cta">
+  <img src="library/sait/DSC_8992-1.jpg" alt="">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow rv" style="color:rgba(250,247,241,.7)">Начать</div>
+      <h2 class="serif rv" style="margin:14px 0 36px">Расскажите о проекте — скажем, какой бизнес-план вам нужен</h2>
+      <button class="btn light rv" data-quiz="1">Обсудить бизнес-план <span class="arrow">→</span></button>
+    </div>
+    <div class="rv">
+      <div class="eyebrow" style="color:rgba(250,247,241,.7);margin-bottom:10px">Что будет после заявки</div>
+      <ol class="next">
+        <li>Юлия посмотрит проект и перезвонит в течение рабочего дня</li>
+        <li>Созвон на 20 минут: цель бизнес-плана, исходные данные, сроки</li>
+        <li>Пришлём договор, срок и стоимость</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div><div class="logo">BK consulting</div><p style="margin-top:14px;max-width:32ch">Консалтинг по открытию отелей, глэмпингов и баз отдыха. Москва, ул. Бутырская, 62.</p></div>
+      <div><h4>Глэмпинги и базы</h4><a href="glamping-marketing.html">Исследование и окупаемость</a><a href="proverka-uchastka.html">Проверка участка</a><a href="glamping-conception.html">Концепция и мастер-план</a><a href="glamping-business-plan.html">Бизнес-план</a><a href="granty.html">Гранты и субсидии</a><a href="glamping-pod-kluch.html">Под ключ</a><a href="baza-otdyha.html">База отдыха</a></div>
+      <div><h4>Отели</h4><a href="marketing.html">Исследование рынка</a><a href="conception.html">Концепция</a><a href="business-plan.html">Бизнес-план</a><a href="design.html">Дизайн-проект</a><a href="hotel-pod-kluch.html">Под ключ</a><a href="hotel-upravlenie.html">Управление</a><a href="modulnaya-gostinica.html">Модульная гостиница</a></div>
+      <div><h4>Компания</h4><a href="proekty.html">Проекты</a><a href="o-kompanii.html">О компании</a><a href="strategicheskaya-sessiya.html">Стратегическая сессия</a><a href="photos.html">Библиотека фото</a><a href="tel:+74996505134">+7 499 650-51-34</a></div>
+    </div>
+    <div class="legal"><span>© 2026 BK consulting</span><span>Политика конфиденциальности</span></div>
+  </div>
+</footer>
+<div class="sticky" id="sticky"><button class="btn" data-quiz="1">Обсудить бизнес-план <span class="arrow">→</span></button></div>
+<!-- Квиз -->
+<div class="quiz" id="quiz" aria-modal="true" role="dialog">
+  <div class="qbox">
+    <div class="qtop">
+      <img src="https://static.tildacdn.com/tild3034-3337-4630-a463-313432646135/photo1683798923_2.jpeg" alt="">
+      <p><b>Юлия Гоффер</b>Шесть коротких вопросов — и я пойму, чем помочь</p>
+      <button class="qclose" aria-label="Закрыть">×</button>
+    </div>
+    <div class="qbar"><i id="qbar"></i></div>
+
+    <div class="qstep" data-s="1">
+      <h3>Что у вас сейчас есть?</h3><p class="hint">Выберите один вариант</p>
+      <div class="opts">
+        <button class="opt">Участок земли</button>
+        <button class="opt">Здание или помещение</button>
+        <button class="opt">Действующий объект, хочу больше загрузки</button>
+        <button class="opt">Пока только идея</button>
+      </div>
+    </div>
+    <div class="qstep" data-s="2">
+      <h3>Что хотите открыть?</h3><p class="hint">Можно выбрать позже, если ещё не решили</p>
+      <div class="opts two">
+        <button class="opt">Глэмпинг</button><button class="opt">База отдыха</button>
+        <button class="opt">Загородный отель</button><button class="opt">Городской отель</button>
+        <button class="opt">Апарт-отель</button><button class="opt">Пока не решил</button>
+      </div>
+    </div>
+    <div class="qstep" data-s="3">
+      <h3>Где объект?</h3><p class="hint">Регион и площадь, если знаете</p>
+      <label class="field"><span>Регион или кадастровый номер</span><input placeholder="Например, Тверская область"></label>
+      <label class="field"><span>Площадь участка или здания</span><input placeholder="Например, 1 га или 600 м²"></label>
+    </div>
+    <div class="qstep" data-s="4">
+      <h3>Какой бюджет рассматриваете?</h3><p class="hint">Порядок цифр, чтобы предложить реалистичный формат</p>
+      <div class="opts two">
+        <button class="opt">До 15 млн ₽</button><button class="opt">15–50 млн ₽</button>
+        <button class="opt">50–100 млн ₽</button><button class="opt">Больше 100 млн ₽</button>
+        <button class="opt" style="grid-column:1/-1">Пока не знаю — помогите посчитать</button>
+      </div>
+    </div>
+    <div class="qstep" data-s="5">
+      <h3>Откуда деньги на проект?</h3><p class="hint">Влияет на то, какие документы понадобятся</p>
+      <div class="opts two">
+        <button class="opt">Свои средства</button><button class="opt">Инвестор</button>
+        <button class="opt">Кредит</button><button class="opt">Грант или субсидия</button>
+      </div>
+    </div>
+    <div class="qstep" data-s="6">
+      <h3>Как с вами связаться?</h3><p class="hint">Перезвоним в течение рабочего дня</p>
+      <label class="field"><span>Имя</span><input placeholder="Как к вам обращаться"></label>
+      <label class="field"><span>Телефон</span><input placeholder="+7"></label>
+      <div class="opts two" style="grid-template-columns:repeat(3,1fr)">
+        <button class="opt">Telegram</button><button class="opt">WhatsApp</button><button class="opt">Звонок</button>
+      </div>
+    </div>
+    <div class="qstep done" data-s="7">
+      <div class="eyebrow">Заявка принята</div>
+      <h3>Спасибо, посмотрю ваш проект</h3>
+      <p>Перезвоню в течение рабочего дня. Пока можно посмотреть наши проекты.</p>
+      <p style="margin-top:18px;font-size:13px;color:var(--stone)">В прототипе ничего не отправляется.</p>
+    </div>
+
+    <div class="qnav" id="qnav">
+      <button class="back" id="qback">← Назад</button>
+      <button class="btn" id="qnext">Дальше <span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<script>
+// шапка: прозрачная на фото, светлая после прокрутки
+const hdr=document.getElementById('hdr'), sticky=document.getElementById('sticky');
+const onScroll=()=>{const y=scrollY;hdr.classList.toggle('solid',y>innerHeight*0.8);sticky.classList.toggle('show',y>innerHeight*0.6)};
+addEventListener('scroll',onScroll,{passive:true});onScroll();
+
+// плавное появление блоков
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
+
+// калькулятор
+const NORM={glamp:1.7,base:1.7,hotel:1.7}; // млн ₽ на домик/номер — заменить нормами Юлии
+const LABEL={glamp:'Домиков',base:'Домиков и номеров',hotel:'Номеров'};
+const RANGE={glamp:[4,40,10],base:[6,60,16],hotel:[10,100,20]};
+let fmt='glamp';
+const range=document.getElementById('range'),units=document.getElementById('units'),sum=document.getElementById('sum'),ul=document.getElementById('unitLabel'),ticks=document.querySelector('.ticks');
+function calc(){const n=+range.value;units.textContent=n;const v=n*NORM[fmt];sum.textContent='≈ '+(v<100?v.toFixed(0):Math.round(v/10)*10)+' млн ₽'}
+function setFmt(k){fmt=k;const[a,b,c]=RANGE[k];range.min=a;range.max=b;range.value=c;ul.textContent=LABEL[k];ticks.innerHTML=`<span>${a}</span><span>${Math.round((a+b)/2)}</span><span>${b}</span>`;calc()}
+if(range){
+document.querySelectorAll('#fmt button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#fmt button').forEach(x=>x.classList.remove('on'));b.classList.add('on');setFmt(b.dataset.k)});
+range.oninput=calc;calc();
+}
+
+// квиз
+const quiz=document.getElementById('quiz'),steps=[...quiz.querySelectorAll('.qstep')],bar=document.getElementById('qbar'),next=document.getElementById('qnext'),back=document.getElementById('qback'),nav=document.getElementById('qnav');
+let s=0;
+function show(i){s=i;steps.forEach((el,k)=>el.classList.toggle('on',k===i));bar.style.width=Math.min(100,(i+1)/6*100)+'%';back.style.visibility=i?'visible':'hidden';nav.style.display=i===6?'none':'flex';next.innerHTML=i===5?'Отправить <span class="arrow">→</span>':'Дальше <span class="arrow">→</span>'}
+// data-quiz="1" — начать со второго вопроса (на странице услуги первый ответ уже известен)
+document.querySelectorAll('[data-quiz]').forEach(b=>b.onclick=()=>{quiz.classList.add('open');show(+b.dataset.quiz||0)});
+quiz.querySelector('.qclose').onclick=()=>quiz.classList.remove('open');
+quiz.onclick=e=>{if(e.target===quiz)quiz.classList.remove('open')};
+addEventListener('keydown',e=>{if(e.key==='Escape')quiz.classList.remove('open')});
+quiz.querySelectorAll('.opts').forEach(g=>g.querySelectorAll('.opt').forEach(o=>o.onclick=()=>{g.querySelectorAll('.opt').forEach(x=>x.classList.remove('sel'));o.classList.add('sel');if(s<5)setTimeout(()=>show(s+1),280)}));
+next.onclick=()=>show(Math.min(6,s+1));back.onclick=()=>show(Math.max(0,s-1));
+
+// вкладки услуг: глэмпинги / отели
+function openTab(k){document.querySelectorAll('.tabs button').forEach(b=>b.classList.toggle('on',b.dataset.tab===k));document.querySelectorAll('.tabpane').forEach(p=>{p.classList.toggle('on',p.dataset.pane===k);if(p.dataset.pane===k)p.querySelectorAll('.rv').forEach(el=>el.classList.add('in'))})}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>openTab(b.dataset.tab));
+document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=>openTab(a.dataset.go)));
+
+// ===== панель «Варианты оформления» (только в прототипе) =====
+(function(){
+  var HERO=[['forest','Шатёр в лесу'],['room','Номер «Кенсингтон»'],['bath','Номер с ванной'],['teal','Номер «Алеон»'],['apart','Апартаменты'],['lobby','Лобби'],['rest','Ресторан'],['bar','Бар-кафе'],['concept','Концепция у реки'],['land','Участок на рассвете'],['cycle','Смена фото'],['video:wellness','Видео: велнес-отель'],['video:poselok','Видео: посёлок-отель'],['video:park','Видео: парк-отель'],['split','Текст и фото']];
+  var PAL=[['cream','Молочный'],['white','Белый'],['stone','Тёплый серый'],['sage','Шалфей']];
+  var hasHero=!!document.querySelector('.hero-media');
+  function get(k,d){try{return localStorage.getItem('bk-'+k)||d}catch(e){return d}}
+  function put(k,v){try{localStorage.setItem('bk-'+k,v)}catch(e){}}
+  var cycleT=null;
+  var el=document.createElement('div');el.className='vpanel';
+  var html='<div class="vbox">';
+  if(hasHero){html+='<h5>Первый экран</h5><div class="vrow">'+HERO.map(function(x){return '<button class="v" data-h="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>'}
+  html+='<h5>Цвет фона</h5><div class="vrow">'+PAL.map(function(x){return '<button class="v" data-p="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>';
+  html+='<p>Видео — отрывки ваших видеопрезентаций (это визуализации). Все фото — в библиотеке: photos.html. Панель есть только в прототипе.</p></div><button class="vtoggle">Варианты оформления</button>';
+  el.innerHTML=html;document.body.appendChild(el);
+  function mark(){
+    el.querySelectorAll('[data-h]').forEach(function(b){b.classList.toggle('on',b.dataset.h===document.body.dataset.heroFull)});
+    el.querySelectorAll('[data-p]').forEach(function(b){b.classList.toggle('on',b.dataset.p===(document.body.dataset.pal||'cream'))});
+  }
+  function setHero(v){
+    var vv=v.split(':');document.body.dataset.hero=vv[0];document.body.dataset.heroFull=v;put('hero',v);
+    var vid=document.querySelector('.h-video');
+    if(vid){if(vv[0]==='video'){var nm=vv[1]||'wellness';if(vid.dataset.v!==nm||!vid.getAttribute('src')){vid.dataset.v=nm;vid.poster='img/hero-'+nm+'.jpg';vid.preload='auto';vid.src='img/hero-'+nm+'.mp4';vid.load();}var p=vid.play();if(p&&p.catch)p.catch(function(){})}else vid.pause()}
+    clearInterval(cycleT);
+    [].slice.call(document.querySelectorAll('.hero-media img[data-src]')).forEach(function(i){if(v==='cycle'||v==='split'?/h-(forest|room|teal|apart|rest|concept)/.test(i.className):i.classList.contains('h-'+vv[0])){i.src=i.dataset.src;i.removeAttribute('data-src')}});
+    var imgs=[].slice.call(document.querySelectorAll('.hero-media img'));
+    imgs.forEach(function(i){i.classList.remove('on')});
+    if(v==='cycle'&&imgs.length){imgs=imgs.filter(function(i){return /h-(forest|room|teal|apart|rest|concept)/.test(i.className)})}if(v==='cycle'&&imgs.length){var k=0;imgs[0].classList.add('on');cycleT=setInterval(function(){imgs[k].classList.remove('on');k=(k+1)%imgs.length;imgs[k].classList.add('on')},7000)}
+    mark();
+  }
+  function setPal(v){document.body.dataset.pal=v;put('pal',v);mark()}
+  el.querySelector('.vtoggle').onclick=function(){el.classList.toggle('open')};
+  el.querySelectorAll('[data-h]').forEach(function(b){b.onclick=function(){setHero(b.dataset.h)}});
+  el.querySelectorAll('[data-p]').forEach(function(b){b.onclick=function(){setPal(b.dataset.p)}});
+  var saved=get('hero','forest');if(!HERO.some(function(x){return x[0]===saved}))saved='forest';if(hasHero)setHero(saved);
+  setPal(get('pal','cream'));
+})();
+
+// видео в карточках исследований: грузим и запускаем, когда карточка на экране
+(function(){
+  var vs=[].slice.call(document.querySelectorAll('.vid video'));
+  if(!vs.length||!('IntersectionObserver' in window))return;
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){var v=e.target;if(e.isIntersecting){if(!v.getAttribute('src'))v.src=v.dataset.src;var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause()})},{threshold:.4});
+  vs.forEach(function(v){io.observe(v)});
+})();
+
+</script>
+</body>
+</html>

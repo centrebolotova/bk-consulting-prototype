@@ -9,10 +9,49 @@ js = (src / 'app.js').read_text(encoding='utf-8') + (src / 'variants.js').read_t
 
 NOINDEX = '<meta name="robots" content="noindex, nofollow">'
 
+import re
+
+# Единый подвал и ссылки меню для всех страниц (в исходниках местами стоят заглушки «#»)
+FOOTER_COLS = '''<div><h4>Глэмпинги и базы</h4><a href="glamping-marketing.html">Исследование и окупаемость</a><a href="proverka-uchastka.html">Проверка участка</a><a href="glamping-conception.html">Концепция и мастер-план</a><a href="glamping-business-plan.html">Бизнес-план</a><a href="granty.html">Гранты и субсидии</a><a href="glamping-pod-kluch.html">Под ключ</a><a href="baza-otdyha.html">База отдыха</a></div>
+      <div><h4>Отели</h4><a href="marketing.html">Исследование рынка</a><a href="conception.html">Концепция</a><a href="business-plan.html">Бизнес-план</a><a href="design.html">Дизайн-проект</a><a href="hotel-pod-kluch.html">Под ключ</a><a href="hotel-upravlenie.html">Управление</a><a href="modulnaya-gostinica.html">Модульная гостиница</a></div>
+      <div><h4>Компания</h4><a href="proekty.html">Проекты</a><a href="o-kompanii.html">О компании</a><a href="strategicheskaya-sessiya.html">Стратегическая сессия</a><a href="photos.html">Библиотека фото</a><a href="tel:+74996505134">+7 499 650-51-34</a></div>'''
+SVC = {'Проверка участка': 'proverka-uchastka.html', 'Концепция и мастер-план': 'glamping-conception.html',
+       'Бизнес-план и финмодель': 'glamping-business-plan.html', 'Гранты и субсидии': 'granty.html',
+       'Дизайн и архитектура': 'glamping-design.html', 'Загрузка и управление': 'glamping-zagruzka.html',
+       'Концепция отеля': 'conception.html', 'Бизнес-план гостиницы': 'business-plan.html', 'Дизайн-проект': 'design.html',
+       'Управление и загрузка': 'hotel-upravlenie.html', 'Модульная гостиница': 'modulnaya-gostinica.html'}
+
+
+def fix_links(s, name):
+    s = re.sub(r'(<footer>.*?<div class="grid">\s*<div>.*?</div>)\s*<div><h4>.*?(?=</div>\s*<div class="legal">)',
+               lambda m: m.group(1) + '\n      ' + FOOTER_COLS + '\n    ', s, count=1, flags=re.S)
+    s = s.replace('href="index.html#cases">Проекты', 'href="proekty.html">Проекты').replace('href="#cases">Проекты', 'href="proekty.html">Проекты')
+    s = s.replace('href="index.html#founder">О компании', 'href="o-kompanii.html">О компании').replace('href="#founder">О компании', 'href="o-kompanii.html">О компании')
+    s = s.replace('href="index.html#glamping">Глэмпинги', 'href="glamping.html">Глэмпинги').replace('href="index.html#hotel">Отели', 'href="hotel.html">Отели')
+    if name == 'index.html':
+        # карточки услуг: ссылка по названию; «Открытие под ключ» — своя для каждой вкладки
+        def card(m):
+            t = m.group(2)
+            href = SVC.get(t)
+            if t == 'Открытие под ключ':
+                href = 'hotel-pod-kluch.html' if m.start() > s.find('data-pane="hotel"') > 0 else 'glamping-pod-kluch.html'
+            return m.group(0).replace('href="#"', f'href="{href}"', 1) if href else m.group(0)
+        s = re.sub(r'<a class="svc rv" href="#">(<span class="n">\d+</span>)<h4>([^<]+)</h4>', card, s)
+        pane_h = s.find('data-pane="hotel"')
+        first = s.find('<a class="link" href="#">Подробнее')
+        if first != -1:
+            s = s[:first] + s[first:].replace('<a class="link" href="#">Подробнее', '<a class="link" href="glamping-marketing.html">Подробнее', 1)
+        second = s.find('<a class="link" href="#">Подробнее', pane_h)
+        if second != -1:
+            s = s[:second] + s[second:].replace('<a class="link" href="#">Подробнее', '<a class="link" href="marketing.html">Подробнее', 1)
+        s = s.replace('<a class="link" href="#">Все проекты', '<a class="link" href="proekty.html">Все проекты')
+    return s
+
 for f in sorted(src.glob('*.html')):
     s = f.read_text(encoding='utf-8')
     s = s.replace('<meta charset="utf-8">', '<meta charset="utf-8">\n' + NOINDEX, 1)  # прототип не должен попадать в поиск
     s = s.replace('<link rel="stylesheet" href="style.css">', '<style>\n' + css + '\n</style>')
     s = s.replace('<script src="app.js"></script>', '<script>\n' + js + '\n</script>')
+    s = fix_links(s, f.name)
     (out / f.name).write_text(s, encoding='utf-8')
     print('собрано', f.name, len(s))
