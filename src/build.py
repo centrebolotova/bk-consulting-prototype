@@ -11,6 +11,9 @@ import json as _json
 # фото с Тильды → локальные копии из библиотеки (поле note в photos.json — исходный адрес)
 CDN_MAP = {i['note']: i['file'] for i in _json.loads((out / 'library' / 'photos.json').read_text(encoding='utf-8')) if i.get('note', '').startswith('http')}
 
+# первый экран выбран сразу при загрузке (без чёрной вспышки до запуска скриптов)
+EARLY_HERO = "<script>try{var h=localStorage.getItem('bk-hero')||'forest';document.body.dataset.hero=h.split(':')[0];document.body.dataset.heroFull=h}catch(e){document.body.dataset.hero='forest'}</script>"
+
 NOINDEX = '<meta name="robots" content="noindex, nofollow">'
 
 import re
@@ -60,6 +63,8 @@ for f in sorted(p for p in src.glob('*.html') if not p.name.startswith('_')):
     s = re.sub(r'<nav class="menu">.*?</nav>', lambda m: (src / '_nav.html').read_text(encoding='utf-8'), s, count=1, flags=re.S)
     for u, loc in CDN_MAP.items():
         s = s.replace(u, loc)
+    if 'hero-media' in s:
+        s = s.replace('<body>', '<body>' + EARLY_HERO, 1)
     s = fix_links(s, f.name)
     (out / f.name).write_text(s, encoding='utf-8')
     print('собрано', f.name, len(s))

@@ -8,12 +8,12 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
 
 // калькулятор
-const NORM={glamp:1.7,base:1.7,hotel:1.7}; // млн ₽ на домик/номер — заменить нормами Юлии
-const LABEL={glamp:'Домиков',base:'Домиков и номеров',hotel:'Номеров'};
+const NORM={glamp:4.5,base:5,hotel:1.7}; // млн ₽ на домик/номер — ПРЕДЛОЖЕНИЕ, подтвердить у Юлии: глэмпинг с инфраструктурой, база с корпусом, отель в готовом здании
+const LABEL={glamp:'Домиков',base:'Домиков и номеров',hotel:'Номеров в готовом здании'};
 const RANGE={glamp:[4,40,10],base:[6,60,16],hotel:[10,100,20]};
 let fmt='glamp';
 const range=document.getElementById('range'),units=document.getElementById('units'),sum=document.getElementById('sum'),ul=document.getElementById('unitLabel'),ticks=document.querySelector('.ticks');
-function calc(){const n=+range.value;units.textContent=n;const v=n*NORM[fmt];sum.textContent='≈ '+(v<100?v.toFixed(0):Math.round(v/10)*10)+' млн ₽'}
+function calc(){const n=+range.value;units.textContent=n;const v=n*NORM[fmt],r=x=>x<100?Math.round(x):Math.round(x/10)*10;sum.innerHTML='<mark class="todo" title="Нормы — предложение, подтвердить у Юлии">'+r(v*0.85)+'–'+r(v*1.15)+' млн ₽</mark>'}
 function setFmt(k){fmt=k;const[a,b,c]=RANGE[k];range.min=a;range.max=b;range.value=c;ul.textContent=LABEL[k];ticks.innerHTML=`<span>${a}</span><span>${Math.round((a+b)/2)}</span><span>${b}</span>`;calc()}
 if(range){
 document.querySelectorAll('#fmt button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#fmt button').forEach(x=>x.classList.remove('on'));b.classList.add('on');setFmt(b.dataset.k)});

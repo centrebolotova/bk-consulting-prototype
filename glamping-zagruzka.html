@@ -528,9 +528,29 @@ header:has(.dd:hover) .btn,header:has(.dd:focus-within) .btn{background:var(--in
 body.mlock{overflow:hidden}
 @media (max-width:980px){.ddm{display:none}}
 
+/* правки после проверки 12.11 */
+body:not([data-hero]) .h-forest{opacity:1}
+@media (max-width:600px){
+  .geo-chips button,.tabs button{padding:11px 16px}
+  .vpanel{top:auto;bottom:84px;left:12px}
+  .vbox{top:auto;bottom:52px}
+  .vtoggle{padding:9px 14px;font-size:12px;opacity:.92}
+}
+@media (max-width:980px){
+  body[data-hero=split] .hero{height:auto;min-height:0}
+  body[data-hero=split] .hero-media{bottom:auto;height:46svh}
+  body[data-hero=split] .hero-in{height:auto;justify-content:flex-start;padding-top:calc(46svh + 28px);padding-bottom:56px}
+}
+@media (max-width:600px){
+  .vpanel{left:auto;right:12px;bottom:88px}
+  .vtoggle{width:44px;height:44px;padding:0;border-radius:50%;font-size:0;display:flex;align-items:center;justify-content:center}
+  .vtoggle:before{content:"◐";font-size:20px;line-height:1}
+  .vbox{left:auto;right:0}
+}
+
 </style>
 </head>
-<body>
+<body><script>try{var h=localStorage.getItem('bk-hero')||'forest';document.body.dataset.hero=h.split(':')[0];document.body.dataset.heroFull=h}catch(e){document.body.dataset.hero='forest'}</script>
 
 
 
@@ -666,7 +686,7 @@ body.mlock{overflow:hidden}
     <div class="text2">
       <div class="rv">
         <h3>Как повысить загрузку базы отдыха</h3>
-        <p>Продвижение глэмпинга начинается с продукта и цены, а уже потом — с рекламы. Если гость не видит, чем ваши будни лучше выходных у соседа, реклама только подорожает. Мы настраиваем динамические цены, пакеты для будних дней и межсезонья, корпоративные и семейные предложения.</p>
+        <p>Продвижение глэмпинга начинается с продукта и цены, а реклама — уже потом. Если гость не видит, чем ваши будни лучше выходных у соседа, реклама только подорожает. Мы настраиваем динамические цены, пакеты для будних дней и межсезонья, корпоративные и семейные предложения.</p>
         <ul>
           <li>Динамическое ценообразование <em>revenue management</em></li>
           <li>Прямые бронирования <em>сайт и модуль</em></li>
@@ -676,7 +696,7 @@ body.mlock{overflow:hidden}
       </div>
       <div class="rv">
         <h3>Управление глэмпингом: форматы работы</h3>
-        <p>Не каждому объекту нужна управляющая компания. Иногда достаточно разовой настройки: аудит, новые цены, стандарты и обучение команды. Если владелец не хочет заниматься операционкой, мы берём на себя управление базой отдыха или глэмпингом и отчитываемся по загрузке, выручке и расходам.</p>
+        <p>Не каждому объекту нужна управляющая компания. Иногда достаточно разовой настройки: аудит, новые цены, стандарты и обучение команды. Если владелец не хочет заниматься операционной работой, мы берём на себя управление базой отдыха или глэмпингом и отчитываемся по загрузке, выручке и расходам.</p>
         <p>Формат и стоимость определяем после аудита — по задаче и размеру объекта.</p>
         <a class="link" href="glamping-design.html">Обновить интерьеры и общие зоны <span class="arrow">→</span></a>
       </div>
@@ -693,7 +713,7 @@ body.mlock{overflow:hidden}
       <div class="rv"><div class="d">Шаг 1</div><h3>Данные</h3><p>Загрузка и выручка по месяцам, цены, каналы, отзывы, штат.</p></div>
       <div class="rv"><div class="d">Шаг 2</div><h3>Аудит</h3><p>Анализ данных, конкурентов и сервиса; при необходимости — выезд на объект.</p></div>
       <div class="rv"><div class="d">Шаг 3</div><h3>План</h3><p>Разбор с Юлией и план на три месяца: цены, каналы, стандарты, команда.</p></div>
-      <div class="rv"><div class="d">Шаг 4</div><h3>Внедрение</h3><p>Делаете сами по плану, с нашей поддержкой или передаёте управление нам.</p></div>
+      <div class="rv"><div class="d">Шаг 4</div><h3>Внедрение</h3><p>Внедряете план сами, с нашей поддержкой или передаёте управление нам.</p></div>
     </div>
   </div>
 </section>
@@ -741,7 +761,7 @@ body.mlock{overflow:hidden}
       <details><summary>Вы управляющая компания для глэмпинга?</summary><p>Можем ей быть, если это нужно объекту. Но часто полезнее разовая работа: аудит, настройка цен и каналов, стандарты и обучение команды, после которых владелец управляет сам.</p></details>
       <details><summary>Как повысить загрузку глэмпинга зимой и в будни?</summary><p>Через цены по дням недели, пакеты с баней и питанием, корпоративные и семейные предложения, работу с повторными гостями. Что сработает у вас, покажет аудит.</p></details>
       <details><summary>Занимаетесь ли вы рекламой и маркетингом глэмпинга?</summary><p>Мы выстраиваем систему продаж: цены, сайт, модуль бронирования, агрегаторы, отзывы. Рекламу запускаем, когда продукт и цены готовы, — иначе она тратит деньги впустую.</p></details>
-      <details><summary>Сколько стоит управление базой отдыха?</summary><p>Зависит от размера объекта и того, что вы передаёте: только продажи или всю операционную работу. Стоимость фиксируем в договоре после аудита.</p></details>
+      <details><summary>Сколько стоит управление базой отдыха?</summary><p><mark class="todo" title="Предложение по цене — подтвердить у Юлии">От 100 000 ₽ в месяц</mark>. Точная стоимость зависит от размера объекта и того, что вы передаёте: только продажи или всю операционную работу. Её фиксируем в договоре после аудита.</p></details>
       <details><summary>Что нужно для аудита глэмпинга?</summary><p>Загрузка и выручка по месяцам за последний год, текущие цены, список каналов продаж, доступ к отзывам и штатное расписание.</p></details>
     </div>
   </div>
@@ -874,12 +894,12 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
 
 // калькулятор
-const NORM={glamp:1.7,base:1.7,hotel:1.7}; // млн ₽ на домик/номер — заменить нормами Юлии
-const LABEL={glamp:'Домиков',base:'Домиков и номеров',hotel:'Номеров'};
+const NORM={glamp:4.5,base:5,hotel:1.7}; // млн ₽ на домик/номер — ПРЕДЛОЖЕНИЕ, подтвердить у Юлии: глэмпинг с инфраструктурой, база с корпусом, отель в готовом здании
+const LABEL={glamp:'Домиков',base:'Домиков и номеров',hotel:'Номеров в готовом здании'};
 const RANGE={glamp:[4,40,10],base:[6,60,16],hotel:[10,100,20]};
 let fmt='glamp';
 const range=document.getElementById('range'),units=document.getElementById('units'),sum=document.getElementById('sum'),ul=document.getElementById('unitLabel'),ticks=document.querySelector('.ticks');
-function calc(){const n=+range.value;units.textContent=n;const v=n*NORM[fmt];sum.textContent='≈ '+(v<100?v.toFixed(0):Math.round(v/10)*10)+' млн ₽'}
+function calc(){const n=+range.value;units.textContent=n;const v=n*NORM[fmt],r=x=>x<100?Math.round(x):Math.round(x/10)*10;sum.innerHTML='<mark class="todo" title="Нормы — предложение, подтвердить у Юлии">'+r(v*0.85)+'–'+r(v*1.15)+' млн ₽</mark>'}
 function setFmt(k){fmt=k;const[a,b,c]=RANGE[k];range.min=a;range.max=b;range.value=c;ul.textContent=LABEL[k];ticks.innerHTML=`<span>${a}</span><span>${Math.round((a+b)/2)}</span><span>${b}</span>`;calc()}
 if(range){
 document.querySelectorAll('#fmt button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#fmt button').forEach(x=>x.classList.remove('on'));b.classList.add('on');setFmt(b.dataset.k)});

@@ -528,9 +528,29 @@ header:has(.dd:hover) .btn,header:has(.dd:focus-within) .btn{background:var(--in
 body.mlock{overflow:hidden}
 @media (max-width:980px){.ddm{display:none}}
 
+/* правки после проверки 12.11 */
+body:not([data-hero]) .h-forest{opacity:1}
+@media (max-width:600px){
+  .geo-chips button,.tabs button{padding:11px 16px}
+  .vpanel{top:auto;bottom:84px;left:12px}
+  .vbox{top:auto;bottom:52px}
+  .vtoggle{padding:9px 14px;font-size:12px;opacity:.92}
+}
+@media (max-width:980px){
+  body[data-hero=split] .hero{height:auto;min-height:0}
+  body[data-hero=split] .hero-media{bottom:auto;height:46svh}
+  body[data-hero=split] .hero-in{height:auto;justify-content:flex-start;padding-top:calc(46svh + 28px);padding-bottom:56px}
+}
+@media (max-width:600px){
+  .vpanel{left:auto;right:12px;bottom:88px}
+  .vtoggle{width:44px;height:44px;padding:0;border-radius:50%;font-size:0;display:flex;align-items:center;justify-content:center}
+  .vtoggle:before{content:"◐";font-size:20px;line-height:1}
+  .vbox{left:auto;right:0}
+}
+
 </style>
 </head>
-<body>
+<body><script>try{var h=localStorage.getItem('bk-hero')||'forest';document.body.dataset.hero=h.split(':')[0];document.body.dataset.heroFull=h}catch(e){document.body.dataset.hero='forest'}</script>
 
 
 
@@ -656,9 +676,9 @@ body.mlock{overflow:hidden}
         </div>
       </article>
       <div class="svc-grid">
-        <a class="svc rv" href="proverka-uchastka.html"><span class="n">01</span><h4>Проверка участка</h4><p>Можно ли строить, ограничения, сколько домиков встанет, порядок бюджета.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">75 000 ₽</mark></b><span>7–10 дней</span></div><span class="go">Подробнее →</span></a>
-        <a class="svc rv" href="glamping-conception.html"><span class="n">02</span><h4>Концепция и мастер-план</h4><p>Формат, зонирование территории, номерной фонд, общественные зоны, 3D.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 200 000 ₽</mark></b><span>от 3 недель</span></div><span class="go">Подробнее →</span></a>
-        <a class="svc rv" href="glamping-business-plan.html"><span class="n">03</span><h4>Бизнес-план и финмодель</h4><p>Финмодель на 10 лет в трёх сценариях, бизнес-план по ЮНИДО для банка или инвестора.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 150 000 ₽</mark></b><span>2–3 недели</span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="proverka-uchastka.html"><span class="n">01</span><h4>Проверка участка</h4><p>Можно ли строить, ограничения, сколько домиков встанет, порядок бюджета.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">75 000 ₽</mark></b><span><mark class="todo" title="Предложение по цене — подтвердить у Юлии">7–10 рабочих дней</mark></span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="glamping-conception.html"><span class="n">02</span><h4>Концепция и мастер-план</h4><p>Формат, зонирование территории, номерной фонд, общественные зоны, 3D.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 200 000 ₽</mark></b><span><mark class="todo" title="Предложение по цене — подтвердить у Юлии">2–6 недель</mark></span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="glamping-business-plan.html"><span class="n">03</span><h4>Бизнес-план и финмодель</h4><p>Финмодель на 10 лет в трёх сценариях, бизнес-план по ЮНИДО для банка или инвестора.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 150 000 ₽</mark></b><span><mark class="todo" title="Предложение по цене — подтвердить у Юлии">1–3 недели</mark></span></div><span class="go">Подробнее →</span></a>
         <a class="svc rv" href="granty.html"><span class="n">04</span><h4>Гранты и субсидии</h4><p>Бизнес-план и расчёты под требования программ поддержки туризма.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 200 000 ₽</mark></b><span>под сроки конкурса</span></div><span class="go">Подробнее →</span></a>
         <a class="svc rv" href="glamping-design.html"><span class="n">05</span><h4>Дизайн и архитектура</h4><p>Архитектурная концепция домиков и интерьеры, подбор модулей и производителей.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 250 000 ₽</mark></b><span>4–6 недель</span></div><span class="go">Подробнее →</span></a>
         <a class="svc rv" href="glamping-pod-kluch.html"><span class="n">06</span><h4>Открытие под ключ</h4><p>Ведём проект от концепции до первых гостей: подрядчики, бюджет, сроки, команда.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">10–15 % бюджета</mark></b><span>10–18 месяцев</span></div><span class="go">Подробнее →</span></a>
@@ -690,9 +710,9 @@ body.mlock{overflow:hidden}
       </article>
       <div class="svc-grid">
         <a class="svc rv" href="conception.html"><span class="n">01</span><h4>Концепция отеля</h4><p>Позиционирование, гость, номерной фонд, услуги, бренд.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 200 000 ₽</mark></b><span>2–3 недели</span></div><span class="go">Подробнее →</span></a>
-        <a class="svc rv" href="business-plan.html"><span class="n">02</span><h4>Бизнес-план гостиницы</h4><p>Финмодель на 10 лет, три сценария, бизнес-план по ЮНИДО для банка.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 150 000 ₽</mark></b><span>2–3 недели</span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="business-plan.html"><span class="n">02</span><h4>Бизнес-план гостиницы</h4><p>Финмодель на 10 лет, три сценария, бизнес-план по ЮНИДО для банка.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 150 000 ₽</mark></b><span><mark class="todo" title="Предложение по цене — подтвердить у Юлии">1–3 недели</mark></span></div><span class="go">Подробнее →</span></a>
         <a class="svc rv" href="design.html"><span class="n">03</span><h4>Дизайн-проект</h4><p>Интерьеры номеров и общественных зон, 3D, комплектация, авторский надзор.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 250 000 ₽</mark></b><span>4–6 недель</span></div><span class="go">Подробнее →</span></a>
-        <a class="svc rv" href="hotel-pod-kluch.html"><span class="n">04</span><h4>Открытие под ключ</h4><p>Реконструкция или новое здание: от концепции до первых гостей.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">10–15 % бюджета</mark></b><span>от 3–6 месяцев</span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="hotel-pod-kluch.html"><span class="n">04</span><h4>Открытие под ключ</h4><p>Реконструкция или новое здание: от концепции до первых гостей.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">10–15 % бюджета</mark></b><span><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 3 месяцев</mark></span></div><span class="go">Подробнее →</span></a>
         <a class="svc rv" href="hotel-upravlenie.html"><span class="n">05</span><h4>Управление и загрузка</h4><p>Операционное управление, продажи и цены для работающего отеля.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 100 000 ₽ в месяц</mark></b><span>от 3 месяцев</span></div><span class="go">Подробнее →</span></a>
         <a class="svc rv" href="modulnaya-gostinica.html"><span class="n">06</span><h4>Модульная гостиница</h4><p>Расчёт и концепция гостиницы из модулей: формат, участок, окупаемость.</p><div class="m"><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 200 000 ₽</mark></b><span>от 3 недель</span></div><span class="go">Подробнее →</span></a>
       </div>
@@ -771,7 +791,7 @@ body.mlock{overflow:hidden}
         <div class="ph"><img src="img/altai-koncept-reka.jpg" alt="Визуализация концепции на Алтае"></div>
         <div class="meta">Концепция · Алтай · 2025</div>
         <h3>Участок, который продаёт себя инвестору</h3>
-        <p>Владелец 2 га в сосновом лесу у реки. Сделали концепцию отеля, планировку участка, архитектуру, визуализации и буклет с бизнес-планом для инвесторов и покупателей земли.</p>
+        <p>У владельца — 2 га в сосновом лесу у реки. Сделали концепцию отеля, планировку участка, архитектуру, визуализации и буклет с бизнес-планом для инвесторов и покупателей земли.</p>
         <div class="nums"><div><b>2 га</b>участок</div><div><b>29</b>визуализаций</div></div>
       </article>
     </div>
@@ -837,7 +857,7 @@ body.mlock{overflow:hidden}
           <li>Проектирование, запуск продаж, команда</li>
         </ul>
         <button class="btn light" data-quiz>Рассчитать по моему участку <span class="arrow">→</span></button>
-        <small>Норматив в прототипе — 1,7 млн ₽ на номер из вашего опросника для бота. Для домиков глэмпинга и номеров базы нужны свои нормы, их даёт Юлия.</small>
+        <small>Ориентир по нашим проектам: домик глэмпинга с инфраструктурой — около 4,5 млн ₽, номер базы отдыха с корпусом — около 5 млн ₽, номер отеля в готовом здании — около 1,7 млн ₽. Точный бюджет зависит от участка, сетей и класса.</small>
       </div>
     </div>
   </div>
@@ -883,8 +903,8 @@ body.mlock{overflow:hidden}
     <div class="eyebrow rv">Вопросы</div>
     <h2 class="serif rv" style="margin:14px 0 40px">Частые вопросы</h2>
     <div class="faq rv">
-      <details><summary>Сколько стоит открыть глэмпинг?</summary><p>Зависит от числа домиков, сетей на участке и класса объекта. Порядок цифр показывает калькулятор выше, точный бюджет мы считаем на стратегической сессии и в бизнес-плане.</p></details>
-      <details><summary>Можно ли построить глэмпинг на сельхозземле?</summary><p>Иногда — да, иногда нужен перевод в рекреацию или смена вида разрешённого использования. Это первое, что мы проверяем в проверке участка, до любых расходов на проект.</p></details>
+      <details><summary>Сколько стоит открыть глэмпинг?</summary><p>Зависит от числа домиков, сетей на участке и класса объекта. Ориентир показывает калькулятор выше, а точный бюджет мы считаем на стратегической сессии и в бизнес-плане.</p></details>
+      <details><summary>Можно ли построить глэмпинг на сельхозземле?</summary><p>Иногда — да, иногда нужен перевод в рекреацию или смена вида разрешённого использования. Это первое, что мы смотрим при проверке участка, — до любых расходов на проект.</p></details>
       <details><summary>Вы сами строите?</summary><p>Нет. Мы консультанты на стороне владельца: готовим концепцию и расчёты, подбираем подрядчиков и производителей, контролируем запуск. Поэтому нам не нужно продать вам конкретные домики.</p></details>
       <details><summary>Помогаете с грантами и кредитом?</summary><p>Готовим бизнес-план и финмодель под требования банка, инвестора или программы поддержки туризма.</p></details>
       <details><summary>В каких регионах работаете?</summary><p>По всей России. Выезжаем на участок, часть работ ведём удалённо.</p></details>
@@ -1006,12 +1026,12 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
 
 // калькулятор
-const NORM={glamp:1.7,base:1.7,hotel:1.7}; // млн ₽ на домик/номер — заменить нормами Юлии
-const LABEL={glamp:'Домиков',base:'Домиков и номеров',hotel:'Номеров'};
+const NORM={glamp:4.5,base:5,hotel:1.7}; // млн ₽ на домик/номер — ПРЕДЛОЖЕНИЕ, подтвердить у Юлии: глэмпинг с инфраструктурой, база с корпусом, отель в готовом здании
+const LABEL={glamp:'Домиков',base:'Домиков и номеров',hotel:'Номеров в готовом здании'};
 const RANGE={glamp:[4,40,10],base:[6,60,16],hotel:[10,100,20]};
 let fmt='glamp';
 const range=document.getElementById('range'),units=document.getElementById('units'),sum=document.getElementById('sum'),ul=document.getElementById('unitLabel'),ticks=document.querySelector('.ticks');
-function calc(){const n=+range.value;units.textContent=n;const v=n*NORM[fmt];sum.textContent='≈ '+(v<100?v.toFixed(0):Math.round(v/10)*10)+' млн ₽'}
+function calc(){const n=+range.value;units.textContent=n;const v=n*NORM[fmt],r=x=>x<100?Math.round(x):Math.round(x/10)*10;sum.innerHTML='<mark class="todo" title="Нормы — предложение, подтвердить у Юлии">'+r(v*0.85)+'–'+r(v*1.15)+' млн ₽</mark>'}
 function setFmt(k){fmt=k;const[a,b,c]=RANGE[k];range.min=a;range.max=b;range.value=c;ul.textContent=LABEL[k];ticks.innerHTML=`<span>${a}</span><span>${Math.round((a+b)/2)}</span><span>${b}</span>`;calc()}
 if(range){
 document.querySelectorAll('#fmt button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#fmt button').forEach(x=>x.classList.remove('on'));b.classList.add('on');setFmt(b.dataset.k)});

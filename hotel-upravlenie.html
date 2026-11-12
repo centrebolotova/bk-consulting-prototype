@@ -528,9 +528,29 @@ header:has(.dd:hover) .btn,header:has(.dd:focus-within) .btn{background:var(--in
 body.mlock{overflow:hidden}
 @media (max-width:980px){.ddm{display:none}}
 
+/* правки после проверки 12.11 */
+body:not([data-hero]) .h-forest{opacity:1}
+@media (max-width:600px){
+  .geo-chips button,.tabs button{padding:11px 16px}
+  .vpanel{top:auto;bottom:84px;left:12px}
+  .vbox{top:auto;bottom:52px}
+  .vtoggle{padding:9px 14px;font-size:12px;opacity:.92}
+}
+@media (max-width:980px){
+  body[data-hero=split] .hero{height:auto;min-height:0}
+  body[data-hero=split] .hero-media{bottom:auto;height:46svh}
+  body[data-hero=split] .hero-in{height:auto;justify-content:flex-start;padding-top:calc(46svh + 28px);padding-bottom:56px}
+}
+@media (max-width:600px){
+  .vpanel{left:auto;right:12px;bottom:88px}
+  .vtoggle{width:44px;height:44px;padding:0;border-radius:50%;font-size:0;display:flex;align-items:center;justify-content:center}
+  .vtoggle:before{content:"◐";font-size:20px;line-height:1}
+  .vbox{left:auto;right:0}
+}
+
 </style>
 </head>
-<body>
+<body><script>try{var h=localStorage.getItem('bk-hero')||'forest';document.body.dataset.hero=h.split(':')[0];document.body.dataset.heroFull=h}catch(e){document.body.dataset.hero='forest'}</script>
 
 
 
@@ -585,7 +605,7 @@ body.mlock{overflow:hidden}
 
 <!-- 1. Первый экран: заголовок с ключом, что получите, ключевые условия -->
 <section class="svc-hero" style="padding:0">
-  <img src="library/sait/IMG_1917.jpg" alt="Лобби апарт-отеля SLAVA у Белорусской, Москва">
+  <img src="library/sait/IMG_1917.jpg" alt="Лобби апарт-отеля «СЛАВА» у Белорусской, Москва">
   <div class="wrap">
     <div class="crumbs"><a href="index.html">Главная</a> · <a href="hotel.html">Отели</a> · Управление и загрузка</div>
     <h1 class="serif">Управление отелем и рост загрузки</h1>
@@ -677,7 +697,7 @@ body.mlock{overflow:hidden}
       </div>
       <div class="rv">
         <h3>Управление гостиницей: форматы работы</h3>
-        <p>Полное управление: команда, продажи и отчётность на нас, собственник получает отчёт и решает стратегические вопросы. Настройка под задачу: аудит и внедрение изменений вместе с вашей командой. Формат, вознаграждение и KPI фиксируем в договоре управления.</p>
+        <p>Полное управление: команда, продажи и отчётность на нас, а собственник получает отчёт и решает стратегические вопросы. Настройка под задачу: аудит и внедрение изменений вместе с вашей командой. Формат, вознаграждение и KPI фиксируем в договоре управления.</p>
         <p>Работаем с отелями, мини-гостиницами и апарт-отелями, в том числе с объектами, где номера принадлежат разным собственникам.</p>
       </div>
     </div>
@@ -722,12 +742,12 @@ body.mlock{overflow:hidden}
 <section style="padding-top:0">
   <div class="wrap">
     <div class="story">
-      <div class="ph rv"><img src="library/sait/DSC_7482-1.jpg" alt="Гостиная апартаментов SLAVA с панорамным окном"></div>
+      <div class="ph rv"><img src="library/sait/DSC_7482-1.jpg" alt="Гостиная апартаментов «СЛАВА» с панорамным окном"></div>
       <div class="rv">
         <div class="eyebrow">Из практики · Москва · Белорусская</div>
         <h3>Десять апартаментов разных владельцев — один апарт-отель</h3>
         <p>Частные инвесторы купили апартаменты в новом жилом комплексе. Мы объединили владельцев в один проект, сделали дизайн-проект и ремонт и взяли объект в управление.</p>
-        <p>Апарт-отель SLAVA принимает гостей с декабря 2024 года.</p>
+        <p>Апарт-отель «СЛАВА» принимает гостей с декабря 2024 года.</p>
         <div class="format">
           <div><b>10</b>апартаментов</div>
           <div><b>С 2024</b>в нашем управлении</div>
@@ -747,10 +767,10 @@ body.mlock{overflow:hidden}
     <div class="faq rv">
       <details><summary>Что делает управляющая компания для отеля?</summary><p>Отвечает за продажи, цены, команду, сервис и отчётность перед собственником. Собственник получает ежемесячный отчёт по загрузке, средней цене, выручке и расходам и принимает стратегические решения.</p></details>
       <details><summary>Можно передать гостиницу в управление частично?</summary><p>Да. Можно отдать нам только продажи и цены, только аудит и настройку или управление целиком. Формат фиксируем в договоре.</p></details>
-      <details><summary>Сколько стоит управление отелем?</summary><p>Стоимость определяется договором и зависит от формата и размера объекта. Начинаем с аудита — после него понятно, какой объём работы нужен.</p></details>
+      <details><summary>Сколько стоит управление отелем?</summary><p><mark class="todo" title="Предложение по цене — подтвердить у Юлии">От 100 000 ₽ в месяц</mark>. Точная стоимость зависит от формата и размера объекта и фиксируется в договоре. Начинаем с аудита — после него понятно, какой объём работы нужен.</p></details>
       <details><summary>Как быстро вырастет загрузка?</summary><p>Первые изменения в ценах и каналах продаж начинают работать в течение нескольких недель. Называть цифры загрузки до аудита мы не будем: они зависят от рынка, состояния объекта и команды.</p></details>
       <details><summary>Вы занимаетесь продвижением отеля?</summary><p>Да, продвижение входит в работу: карточки на агрегаторах, сайт и прямые бронирования, отзывы, реклама. Но начинаем с цены и продукта — без них реклама не окупается.</p></details>
-      <details><summary>Работаете с апарт-отелями и гостевыми домами?</summary><p>Да. Апарт-отель SLAVA — пример объекта, где номера принадлежат разным владельцам, а управление общее.</p></details>
+      <details><summary>Работаете с апарт-отелями и гостевыми домами?</summary><p>Да. Апарт-отель «СЛАВА» — пример объекта, где номера принадлежат разным владельцам, а управление общее.</p></details>
     </div>
   </div>
 </section>
@@ -882,12 +902,12 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.targ
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
 
 // калькулятор
-const NORM={glamp:1.7,base:1.7,hotel:1.7}; // млн ₽ на домик/номер — заменить нормами Юлии
-const LABEL={glamp:'Домиков',base:'Домиков и номеров',hotel:'Номеров'};
+const NORM={glamp:4.5,base:5,hotel:1.7}; // млн ₽ на домик/номер — ПРЕДЛОЖЕНИЕ, подтвердить у Юлии: глэмпинг с инфраструктурой, база с корпусом, отель в готовом здании
+const LABEL={glamp:'Домиков',base:'Домиков и номеров',hotel:'Номеров в готовом здании'};
 const RANGE={glamp:[4,40,10],base:[6,60,16],hotel:[10,100,20]};
 let fmt='glamp';
 const range=document.getElementById('range'),units=document.getElementById('units'),sum=document.getElementById('sum'),ul=document.getElementById('unitLabel'),ticks=document.querySelector('.ticks');
-function calc(){const n=+range.value;units.textContent=n;const v=n*NORM[fmt];sum.textContent='≈ '+(v<100?v.toFixed(0):Math.round(v/10)*10)+' млн ₽'}
+function calc(){const n=+range.value;units.textContent=n;const v=n*NORM[fmt],r=x=>x<100?Math.round(x):Math.round(x/10)*10;sum.innerHTML='<mark class="todo" title="Нормы — предложение, подтвердить у Юлии">'+r(v*0.85)+'–'+r(v*1.15)+' млн ₽</mark>'}
 function setFmt(k){fmt=k;const[a,b,c]=RANGE[k];range.min=a;range.max=b;range.value=c;ul.textContent=LABEL[k];ticks.innerHTML=`<span>${a}</span><span>${Math.round((a+b)/2)}</span><span>${b}</span>`;calc()}
 if(range){
 document.querySelectorAll('#fmt button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#fmt button').forEach(x=>x.classList.remove('on'));b.classList.add('on');setFmt(b.dataset.k)});
