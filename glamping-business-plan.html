@@ -450,6 +450,10 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
 .vid p{font-size:15px;color:var(--ink-2)}
 @media (max-width:980px){.vids{grid-template-columns:1fr}}
 
+/* пометка «подтвердить» */
+mark.todo{background:#FFE071;color:#1E1D1B;padding:0 .2em;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+body.notodo mark.todo{background:none;color:inherit;padding:0}
+
 </style>
 </head>
 <body>
@@ -485,7 +489,7 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
       <a class="link" href="#get">Что входит</a>
     </div>
     <div class="keys">
-      <div><b>от 150 000 ₽</b>экспресс-план</div>
+      <div><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 150 000 ₽</mark></b>экспресс-план</div>
       <div><b>1–3 недели</b>в зависимости от пакета</div>
       <div><b>3 сценария</b>на 10 лет</div>
       <div><b>По ЮНИДО</b>для банка и инвестора</div>
@@ -542,7 +546,7 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
       <div class="format rv">
         <div><b>Бизнес-план PDF</b>до 50–80 страниц</div>
         <div><b>Финмодель Excel</b>с изменяемыми параметрами</div>
-        <div><b>Презентация</b>в пакете от 400 000 ₽</div>
+        <div><b>Презентация</b>в пакете <mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 400 000 ₽</mark></div>
       </div>
     </div>
   </div>
@@ -593,12 +597,12 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
     <div class="price-card rv">
       <div class="l">
         <div class="eyebrow">Стоимость и сроки</div>
-        <div class="big">от 150 000 ₽</div>
+        <div class="big"><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 150 000 ₽</mark></div>
         <p style="color:rgba(250,247,241,.75)">Цена зависит от формата объекта и того, для кого готовится документ.</p>
         <ul>
-          <li>Экспресс-план — от 150 000 ₽, 1–2 недели: для собственного решения</li>
-          <li>Полный бизнес-план по ЮНИДО, 50–80 страниц — от 300 000 ₽, 2–3 недели</li>
-          <li>Бизнес-план, финмодель и презентация — от 400 000 ₽, с поддержкой при защите</li>
+          <li>Экспресс-план — <mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 150 000 ₽</mark>, 1–2 недели: для собственного решения</li>
+          <li>Полный бизнес-план по ЮНИДО, 50–80 страниц — <mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 300 000 ₽</mark>, 2–3 недели</li>
+          <li>Бизнес-план, финмодель и презентация — <mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 400 000 ₽</mark>, с поддержкой при защите</li>
         </ul>
         <button class="btn light" data-quiz="1">Обсудить бизнес-план <span class="arrow">→</span></button>
       </div>
@@ -627,7 +631,7 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
     <div class="eyebrow rv">Вопросы</div>
     <h2 class="serif rv" style="margin:14px 0 40px">Частые вопросы о бизнес-плане глэмпинга</h2>
     <div class="faq rv">
-      <details><summary>Сколько стоит бизнес-план глэмпинга?</summary><p>Экспресс-план — от 150 000 ₽, полный бизнес-план по ЮНИДО — от 300 000 ₽, пакет с финмоделью и презентацией — от 400 000 ₽. Точную цену называем после созвона.</p></details>
+      <details><summary>Сколько стоит бизнес-план глэмпинга?</summary><p>Экспресс-план — <mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 150 000 ₽</mark>, полный бизнес-план по ЮНИДО — <mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 300 000 ₽</mark>, пакет с финмоделью и презентацией — <mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 400 000 ₽</mark>. Точную цену называем после созвона.</p></details>
       <details><summary>Подойдёт ли бизнес-план глэмпинга для банка?</summary><p>Полный бизнес-план готовится по стандарту ЮНИДО, который понятен банкам. Мы помогаем подготовиться к вопросам кредитного комитета. Решение о кредите принимает банк, и оно зависит также от залога и истории заёмщика.</p></details>
       <details><summary>Что нужно, чтобы начать?</summary><p>Концепция или хотя бы понимание формата, участок, порядок бюджета или смета, условия финансирования. Если концепции и анализа рынка нет, начнём с <a class="link" href="glamping-marketing.html">исследования</a>.</p></details>
       <details><summary>Вы делаете финансовую модель базы отдыха отдельно?</summary><p>Да, можно заказать только финмодель, если бизнес-план не нужен. Модель передаём в Excel с изменяемыми параметрами.</p></details>
@@ -805,6 +809,7 @@ document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=
   var html='<div class="vbox">';
   if(hasHero){html+='<h5>Первый экран</h5><div class="vrow">'+HERO.map(function(x){return '<button class="v" data-h="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>'}
   html+='<h5>Цвет фона</h5><div class="vrow">'+PAL.map(function(x){return '<button class="v" data-p="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>';
+  html+='<h5>Пометки</h5><div class="vrow"><button class="v on" data-todo>Жёлтым — что подтвердить</button></div>';
   html+='<p>Видео — отрывки ваших видеопрезентаций (это визуализации). Все фото — в библиотеке: photos.html. Панель есть только в прототипе.</p></div><button class="vtoggle">Варианты оформления</button>';
   el.innerHTML=html;document.body.appendChild(el);
   function mark(){
@@ -823,6 +828,7 @@ document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=
     mark();
   }
   function setPal(v){document.body.dataset.pal=v;put('pal',v);mark()}
+  var tb=el.querySelector('[data-todo]');if(tb)tb.onclick=function(){document.body.classList.toggle('notodo');tb.classList.toggle('on',!document.body.classList.contains('notodo'))};
   el.querySelector('.vtoggle').onclick=function(){el.classList.toggle('open')};
   el.querySelectorAll('[data-h]').forEach(function(b){b.onclick=function(){setHero(b.dataset.h)}});
   el.querySelectorAll('[data-p]').forEach(function(b){b.onclick=function(){setPal(b.dataset.p)}});

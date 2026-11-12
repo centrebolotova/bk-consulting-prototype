@@ -450,6 +450,10 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
 .vid p{font-size:15px;color:var(--ink-2)}
 @media (max-width:980px){.vids{grid-template-columns:1fr}}
 
+/* пометка «подтвердить» */
+mark.todo{background:#FFE071;color:#1E1D1B;padding:0 .2em;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+body.notodo mark.todo{background:none;color:inherit;padding:0}
+
 </style>
 </head>
 <body>
@@ -485,10 +489,10 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
       <a class="link" href="#get">Что входит в проект</a>
     </div>
     <div class="keys">
-      <div><b>от 150 000 ₽</b>исследование и расчёт окупаемости</div>
+      <div><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 150 000 ₽</mark></b>исследование и расчёт окупаемости</div>
       <div><b>от 3 недель</b>концепция и мастер-план</div>
       <div><b>Бизнес-план</b>для банка, инвестора или гранта</div>
-      <div><b>10–15 % бюджета</b>сопровождение строительства</div>
+      <div><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">10–15 % бюджета</mark></b>сопровождение строительства</div>
     </div>
   </div>
 </section>
@@ -599,13 +603,13 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
     <div class="price-card rv">
       <div class="l">
         <div class="eyebrow">Сроки и стоимость</div>
-        <div class="big">от 150 000 ₽</div>
+        <div class="big"><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 150 000 ₽</mark></div>
         <p style="color:rgba(250,247,241,.75)">Начинаем с исследования и расчёта окупаемости. Дальше каждый этап можно заказать отдельно.</p>
         <ul>
-          <li>Концепция и мастер-план — от 200 000 ₽, от 3 недель</li>
-          <li>Бизнес-план и финмодель — от 150 000 ₽, 2–3 недели</li>
-          <li>Дизайн и архитектура — от 250 000 ₽, 4–6 недель</li>
-          <li>Сопровождение строительства — 10–15 % бюджета</li>
+          <li>Концепция и мастер-план — <mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 200 000 ₽</mark>, от 3 недель</li>
+          <li>Бизнес-план и финмодель — <mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 150 000 ₽</mark>, 2–3 недели</li>
+          <li>Дизайн и архитектура — <mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 250 000 ₽</mark>, 4–6 недель</li>
+          <li>Сопровождение строительства — <mark class="todo" title="Предложение по цене — подтвердить у Юлии">10–15 % бюджета</mark></li>
         </ul>
         <button class="btn light" data-quiz="1">Обсудить базу отдыха <span class="arrow">→</span></button>
       </div>
@@ -814,6 +818,7 @@ document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=
   var html='<div class="vbox">';
   if(hasHero){html+='<h5>Первый экран</h5><div class="vrow">'+HERO.map(function(x){return '<button class="v" data-h="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>'}
   html+='<h5>Цвет фона</h5><div class="vrow">'+PAL.map(function(x){return '<button class="v" data-p="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>';
+  html+='<h5>Пометки</h5><div class="vrow"><button class="v on" data-todo>Жёлтым — что подтвердить</button></div>';
   html+='<p>Видео — отрывки ваших видеопрезентаций (это визуализации). Все фото — в библиотеке: photos.html. Панель есть только в прототипе.</p></div><button class="vtoggle">Варианты оформления</button>';
   el.innerHTML=html;document.body.appendChild(el);
   function mark(){
@@ -832,6 +837,7 @@ document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=
     mark();
   }
   function setPal(v){document.body.dataset.pal=v;put('pal',v);mark()}
+  var tb=el.querySelector('[data-todo]');if(tb)tb.onclick=function(){document.body.classList.toggle('notodo');tb.classList.toggle('on',!document.body.classList.contains('notodo'))};
   el.querySelector('.vtoggle').onclick=function(){el.classList.toggle('open')};
   el.querySelectorAll('[data-h]').forEach(function(b){b.onclick=function(){setHero(b.dataset.h)}});
   el.querySelectorAll('[data-p]').forEach(function(b){b.onclick=function(){setPal(b.dataset.p)}});

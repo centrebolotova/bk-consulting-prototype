@@ -450,6 +450,10 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
 .vid p{font-size:15px;color:var(--ink-2)}
 @media (max-width:980px){.vids{grid-template-columns:1fr}}
 
+/* пометка «подтвердить» */
+mark.todo{background:#FFE071;color:#1E1D1B;padding:0 .2em;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+body.notodo mark.todo{background:none;color:inherit;padding:0}
+
 </style>
 </head>
 <body>
@@ -485,7 +489,7 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
       <a class="link" href="#get">Что входит в отчёт</a>
     </div>
     <div class="keys">
-      <div><b>от 150 000 ₽</b>экспресс-исследование</div>
+      <div><b><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 150 000 ₽</mark></b>экспресс-исследование</div>
       <div><b>1–3 недели</b>в зависимости от формата</div>
       <div><b>С выездом</b>к конкурентам в регионе</div>
       <div><b>3 сценария</b>загрузки и выручки</div>
@@ -595,11 +599,11 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
     <div class="price-card rv">
       <div class="l">
         <div class="eyebrow">Сроки и стоимость</div>
-        <div class="big">от 150 000 ₽</div>
+        <div class="big"><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 150 000 ₽</mark></div>
         <p style="color:rgba(250,247,241,.75)">Фиксированная цена после первого созвона. Состав и срок закрепляем в договоре.</p>
         <ul>
-          <li>Экспресс-исследование — от 150 000 ₽, 1–2 недели, по открытым данным</li>
-          <li>Полное исследование с выездом — от 250 000 ₽, 2–3 недели</li>
+          <li>Экспресс-исследование — <mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 150 000 ₽</mark>, 1–2 недели, по открытым данным</li>
+          <li>Полное исследование с выездом — <mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 250 000 ₽</mark>, 2–3 недели</li>
           <li>Сравнение нескольких участков — по задаче</li>
         </ul>
         <button class="btn light" data-quiz="1">Обсудить исследование <span class="arrow">→</span></button>
@@ -617,8 +621,8 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
       <p class="rv">По итогам исследования мы готовим не только отчёт, но и короткое видео концепции. Инвестор и партнёры видят будущий объект до проекта и стройки.</p>
     </div>
     <div class="vids">
-      <article class="vid rv"><div class="ph"><video muted loop playsinline preload="none" poster="img/case-park.jpg" data-src="img/case-park.mp4"></video></div><div class="meta">Участок 200 га · семейный отдых</div><h3>Тематический парк-отель</h3><p>Исследовали, какой формат подойдёт большой территории, и предложили концепцию тематических зон с проживанием и развлечениями.</p></article>
-      <article class="vid rv"><div class="ph"><video muted loop playsinline preload="none" poster="img/case-wellness.jpg" data-src="img/case-wellness.mp4"></video></div><div class="meta">Велнес-туризм</div><h3>Оздоровительный отель</h3><p>Изучили спрос на велнес-отдых в регионе и предложили формат, где проживание дополняют оздоровительные программы на природе.</p></article>
+      <article class="vid rv"><div class="ph"><video muted loop playsinline preload="none" poster="img/case-park.jpg" data-src="img/case-park.mp4"></video></div><div class="meta">Участок 200 га · сравнение форматов</div><h3>Парк-отель или велнес: что выгоднее</h3><p>Для участка 200 га сравнили несколько форматов, в том числе тематический парк-отель. По итогам исследования самым выгодным оказался велнес-отель — его заказчик и решил строить.</p></article>
+      <article class="vid rv"><div class="ph"><video muted loop playsinline preload="none" poster="img/case-wellness.jpg" data-src="img/case-wellness.mp4"></video></div><div class="meta">Участок 200 га · выбранный формат</div><h3>Оздоровительный отель</h3><p>Формат, который показал лучшую экономику в исследовании: медицинские и детокс-программы, релаксация, природа вокруг. Видеопрезентация — для инвесторов.</p></article>
       <article class="vid rv"><div class="ph"><video muted loop playsinline preload="none" poster="img/case-poselok.jpg" data-src="img/case-poselok.mp4"></video></div><div class="meta">Выездной анализ рынка</div><h3>Коттеджный посёлок-отель</h3><p>Объехали средства размещения в районе, сравнили цены и отзывы гостей и на этой основе предложили концепцию посёлка-отеля.</p></article>
     </div>
     <p class="rv" style="margin-top:24px;font-size:13px;color:var(--stone)">Кадры — визуализации концепций, а не построенные объекты.</p>
@@ -809,6 +813,7 @@ document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=
   var html='<div class="vbox">';
   if(hasHero){html+='<h5>Первый экран</h5><div class="vrow">'+HERO.map(function(x){return '<button class="v" data-h="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>'}
   html+='<h5>Цвет фона</h5><div class="vrow">'+PAL.map(function(x){return '<button class="v" data-p="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>';
+  html+='<h5>Пометки</h5><div class="vrow"><button class="v on" data-todo>Жёлтым — что подтвердить</button></div>';
   html+='<p>Видео — отрывки ваших видеопрезентаций (это визуализации). Все фото — в библиотеке: photos.html. Панель есть только в прототипе.</p></div><button class="vtoggle">Варианты оформления</button>';
   el.innerHTML=html;document.body.appendChild(el);
   function mark(){
@@ -827,6 +832,7 @@ document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=
     mark();
   }
   function setPal(v){document.body.dataset.pal=v;put('pal',v);mark()}
+  var tb=el.querySelector('[data-todo]');if(tb)tb.onclick=function(){document.body.classList.toggle('notodo');tb.classList.toggle('on',!document.body.classList.contains('notodo'))};
   el.querySelector('.vtoggle').onclick=function(){el.classList.toggle('open')};
   el.querySelectorAll('[data-h]').forEach(function(b){b.onclick=function(){setHero(b.dataset.h)}});
   el.querySelectorAll('[data-p]').forEach(function(b){b.onclick=function(){setPal(b.dataset.p)}});

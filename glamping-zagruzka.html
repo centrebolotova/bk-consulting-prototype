@@ -450,6 +450,10 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
 .vid p{font-size:15px;color:var(--ink-2)}
 @media (max-width:980px){.vids{grid-template-columns:1fr}}
 
+/* пометка «подтвердить» */
+mark.todo{background:#FFE071;color:#1E1D1B;padding:0 .2em;border-radius:3px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+body.notodo mark.todo{background:none;color:inherit;padding:0}
+
 </style>
 </head>
 <body>
@@ -594,7 +598,7 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
     <div class="price-card rv">
       <div class="l">
         <div class="eyebrow">Стоимость</div>
-        <div class="big">по договору</div>
+        <div class="big"><mark class="todo" title="Предложение по цене — подтвердить у Юлии">от 100 000 ₽ в месяц</mark></div>
         <p style="color:rgba(250,247,241,.75)">Зависит от размера объекта и формата работы. Называем после первого созвона и знакомства с цифрами.</p>
         <ul>
           <li>Аудит и план действий — разовая работа</li>
@@ -805,6 +809,7 @@ document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=
   var html='<div class="vbox">';
   if(hasHero){html+='<h5>Первый экран</h5><div class="vrow">'+HERO.map(function(x){return '<button class="v" data-h="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>'}
   html+='<h5>Цвет фона</h5><div class="vrow">'+PAL.map(function(x){return '<button class="v" data-p="'+x[0]+'">'+x[1]+'</button>'}).join('')+'</div>';
+  html+='<h5>Пометки</h5><div class="vrow"><button class="v on" data-todo>Жёлтым — что подтвердить</button></div>';
   html+='<p>Видео — отрывки ваших видеопрезентаций (это визуализации). Все фото — в библиотеке: photos.html. Панель есть только в прототипе.</p></div><button class="vtoggle">Варианты оформления</button>';
   el.innerHTML=html;document.body.appendChild(el);
   function mark(){
@@ -823,6 +828,7 @@ document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=
     mark();
   }
   function setPal(v){document.body.dataset.pal=v;put('pal',v);mark()}
+  var tb=el.querySelector('[data-todo]');if(tb)tb.onclick=function(){document.body.classList.toggle('notodo');tb.classList.toggle('on',!document.body.classList.contains('notodo'))};
   el.querySelector('.vtoggle').onclick=function(){el.classList.toggle('open')};
   el.querySelectorAll('[data-h]').forEach(function(b){b.onclick=function(){setHero(b.dataset.h)}});
   el.querySelectorAll('[data-p]').forEach(function(b){b.onclick=function(){setPal(b.dataset.p)}});
