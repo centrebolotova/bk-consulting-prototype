@@ -7,17 +7,31 @@ addEventListener('scroll',onScroll,{passive:true});onScroll();
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%4)*80+'ms';io.observe(el)});
 
-// калькулятор
-const NORM={glamp:4.5,base:5,hotel:1.7}; // млн ₽ на домик/номер — ПРЕДЛОЖЕНИЕ, подтвердить у Юлии: глэмпинг с инфраструктурой, база с корпусом, отель в готовом здании
-const LABEL={glamp:'Домиков',base:'Домиков и номеров',hotel:'Номеров в готовом здании'};
+// калькулятор — логика бота BK: 1,7 млн ₽ на номер или домик, расчёт в обе стороны
+const NORM=1.7; // млн ₽ на номер/домик — как в калькуляторе бота
+const UNIT={glamp:['домик','домика','домиков'],base:['домик','домика','домиков'],hotel:['номер','номера','номеров']};
 const RANGE={glamp:[4,40,10],base:[6,60,16],hotel:[10,100,20]};
-let fmt='glamp';
+const BUD=[10,200,30];
+let fmt='glamp',mode='units';
 const range=document.getElementById('range'),units=document.getElementById('units'),sum=document.getElementById('sum'),ul=document.getElementById('unitLabel'),ticks=document.querySelector('.ticks');
-function calc(){const n=+range.value;units.textContent=n;const v=n*NORM[fmt],r=x=>x<100?Math.round(x):Math.round(x/10)*10;sum.innerHTML='<mark class="todo" title="Нормы — предложение, подтвердить у Юлии">'+r(v*0.85)+'–'+r(v*1.15)+' млн ₽</mark>'}
-function setFmt(k){fmt=k;const[a,b,c]=RANGE[k];range.min=a;range.max=b;range.value=c;ul.textContent=LABEL[k];ticks.innerHTML=`<span>${a}</span><span>${Math.round((a+b)/2)}</span><span>${b}</span>`;calc()}
+const plural=(n,f)=>{const a=n%10,b=n%100;return f[(a==1&&b!=11)?0:(a>=2&&a<=4&&(b<10||b>=20))?1:2]};
+const money=v=>v<100?(Math.round(v*10)/10).toString().replace('.',','):Math.round(v);
+function setTicks(a,b){ticks.innerHTML=`<span>${a}</span><span>${Math.round((a+b)/2)}</span><span>${b}</span>`}
+function calc(){const n=+range.value;
+  if(mode==='units'){units.textContent=n;sum.textContent='≈ '+money(n*NORM)+' млн ₽'}
+  else{units.textContent=n+' млн ₽';const k=Math.floor(n/NORM);sum.textContent='≈ '+k+' '+plural(k,UNIT[fmt])}}
+function setup(){if(mode==='units'){const[a,b,c]=RANGE[fmt];range.min=a;range.max=b;range.step=1;range.value=c;ul.textContent='Сколько '+UNIT[fmt][2];setTicks(a,b)}
+  else{const[a,b,c]=BUD;range.min=a;range.max=b;range.step=5;range.value=c;ul.textContent='Бюджет';setTicks(a,b)}
+  const lab=document.querySelector('#calc .result .eyebrow');if(lab)lab.textContent=mode==='units'?'Ориентир вложений':'Можно построить примерно';calc()}
 if(range){
-document.querySelectorAll('#fmt button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#fmt button').forEach(x=>x.classList.remove('on'));b.classList.add('on');setFmt(b.dataset.k)});
-range.oninput=calc;calc();
+  // переключатель «знаю число номеров / знаю бюджет»
+  const fm=document.getElementById('fmt');
+  const md=document.createElement('div');md.className='seg';md.id='mode';md.style.marginBottom='28px';
+  md.innerHTML='<button class="on" data-m="units">Знаю, сколько номеров</button><button data-m="budget">Знаю бюджет</button>';
+  fm.parentNode.insertBefore(md,fm.nextSibling);fm.style.marginBottom='16px';
+  md.querySelectorAll('button').forEach(b=>b.onclick=()=>{md.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));mode=b.dataset.m;setup()});
+  document.querySelectorAll('#fmt button').forEach(b=>b.onclick=()=>{document.querySelectorAll('#fmt button').forEach(x=>x.classList.remove('on'));b.classList.add('on');fmt=b.dataset.k;setup()});
+  range.oninput=calc;setup();
 }
 
 // квиз
