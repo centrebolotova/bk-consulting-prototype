@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Консалтинг по открытию отелей и глэмпингов — BK consulting</title>
+<meta name="description" content="Гостиничный консалтинг: проверка участка, концепция, бизнес-план и финмодель, сопровождение запуска и загрузка. Прототип, не для публикации.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter+Tight:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+<header id="hdr">
+  <div class="wrap nav">
+    <a href="#" class="logo">BK consulting<span>отельный консалтинг</span></a>
+    <nav class="menu">
+      <a href="#services" data-go="glamping">Глэмпинги</a>
+      <a href="#services" data-go="hotel">Отели</a>
+      <a href="#cases">Проекты</a>
+      <a href="#founder">О компании</a>
+    </nav>
+    <div class="nav-right">
+      <a class="phone" href="tel:+74996505134">+7 499 650-51-34</a>
+      <button class="btn" data-quiz>Обсудить проект</button>
+      <button class="burger" aria-label="Меню"></button>
+    </div>
+  </div>
+</header>
+
+<!-- 1. Первый экран -->
+<section class="hero" style="padding:0">
+  <div class="hero-media">
+    <img class="h-forest" src="https://static.tildacdn.com/tild6262-6534-4964-b961-343234616561/DSC_5339.jpg" alt="Шатёр глэмпинга «Лосиный остров» в берёзовом лесу">
+    <img class="h-cabin" src="https://static.tildacdn.com/tild3938-6431-4164-a161-613539346236/DSC_5177.jpg" alt="Домик в берёзовом лесу">
+    <img class="h-city" src="https://static.tildacdn.com/tild6533-3033-4035-b336-656261633765/DSC_9033-1.jpg" alt="Фасад отеля «Кенсингтон» вечером">
+    <img class="h-room" src="https://static.tildacdn.com/tild6463-6363-4031-a561-386666393537/DSC_7482-1.jpg" alt="Гостиная апартаментов «СЛАВА»">
+    <video class="h-video" muted loop playsinline preload="none" data-src="https://df4f6446-4ba4-402b-a7e8-017403dbff93.selstorage.ru/video-output-442DF821-5AB1-4F46-BD06-DFAFB452D4B3-1--effiroom.ru.mp4"></video>
+  </div>
+  <div class="wrap hero-in">
+    <div class="eyebrow">Глэмпинги · базы отдыха · отели</div>
+    <h1 class="serif">Консалтинг по открытию отелей, глэмпингов и баз отдыха</h1>
+    <p class="lead">Исследуем рынок и считаем окупаемость, разрабатываем концепцию и бизнес-план, ведём запуск. Проект ведёт Юлия Гоффер — владелец и управляющий отелей в Москве.</p>
+    <div class="actions">
+      <button class="btn light" data-quiz>Обсудить проект <span class="arrow">→</span></button>
+      <a class="link" href="#calc">Сколько стоит открыть</a>
+    </div>
+  </div>
+  <div class="scroll-hint">Листайте</div>
+</section>
+
+<!-- 2. Цифры -->
+<div class="facts">
+  <div class="wrap">
+    <div class="fact rv"><b>30+</b><span>открытых объектов: отели, апарт-отели, глэмпинги</span></div>
+    <div class="fact rv"><b>2016</b><span>первый открытый отель — «Радио», Москва</span></div>
+    <div class="fact rv"><b>3–6</b><span>месяцев от концепции до открытия городского отеля</span></div>
+    <div class="fact rv"><b>15+</b><span>банков, с которыми работали по финансированию</span></div>
+  </div>
+</div>
+
+<!-- 3. Услуги -->
+<section id="services">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow rv">Услуги</div><h2 class="serif rv" style="margin-top:14px">Чем мы занимаемся</h2></div>
+      <p class="rv">Начинаем с главного вопроса — что строить и окупится ли. Дальше по результату: концепция, бизнес-план для банка или инвестора, дизайн и запуск. Каждую услугу можно заказать отдельно.</p>
+    </div>
+
+    <div class="tabs rv" role="tablist">
+      <button class="on" data-tab="glamping" id="glamping">Глэмпинги и базы отдыха</button>
+      <button data-tab="hotel" id="hotel">Отели</button>
+    </div>
+
+    <!-- Глэмпинги -->
+    <div class="tabpane on" data-pane="glamping">
+      <article class="feat rv">
+        <div class="ph"><img src="https://static.tildacdn.com/tild3539-3733-4566-b939-653165656630/DSC_4971-1.jpg" alt=""></div>
+        <div class="txt">
+          <div class="eyebrow">Главная услуга · с неё начинается проект</div>
+          <h3 class="serif">Маркетинговое исследование и расчёт окупаемости</h3>
+          <p>Что строить на вашем участке, для кого и сколько это принесёт. Ответ до того, как вы вложите деньги в проект и стройку.</p>
+          <ul>
+            <li>Спрос и турпоток в вашем районе</li>
+            <li>Конкуренты: цены, загрузка, чего не хватает рынку</li>
+            <li>Формат и вместимость: глэмпинг, база, отель</li>
+            <li>Цена ночи, загрузка по сезонам, выручка</li>
+            <li>Вложения и окупаемость в трёх сценариях</li>
+          </ul>
+          <div class="feat-meta"><span><b>от 150 000 ₽</b></span><span>1–3 недели</span><span>с выездом или удалённо</span></div>
+          <div class="feat-act">
+            <button class="btn" data-quiz>Заказать исследование <span class="arrow">→</span></button>
+            <a class="link" href="#">Подробнее <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </article>
+      <div class="svc-grid">
+        <a class="svc rv" href="proverka-uchastka.html"><span class="n">01</span><h4>Проверка участка</h4><p>Можно ли строить, ограничения, сколько домиков встанет, порядок бюджета.</p><div class="m"><b>от — уточнить</b><span>7–10 дней</span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="#"><span class="n">02</span><h4>Концепция и мастер-план</h4><p>Формат, зонирование территории, номерной фонд, общественные зоны, 3D.</p><div class="m"><b>от 200 000 ₽</b><span>от 3 недель</span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="#"><span class="n">03</span><h4>Бизнес-план и финмодель</h4><p>Финмодель на 10 лет в трёх сценариях, бизнес-план по ЮНИДО для банка или инвестора.</p><div class="m"><b>от 150 000 ₽</b><span>2–3 недели</span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="#"><span class="n">04</span><h4>Гранты и субсидии</h4><p>Бизнес-план и расчёты под требования программ поддержки туризма.</p><div class="m"><b>по проекту</b><span>под сроки конкурса</span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="#"><span class="n">05</span><h4>Дизайн и архитектура</h4><p>Архитектурная концепция домиков и интерьеры, подбор модулей и производителей.</p><div class="m"><b>от 250 000 ₽</b><span>4–6 недель</span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="#"><span class="n">06</span><h4>Открытие под ключ</h4><p>Ведём проект от концепции до первых гостей: подрядчики, бюджет, сроки, команда.</p><div class="m"><b>% от бюджета</b><span>10–18 месяцев</span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="#"><span class="n">07</span><h4>Загрузка и управление</h4><p>Для работающих объектов: продажи, цены, каналы, сервис и команда.</p><div class="m"><b>по договору</b><span>от 3 месяцев</span></div><span class="go">Подробнее →</span></a>
+      </div>
+    </div>
+
+    <!-- Отели -->
+    <div class="tabpane" data-pane="hotel">
+      <article class="feat rv">
+        <div class="ph"><img src="https://static.tildacdn.com/tild6533-3033-4035-b336-656261633765/DSC_9033-1.jpg" alt=""></div>
+        <div class="txt">
+          <div class="eyebrow">Главная услуга · с неё начинается проект</div>
+          <h3 class="serif">Маркетинговое исследование рынка гостиниц</h3>
+          <p>Какой отель открыть в вашем здании или на участке, по какой цене продавать номера и когда он окупится.</p>
+          <ul>
+            <li>Спрос: деловой и туристический поток, сезонность</li>
+            <li>Конкуренты в радиусе: цены, загрузка, рейтинги</li>
+            <li>Категория, номерной фонд и услуги</li>
+            <li>Средняя цена номера, загрузка, выручка</li>
+            <li>Вложения и окупаемость в трёх сценариях</li>
+          </ul>
+          <div class="feat-meta"><span><b>от 150 000 ₽</b></span><span>1–3 недели</span><span>выезд к конкурентам</span></div>
+          <div class="feat-act">
+            <button class="btn" data-quiz>Заказать исследование <span class="arrow">→</span></button>
+            <a class="link" href="#">Подробнее <span class="arrow">→</span></a>
+          </div>
+        </div>
+      </article>
+      <div class="svc-grid">
+        <a class="svc rv" href="#"><span class="n">01</span><h4>Концепция отеля</h4><p>Позиционирование, гость, номерной фонд, услуги, бренд.</p><div class="m"><b>от 200 000 ₽</b><span>2–3 недели</span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="#"><span class="n">02</span><h4>Бизнес-план гостиницы</h4><p>Финмодель на 10 лет, три сценария, бизнес-план по ЮНИДО для банка.</p><div class="m"><b>от 150 000 ₽</b><span>2–3 недели</span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="#"><span class="n">03</span><h4>Дизайн-проект</h4><p>Интерьеры номеров и общественных зон, 3D, комплектация, авторский надзор.</p><div class="m"><b>от 250 000 ₽</b><span>4–6 недель</span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="#"><span class="n">04</span><h4>Открытие под ключ</h4><p>Реконструкция или новое здание: от концепции до первых гостей.</p><div class="m"><b>% от бюджета</b><span>от 3–6 месяцев</span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="#"><span class="n">05</span><h4>Управление и загрузка</h4><p>Операционное управление, продажи и цены для работающего отеля.</p><div class="m"><b>по договору</b><span>от 3 месяцев</span></div><span class="go">Подробнее →</span></a>
+        <a class="svc rv" href="#"><span class="n">06</span><h4>Модульная гостиница</h4><p>Расчёт и концепция гостиницы из модулей: формат, участок, окупаемость.</p><div class="m"><b>по проекту</b><span>от 3 недель</span></div><span class="go">Подробнее →</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. С чего начать -->
+<section class="steps-wrap">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow rv">С чего начинается работа</div><h2 class="serif rv" style="margin-top:14px">Сначала разбираемся, потом считаем</h2></div>
+      <p class="rv">Не нужно сразу заказывать бизнес-план за сотни тысяч. Каждый следующий шаг вы делаете, когда видите результат предыдущего. Оплата первых шагов засчитывается в договор.</p>
+    </div>
+    <div class="ladder">
+      <div class="rung rv"><span class="n">01</span><h3>Разбор задачи</h3><p>Созвон на 20 минут: что у вас есть, что хотите открыть, какой бюджет. Скажем честно, стоит ли идти дальше.</p><div class="price"><b>Бесплатно</b></div></div>
+      <div class="rung key rv"><span class="n">02</span><h3>Стратегическая сессия</h3><p>Два часа с Юлией Гоффер по вашему участку или зданию: формат, вместимость, порядок бюджета, план действий и риски.</p><span class="tag">Засчитывается в договор</span><div class="price"><b>25–30 тыс. ₽</b></div></div>
+      <div class="rung rv"><span class="n">03</span><h3>Исследование и расчёт</h3><p>Маркетинговое исследование и окупаемость: что строить, для кого и сколько принесёт. Для участка — ещё проверка земли и ограничений.</p><div class="price"><b>от 150 000 ₽</b></div></div>
+      <div class="rung rv"><span class="n">04</span><h3>Концепция, бизнес-план, запуск</h3><p>Мастер-план, финмодель для инвестора или банка, дизайн, подбор подрядчиков, открытие и загрузка.</p><div class="price">бизнес-план <b>от 150 000 ₽</b></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. Кейсы -->
+<section id="cases">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow rv">Проекты</div><h2 class="serif rv" style="margin-top:14px">Что мы открыли</h2></div>
+      <p class="rv">Показываем объекты с цифрами: площадь, число номеров, бюджет и срок. Остальные проекты — на странице «Проекты».</p>
+    </div>
+    <div class="cases">
+      <article class="case wide rv">
+        <div class="ph"><img src="https://static.tildacdn.com/tild6262-6534-4964-b961-343234616561/DSC_5339.jpg" alt=""></div>
+        <div class="meta">Глэмпинг · Подмосковье, национальный парк · 2023</div>
+        <h3>Глэмпинг в национальном парке</h3>
+        <p>«Лосиный остров»: аудит действующего объекта, сертификация, брендбук и сайт, обучение персонала.</p>
+      </article>
+      <article class="case rv">
+        <div class="ph"><img src="https://static.tildacdn.com/tild3235-3366-4564-a438-313939313766/DSC_8919-1.jpg" alt=""></div>
+        <div class="meta">Отель · Москва · 2021</div>
+        <h3>Офис у Кремля стал отелем</h3>
+        <p>«Кенсингтон»: перепрофилирование офисного здания, концепция, дизайн, запуск.</p>
+        <div class="nums"><div><b>700 м²</b>площадь</div><div><b>20</b>номеров</div><div><b>6 мес.</b>до открытия</div></div>
+      </article>
+      <article class="case rv">
+        <div class="ph"><img src="https://static.tildacdn.com/tild3435-6563-4130-b531-633130643865/_MG_9352_1.jpg" alt=""></div>
+        <div class="meta">Отель 3* · Москва · 2019</div>
+        <h3>Пятнадцать номеров за пять месяцев</h3>
+        <p>«Галерея» у Добрынинской: здание расширили с 446 до 700 м².</p>
+        <div class="nums"><div><b>21 млн ₽</b>бюджет</div><div><b>70 %</b>загрузка в первую неделю</div></div>
+      </article>
+      <article class="case rv">
+        <div class="ph"><img src="https://static.tildacdn.com/tild3936-6566-4237-b036-623963313864/DSC_7900-1_1.jpg" alt=""></div>
+        <div class="meta">Отель · Москва · 2020</div>
+        <h3>Открытие за три месяца</h3>
+        <p>«Алеон» на Валовой: концепция, дизайн номеров, запуск продаж.</p>
+        <div class="nums"><div><b>15</b>номеров</div><div><b>80–90 %</b>загрузка</div></div>
+      </article>
+      <article class="case rv">
+        <div class="ph"><img src="https://static.tildacdn.com/tild3435-3662-4961-b739-636562386232/PHOTO-2025-07-05-23-.jpg" alt=""></div>
+        <div class="meta">Концепция · Алтай · 2025</div>
+        <h3>Мастер-план для инвестора</h3>
+        <p>Участок 2 га у реки: концепция комплекса, мастер-план и буклет для привлечения инвестора.</p>
+        <div class="nums"><div><b>2 га</b>участок</div></div>
+      </article>
+    </div>
+    <div style="margin-top:64px" class="rv"><a class="link" href="#">Все проекты <span class="arrow">→</span></a></div>
+  </div>
+</section>
+
+<!-- 6. Калькулятор -->
+<section id="calc" class="calc">
+  <div class="wrap">
+    <div class="head">
+      <div><div class="eyebrow rv" style="color:rgba(250,247,241,.55)">Ориентир бюджета</div><h2 class="serif rv" style="margin-top:14px">Сколько стоит открыть</h2></div>
+      <p class="rv">Первый вопрос, который нам задают. Выберите формат и вместимость — покажем порядок вложений по нашим проектам. Точную цифру даёт расчёт по вашему участку.</p>
+    </div>
+    <div class="calc-box">
+      <div class="rv">
+        <div class="seg" id="fmt">
+          <button class="on" data-k="glamp">Глэмпинг</button>
+          <button data-k="base">База отдыха</button>
+          <button data-k="hotel">Отель</button>
+        </div>
+        <label><span id="unitLabel">Домиков</span><b id="units">10</b></label>
+        <input type="range" id="range" min="4" max="40" value="10">
+        <div class="ticks"><span>4</span><span>20</span><span>40</span></div>
+      </div>
+      <div class="result rv">
+        <div class="eyebrow">Ориентир вложений</div>
+        <div class="big" id="sum">≈ 17 млн ₽</div>
+        <ul>
+          <li>Здания или модули, инженерные сети, благоустройство</li>
+          <li>Мебель, оснащение, общественные зоны</li>
+          <li>Проектирование, запуск продаж, команда</li>
+        </ul>
+        <button class="btn light" data-quiz>Рассчитать по моему участку <span class="arrow">→</span></button>
+        <small>Норматив в прототипе — 1,7 млн ₽ на номер из вашего опросника для бота. Для домиков глэмпинга и номеров базы нужны свои нормы, их даёт Юлия.</small>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. Основатель -->
+<section id="founder">
+  <div class="wrap founder">
+    <div class="ph rv"><img src="https://static.tildacdn.com/tild3034-3337-4630-a463-313432646135/photo1683798923_2.jpeg" alt="Юлия Гоффер"></div>
+    <div>
+      <div class="eyebrow rv">Кто ведёт проект</div>
+      <blockquote class="rv">«Я сама владею отелями и управляю ими. Поэтому считаю ваш проект как владелец, которому потом этот объект загружать, а не как архитектор или продавец домиков».</blockquote>
+      <div class="sign rv"><b>Юлия Гоффер</b>, основатель BK consulting</div>
+      <div class="creds rv">
+        <div>Собственная сеть отелей 3* в Москве</div>
+        <div>Эксперт ТПП по развитию гостиничного бизнеса</div>
+        <div>Секретарь инвестиционного совета Московской ассоциации предпринимателей</div>
+        <div>Работа с банками: Сбербанк, ВТБ, Россельхозбанк, МСП Банк</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 8. Как проходит -->
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="eyebrow rv" style="margin-bottom:24px">Как проходит проект</div>
+    <div class="path rv">
+      <div><span>01</span>Заявка</div>
+      <div><span>02</span>Разбор задачи</div>
+      <div><span>03</span>Стратегическая сессия</div>
+      <div><span>04</span>Проверка участка</div>
+      <div><span>05</span>Концепция и мастер-план</div>
+      <div><span>06</span>Бизнес-план и финмодель</div>
+      <div><span>07</span>Запуск и загрузка</div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. Вопросы -->
+<section class="steps-wrap">
+  <div class="wrap">
+    <div class="eyebrow rv">Вопросы</div>
+    <h2 class="serif rv" style="margin:14px 0 40px">Частые вопросы</h2>
+    <div class="faq rv">
+      <details><summary>Сколько стоит открыть глэмпинг?</summary><p>Зависит от числа домиков, сетей на участке и класса объекта. Порядок цифр показывает калькулятор выше, точный бюджет мы считаем на стратегической сессии и в бизнес-плане.</p></details>
+      <details><summary>Можно ли построить глэмпинг на сельхозземле?</summary><p>Иногда — да, иногда нужен перевод в рекреацию или смена вида разрешённого использования. Это первое, что мы проверяем в проверке участка, до любых расходов на проект.</p></details>
+      <details><summary>Вы сами строите?</summary><p>Нет. Мы консультанты на стороне владельца: готовим концепцию и расчёты, подбираем подрядчиков и производителей, контролируем запуск. Поэтому нам не нужно продать вам конкретные домики.</p></details>
+      <details><summary>Помогаете с грантами и кредитом?</summary><p>Готовим бизнес-план и финмодель под требования банка, инвестора или программы поддержки туризма.</p></details>
+      <details><summary>В каких регионах работаете?</summary><p>По всей России. Выезжаем на участок, часть работ ведём удалённо.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- 10. Заявка -->
+<section class="cta">
+  <img src="https://static.tildacdn.com/tild3139-3437-4634-b637-643735373264/IMG_20230929_174207_.jpg" alt="">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow rv" style="color:rgba(250,247,241,.7)">Начать</div>
+      <h2 class="serif rv" style="margin:14px 0 36px">Расскажите о вашем участке или здании</h2>
+      <button class="btn light rv" data-quiz>Обсудить проект <span class="arrow">→</span></button>
+    </div>
+    <div class="rv">
+      <div class="eyebrow" style="color:rgba(250,247,241,.7);margin-bottom:10px">Что будет после заявки</div>
+      <ol class="next">
+        <li>Юлия посмотрит ваши ответы и перезвонит в течение рабочего дня</li>
+        <li>Созвон на 20 минут: поймём задачу и скажем, чем можем помочь</li>
+        <li>Пришлём предложение по первому шагу со сроком и ценой</li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="grid">
+      <div><div class="logo">BK consulting</div><p style="margin-top:14px;max-width:32ch">Консалтинг по открытию отелей, глэмпингов и баз отдыха. Москва, ул. Бутырская, 62.</p></div>
+      <div><h4>Глэмпинги</h4><a href="proverka-uchastka.html">Проверка участка</a><a href="#">Концепция и мастер-план</a><a href="#">Бизнес-план</a><a href="#">Под ключ</a></div>
+      <div><h4>Отели</h4><a href="#">Концепция</a><a href="#">Бизнес-план</a><a href="#">Под ключ</a><a href="#">Управление</a></div>
+      <div><h4>Связаться</h4><a href="tel:+74996505134">+7 499 650-51-34</a><a href="#">Telegram</a><a href="#">WhatsApp</a></div>
+    </div>
+    <div class="legal"><span>© 2026 BK consulting</span><span>Политика конфиденциальности</span></div>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky"><button class="btn" data-quiz>Обсудить проект <span class="arrow">→</span></button></div>
+
+<!-- Квиз -->
+<div class="quiz" id="quiz" aria-modal="true" role="dialog">
+  <div class="qbox">
+    <div class="qtop">
+      <img src="https://static.tildacdn.com/tild3034-3337-4630-a463-313432646135/photo1683798923_2.jpeg" alt="">
+      <p><b>Юлия Гоффер</b>Шесть коротких вопросов — и я пойму, чем помочь</p>
+      <button class="qclose" aria-label="Закрыть">×</button>
+    </div>
+    <div class="qbar"><i id="qbar"></i></div>
+
+    <div class="qstep" data-s="1">
+      <h3>Что у вас сейчас есть?</h3><p class="hint">Выберите один вариант</p>
+      <div class="opts">
+        <button class="opt">Участок земли</button>
+        <button class="opt">Здание или помещение</button>
+        <button class="opt">Действующий объект, хочу больше загрузки</button>
+        <button class="opt">Пока только идея</button>
+      </div>
+    </div>
+    <div class="qstep" data-s="2">
+      <h3>Что хотите открыть?</h3><p class="hint">Можно выбрать позже, если ещё не решили</p>
+      <div class="opts two">
+        <button class="opt">Глэмпинг</button><button class="opt">База отдыха</button>
+        <button class="opt">Загородный отель</button><button class="opt">Городской отель</button>
+        <button class="opt">Апарт-отель</button><button class="opt">Пока не решил</button>
+      </div>
+    </div>
+    <div class="qstep" data-s="3">
+      <h3>Где объект?</h3><p class="hint">Регион и площадь, если знаете</p>
+      <label class="field"><span>Регион или кадастровый номер</span><input placeholder="Например, Тверская область"></label>
+      <label class="field"><span>Площадь участка или здания</span><input placeholder="Например, 1 га или 600 м²"></label>
+    </div>
+    <div class="qstep" data-s="4">
+      <h3>Какой бюджет рассматриваете?</h3><p class="hint">Порядок цифр, чтобы предложить реалистичный формат</p>
+      <div class="opts two">
+        <button class="opt">До 15 млн ₽</button><button class="opt">15–50 млн ₽</button>
+        <button class="opt">50–100 млн ₽</button><button class="opt">Больше 100 млн ₽</button>
+        <button class="opt" style="grid-column:1/-1">Пока не знаю — помогите посчитать</button>
+      </div>
+    </div>
+    <div class="qstep" data-s="5">
+      <h3>Откуда деньги на проект?</h3><p class="hint">Влияет на то, какие документы понадобятся</p>
+      <div class="opts two">
+        <button class="opt">Свои средства</button><button class="opt">Инвестор</button>
+        <button class="opt">Кредит</button><button class="opt">Грант или субсидия</button>
+      </div>
+    </div>
+    <div class="qstep" data-s="6">
+      <h3>Как с вами связаться?</h3><p class="hint">Перезвоним в течение рабочего дня</p>
+      <label class="field"><span>Имя</span><input placeholder="Как к вам обращаться"></label>
+      <label class="field"><span>Телефон</span><input placeholder="+7"></label>
+      <div class="opts two" style="grid-template-columns:repeat(3,1fr)">
+        <button class="opt">Telegram</button><button class="opt">WhatsApp</button><button class="opt">Звонок</button>
+      </div>
+    </div>
+    <div class="qstep done" data-s="7">
+      <div class="eyebrow">Заявка принята</div>
+      <h3>Спасибо, посмотрю ваш проект</h3>
+      <p>Перезвоню в течение рабочего дня. Пока можно посмотреть наши проекты.</p>
+      <p style="margin-top:18px;font-size:13px;color:var(--stone)">В прототипе ничего не отправляется.</p>
+    </div>
+
+    <div class="qnav" id="qnav">
+      <button class="back" id="qback">← Назад</button>
+      <button class="btn" id="qnext">Дальше <span class="arrow">→</span></button>
+    </div>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
