@@ -1,7 +1,7 @@
 
 // ===== панель «Варианты оформления» (только в прототипе) =====
 (function(){
-  var HERO=[['forest','Шатёр в лесу'],['cabin','Домик в берёзах'],['city','Городской отель'],['room','Интерьер'],['cycle','Смена фото'],['video','Видео'],['split','Текст и фото'],['type','Без фото']];
+  var HERO=[['forest','Шатёр в лесу'],['cabin','Домик в берёзах'],['city','Городской отель'],['room','Интерьер'],['land','Участок на рассвете'],['cycle','Смена фото'],['video','Видео'],['split','Текст и фото'],['type','Без фото']];
   var PAL=[['cream','Молочный'],['white','Белый'],['stone','Тёплый серый'],['sage','Шалфей']];
   var hasHero=!!document.querySelector('.hero-media');
   function get(k,d){try{return localStorage.getItem('bk-'+k)||d}catch(e){return d}}

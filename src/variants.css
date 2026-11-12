@@ -2,7 +2,7 @@
 /* ===== первый экран: варианты ===== */
 .hero-media{position:absolute;inset:0;overflow:hidden;background:#1b1a18}
 .hero-media>*{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease}
-body[data-hero=forest] .h-forest,body[data-hero=cabin] .h-cabin,body[data-hero=city] .h-city,body[data-hero=room] .h-room,body[data-hero=video] .h-video,body[data-hero=split] .h-forest,body[data-hero=type] .h-cabin{opacity:1;animation:slowzoom 18s ease-out forwards}
+body[data-hero=forest] .h-forest,body[data-hero=cabin] .h-cabin,body[data-hero=city] .h-city,body[data-hero=room] .h-room,body[data-hero=land] .h-land,body[data-hero=video] .h-video,body[data-hero=split] .h-forest,body[data-hero=type] .h-cabin{opacity:1;animation:slowzoom 18s ease-out forwards}
 body[data-hero=cycle] .hero-media img.on{opacity:1;animation:slowzoom 9s ease-out forwards}
 
 /* без фото: тёмный типографский экран, фото маленькой карточкой */

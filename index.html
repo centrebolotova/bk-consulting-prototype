@@ -381,7 +381,7 @@ footer .logo{color:var(--paper)}
 /* ===== первый экран: варианты ===== */
 .hero-media{position:absolute;inset:0;overflow:hidden;background:#1b1a18}
 .hero-media>*{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.6s ease}
-body[data-hero=forest] .h-forest,body[data-hero=cabin] .h-cabin,body[data-hero=city] .h-city,body[data-hero=room] .h-room,body[data-hero=video] .h-video,body[data-hero=split] .h-forest,body[data-hero=type] .h-cabin{opacity:1;animation:slowzoom 18s ease-out forwards}
+body[data-hero=forest] .h-forest,body[data-hero=cabin] .h-cabin,body[data-hero=city] .h-city,body[data-hero=room] .h-room,body[data-hero=land] .h-land,body[data-hero=video] .h-video,body[data-hero=split] .h-forest,body[data-hero=type] .h-cabin{opacity:1;animation:slowzoom 18s ease-out forwards}
 body[data-hero=cycle] .hero-media img.on{opacity:1;animation:slowzoom 9s ease-out forwards}
 
 /* без фото: тёмный типографский экран, фото маленькой карточкой */
@@ -470,6 +470,7 @@ body[data-pal=sage]{--cream:#E9ECE6;--paper:#F4F5F1;--mist:#DCE1D8;--line:#CDD3C
     <img class="h-forest" src="https://static.tildacdn.com/tild6262-6534-4964-b961-343234616561/DSC_5339.jpg" alt="Шатёр глэмпинга «Лосиный остров» в берёзовом лесу">
     <img class="h-cabin" src="https://static.tildacdn.com/tild3938-6431-4164-a161-613539346236/DSC_5177.jpg" alt="Домик в берёзовом лесу">
     <img class="h-city" src="https://static.tildacdn.com/tild6533-3033-4035-b336-656261633765/DSC_9033-1.jpg" alt="Фасад отеля «Кенсингтон» вечером">
+    <img class="h-land" src="img/altai-uchastok-rassvet.jpg" alt="Участок в сосновом лесу на рассвете">
     <img class="h-room" src="https://static.tildacdn.com/tild6463-6363-4031-a561-386666393537/DSC_7482-1.jpg" alt="Гостиная апартаментов «СЛАВА»">
     <video class="h-video" muted loop playsinline preload="none" data-src="https://df4f6446-4ba4-402b-a7e8-017403dbff93.selstorage.ru/video-output-442DF821-5AB1-4F46-BD06-DFAFB452D4B3-1--effiroom.ru.mp4"></video>
   </div>
@@ -865,7 +866,7 @@ document.querySelectorAll('[data-go]').forEach(a=>a.addEventListener('click',()=
 
 // ===== панель «Варианты оформления» (только в прототипе) =====
 (function(){
-  var HERO=[['forest','Шатёр в лесу'],['cabin','Домик в берёзах'],['city','Городской отель'],['room','Интерьер'],['cycle','Смена фото'],['video','Видео'],['split','Текст и фото'],['type','Без фото']];
+  var HERO=[['forest','Шатёр в лесу'],['cabin','Домик в берёзах'],['city','Городской отель'],['room','Интерьер'],['land','Участок на рассвете'],['cycle','Смена фото'],['video','Видео'],['split','Текст и фото'],['type','Без фото']];
   var PAL=[['cream','Молочный'],['white','Белый'],['stone','Тёплый серый'],['sage','Шалфей']];
   var hasHero=!!document.querySelector('.hero-media');
   function get(k,d){try{return localStorage.getItem('bk-'+k)||d}catch(e){return d}}
