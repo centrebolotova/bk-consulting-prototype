@@ -16,7 +16,7 @@ EARLY_HERO = "<script>try{var h=localStorage.getItem('bk-hero')||'video:wellness
 
 # ссылки из карточек кейсов на страницы проектов (порядок важен: частные раньше общих)
 CASE_KEYS = [('Горно-Алтайск', 'gorno-altaysk'), ('200 га', 'velnes-200-ga'), ('Оздоровительный', 'velnes-200-ga'), ('велнес', 'velnes-200-ga'),
-             ('Парк слонов', 'park-slonov'), ('посёлок', 'poselok-otel'), ('Галере', 'galereya'), ('Кенсингтон', 'kensington'),
+             ('Парк слонов', 'park-slonov'), ('посёлок', 'velnes-200-ga'), ('Галере', 'galereya'), ('Кенсингтон', 'kensington'),
              ('Алеон', 'aleon'), ('Гостик', 'gostika'), ('Лофт', 'loft'), ('СЛАВА', 'slava'), ('Лосин', 'losiny-ostrov'),
              ('Усть-Сем', 'altai'), ('Алтай', 'altai')]
 
@@ -48,7 +48,8 @@ import re
 # Единый подвал и ссылки меню для всех страниц (в исходниках местами стоят заглушки «#»)
 FOOTER_COLS = '''<div><h4>Глэмпинги и базы</h4><a href="glamping-marketing.html">Исследование и окупаемость</a><a href="proverka-uchastka.html">Проверка участка</a><a href="glamping-conception.html">Концепция и мастер-план</a><a href="glamping-business-plan.html">Бизнес-план</a><a href="granty.html">Гранты и субсидии</a><a href="glamping-pod-kluch.html">Под ключ</a><a href="baza-otdyha.html">База отдыха</a><a href="obekty.html">Все объекты и услуги</a></div>
       <div><h4>Отели</h4><a href="marketing.html">Исследование рынка</a><a href="conception.html">Концепция</a><a href="business-plan.html">Бизнес-план</a><a href="design.html">Дизайн-проект</a><a href="hotel-pod-kluch.html">Под ключ</a><a href="hotel-upravlenie.html">Управление отелем</a><a href="modulnaya-gostinica.html">Модульная гостиница</a></div>
-      <div><h4>Компания</h4><a href="proekty.html">Проекты</a><a href="o-kompanii.html">О компании</a><a href="strategicheskaya-sessiya.html">Стратегическая сессия</a><a href="photos.html">Библиотека фото</a><a href="tel:+74996505134">+7 499 650-51-34</a></div>'''
+      <div><h4>Компания</h4><a href="proekty.html">Проекты</a><a href="o-kompanii.html">О компании</a><a href="strategicheskaya-sessiya.html">Стратегическая сессия</a><a href="photos.html">Библиотека фото</a></div>
+      <div><h4>Связаться</h4><a href="tel:+74996505134">+7 499 650-51-34</a><a href="mailto:gamora77@list.ru">gamora77@list.ru</a><a href="https://t.me/YG_Hotelier">Telegram</a><a href="https://wa.me/79646449988">WhatsApp</a></div>'''
 SVC = {'Проверка участка': 'proverka-uchastka.html', 'Концепция и мастер-план': 'glamping-conception.html',
        'Бизнес-план и финмодель': 'glamping-business-plan.html', 'Гранты и субсидии': 'granty.html',
        'Дизайн и архитектура': 'glamping-design.html', 'Загрузка и управление': 'glamping-zagruzka.html',

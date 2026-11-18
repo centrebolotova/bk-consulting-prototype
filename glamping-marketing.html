@@ -649,6 +649,16 @@ header:has(.dd:hover),header:has(.dd:focus-within){background:rgba(250,247,241,.
 .seo-text h2{font-size:clamp(28px,2.8vw,40px);margin-bottom:22px}
 .seo-text p{color:var(--ink-2);margin-bottom:16px;font-size:17px;line-height:1.65}
 
+/* таблица сравнения концепций */
+.ptable{margin-top:48px;overflow-x:auto}
+.ptable table{width:100%;border-collapse:collapse;font-size:15px;min-width:560px}
+.ptable th,.ptable td{padding:14px 12px;border-bottom:1px solid var(--line);text-align:left}
+.ptable tr:first-child th{font-family:var(--serif);font-weight:400;font-size:20px;border-bottom:1px solid var(--ink)}
+.ptable td:first-child{color:var(--stone)}
+.ptable td:nth-child(3),.ptable th:nth-child(3){background:rgba(63,85,68,.08)}
+footer .grid{grid-template-columns:1.6fr 1fr 1fr 1fr 1fr}
+@media (max-width:980px){footer .grid{grid-template-columns:1fr 1fr}}
+
 </style>
 <link rel="icon" type="image/png" href="img/favicon.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png"></head>
 <body><script>try{var h=localStorage.getItem('bk-hero')||'video:wellness';document.body.dataset.hero=h.split(':')[0];document.body.dataset.heroFull=h}catch(e){document.body.dataset.hero='video'}</script>
@@ -848,9 +858,9 @@ header:has(.dd:hover),header:has(.dd:focus-within){background:rgba(250,247,241,.
       <p class="rv">По итогам исследования мы готовим не только отчёт, но и короткое видео концепции. Инвестор и партнёры видят будущий объект до проекта и стройки.</p>
     </div>
     <div class="vids">
-      <article class="vid rv"><div class="ph"><video muted loop playsinline preload="none" poster="img/case-park.jpg" data-src="img/case-park.mp4"></video></div><div class="meta">Участок 200 га · сравнение форматов</div><h3>Парк-отель или велнес: что выгоднее</h3><p>Для участка 200 га сравнили несколько форматов, в том числе тематический парк-отель. По итогам исследования самым выгодным оказался велнес-отель — его заказчик и решил строить.</p><a class="case-link" href="proekt-velnes-200-ga.html">Подробнее о проекте →</a></article>
-      <article class="vid rv"><div class="ph"><video muted loop playsinline preload="none" poster="img/case-wellness.jpg" data-src="img/case-wellness.mp4"></video></div><div class="meta">Участок 200 га · выбранный формат</div><h3>Оздоровительный отель</h3><p>Формат, который показал лучшую экономику в исследовании: медицинские и детокс-программы, релаксация, природа вокруг. Видеопрезентация — для инвесторов.</p><a class="case-link" href="proekt-velnes-200-ga.html">Подробнее о проекте →</a></article>
-      <article class="vid rv"><div class="ph"><video muted loop playsinline preload="none" poster="img/case-poselok.jpg" data-src="img/case-poselok.mp4"></video></div><div class="meta">Выездной анализ рынка</div><h3>Коттеджный посёлок-отель</h3><p>Объехали средства размещения в районе, сравнили цены и отзывы гостей и на этой основе предложили концепцию посёлка-отеля.</p><a class="case-link" href="proekt-poselok-otel.html">Подробнее о проекте →</a></article>
+      <article class="vid rv"><div class="ph"><video muted loop playsinline preload="none" poster="img/case-park.jpg" data-src="img/case-park.mp4"></video></div><div class="meta">Дмитровский район · концепция 2</div><h3>Тематический парк-отель</h3><p>120 номеров и развлечения, зоны по культурам стран БРИКС. Вложения 5 млрд ₽, окупаемость по расчёту 8 лет.</p></article>
+      <article class="vid rv"><div class="ph"><video muted loop playsinline preload="none" poster="img/case-wellness.jpg" data-src="img/case-wellness.mp4"></video></div><div class="meta">Дмитровский район · выбранная концепция</div><h3>Велнес-отель</h3><p>30 номеров, средний чек 50 000 ₽, расчётная загрузка 95 %, окупаемость 5,1 года — лучшая экономика из трёх вариантов. Его заказчик и строит.</p></article>
+      <article class="vid rv"><div class="ph"><video muted loop playsinline preload="none" poster="img/case-poselok.jpg" data-src="img/case-poselok.mp4"></video></div><div class="meta">Дмитровский район · концепция 3</div><h3>Коттеджный посёлок-отель</h3><p>40 коттеджей, средний чек 12 000 ₽, загрузка 65 %, окупаемость по расчёту 9 лет.</p><a class="case-link" href="proekt-velnes-200-ga.html">Подробнее о проекте →</a></article>
     </div>
     <p class="rv" style="margin-top:24px;font-size:13px;color:var(--stone)">Кадры — визуализации концепций, а не построенные объекты.</p>
   </div>
@@ -913,7 +923,8 @@ header:has(.dd:hover),header:has(.dd:focus-within){background:rgba(250,247,241,.
       <div><div class="logo"><img src="img/logo-full-light.png" alt="BK consulting — ключ для вашего бизнеса" style="height:64px;width:auto"></div><p style="margin-top:14px;max-width:32ch">Консалтинг по открытию отелей, глэмпингов и баз отдыха. Москва, ул. Бутырская, 62.</p></div>
       <div><h4>Глэмпинги и базы</h4><a href="glamping-marketing.html">Исследование и окупаемость</a><a href="proverka-uchastka.html">Проверка участка</a><a href="glamping-conception.html">Концепция и мастер-план</a><a href="glamping-business-plan.html">Бизнес-план</a><a href="granty.html">Гранты и субсидии</a><a href="glamping-pod-kluch.html">Под ключ</a><a href="baza-otdyha.html">База отдыха</a><a href="obekty.html">Все объекты и услуги</a></div>
       <div><h4>Отели</h4><a href="marketing.html">Исследование рынка</a><a href="conception.html">Концепция</a><a href="business-plan.html">Бизнес-план</a><a href="design.html">Дизайн-проект</a><a href="hotel-pod-kluch.html">Под ключ</a><a href="hotel-upravlenie.html">Управление отелем</a><a href="modulnaya-gostinica.html">Модульная гостиница</a></div>
-      <div><h4>Компания</h4><a href="proekty.html">Проекты</a><a href="o-kompanii.html">О компании</a><a href="strategicheskaya-sessiya.html">Стратегическая сессия</a><a href="photos.html">Библиотека фото</a><a href="tel:+74996505134">+7 499 650-51-34</a></div>
+      <div><h4>Компания</h4><a href="proekty.html">Проекты</a><a href="o-kompanii.html">О компании</a><a href="strategicheskaya-sessiya.html">Стратегическая сессия</a><a href="photos.html">Библиотека фото</a></div>
+      <div><h4>Связаться</h4><a href="tel:+74996505134">+7 499 650-51-34</a><a href="mailto:gamora77@list.ru">gamora77@list.ru</a><a href="https://t.me/YG_Hotelier">Telegram</a><a href="https://wa.me/79646449988">WhatsApp</a></div>
     </div>
     <div class="legal"><span>© 2026 BK consulting</span><span>Политика конфиденциальности</span></div>
   </div>
