@@ -174,6 +174,10 @@ P = [
  ('okupaemost-glempinga', 'glamping', 'okupaemost', 'Сколько стоит построить глэмпинг и когда он окупится', 'сколько стоит построить глэмпинг 99', ['окупаемость глэмпинга 35', 'сколько стоит открыть глэмпинг 21']),
 ]
 
+TEXTS = {}
+for _f in ['_texts_a.json', '_texts_b.json', '_texts_c.json']:
+    if (SRC / _f).exists():
+        TEXTS.update(json.loads((SRC / _f).read_text(encoding='utf-8')))
 CASES = json.loads((SRC / '_projects.json').read_text(encoding='utf-8'))
 SVC_NAMES = {'proekt': 'Проект', 'stroitelstvo': 'Открытие под ключ', 'biznes': 'Бизнес-план', 'upravlenie': 'Управление', 'okupaemost': 'Сколько стоит и окупаемость', 'grant': 'Грант'}
 
@@ -217,7 +221,12 @@ def page(slug, tk, sk, h1, kw, extra):
     feat = ''.join(f'<li>{x}</li>' for x in t['feat'])
     do = ''.join(f'<li class="rv"><div><h3>{x}</h3></div></li>' for x in s['do'])
     steps = ''.join(f'<div class="rv"><div class="d">{a}</div><h3>{b}</h3><p>{c}</p></div>' for a, b, c in s['steps'])
-    fq = ''.join(f'<details><summary>{a}</summary><p>{b}</p></details>' for a, b in faq(t, sk))
+    tx = TEXTS.get(slug, {})
+    fq = ''.join(f'<details><summary>{H.escape(a)}</summary><p>{H.escape(b)}</p></details>' for a, b in tx.get('faq', [])) + ''.join(f'<details><summary>{a}</summary><p>{b}</p></details>' for a, b in faq(t, sk))
+    seo = ''
+    if tx.get('paras'):
+        ps = ''.join(f'<p>{H.escape(x)}</p>' for x in tx['paras'])
+        seo = f'<section style="padding-top:0"><div class="wrap"><div class="seo-text rv"><h2 class="serif">{H.escape(tx.get("h2", h1))}</h2>{ps}</div></div></section>'
     pics = ''.join(f'<a class="gi rv" href="{x}" data-lb><img loading="lazy" src="{x}" alt="{H.escape(t["n"])}"></a>' for x in t['pics'])
     # перелинковка: другие услуги этого типа и эта услуга для других типов
     same_type = [(p[0], SVC_NAMES[p[2]] + ' ' + T[p[1]]['g']) for p in P if p[1] == tk and p[0] != slug]
@@ -246,6 +255,8 @@ def page(slug, tk, sk, h1, kw, extra):
     <div class="rv"><ul class="pdid">{feat}</ul></div>
   </div>
 </section>
+
+{seo}
 
 <section id="get" class="steps-wrap">
   <div class="wrap toc">
