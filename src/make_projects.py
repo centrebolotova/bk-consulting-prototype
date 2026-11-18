@@ -113,6 +113,25 @@ P = [
 ]
 
 
+ISH_EXTRA = {'galereya': 'galereya', 'kensington': 'kensington', 'aleon': 'aleon', 'gostika': 'gostika', 'loft': 'loft', 'slava': 'slava', 'losiny-ostrov': 'losiny'}
+
+
+def ish_photos(slug, have, limit=15):
+    d = SRC.parent / 'library' / 'ish' / ISH_EXTRA.get(slug, '_')
+    if not d.exists():
+        return []
+    seen, outl = set(re.sub(r'(_\d+)+$', '', pathlib.Path(h).stem).lower() for h in have), []
+    for f in sorted(d.glob('*.jpg')):
+        base = re.sub(r'[-_]\d+$', '', f.stem).lower()  # дубли одного кадра (-1, -2, _2)
+        if base in seen:
+            continue
+        seen.add(base)
+        outl.append('library/ish/' + d.name + '/' + f.name)
+        if len(outl) >= limit:
+            break
+    return outl
+
+
 def img(x):
     if '/' in x:
         return x if x.endswith('.jpg') else x + '.jpg'
@@ -123,7 +142,8 @@ def page(p, nxt):
     keys = ''.join(f'<div><b>{a}</b>{b}</div>' for a, b in p['keys'])
     did = ''.join(f'<li>{H.escape(d) if "<mark" not in d else d}</li>' for d in p['did'])
     res = ''.join(f'<div><b>{a}</b>{b}</div>' for a, b in p['result'])
-    gal = ''.join(f'<a class="gi rv" href="{img(x)}" data-lb><img loading="lazy" src="{img(x)}" alt="{H.escape(p["name"])}"></a>' for x in p['photos'])
+    allp = [img(x) for x in p['photos']] + ish_photos(p['slug'], p['photos'])
+    gal = ''.join(f'<a class="gi rv" href="{x}" data-lb><img loading="lazy" src="{x}" alt="{H.escape(p["name"])}"></a>' for x in allp)
     serv = ''.join(f'<a href="{u}">{t} <span>→</span></a>' for u, t in p['services'])
     meta = ' · '.join(x for x in [p['type'], p['place'], p['year']] if x)
     extra = ''

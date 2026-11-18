@@ -3,7 +3,7 @@ import json, pathlib, html
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 items = json.loads((ROOT / 'library' / 'photos.json').read_text(encoding='utf-8'))
-ORDER = ['сайт', 'Диск «САЙТ 2025»', 'фото участка', 'визуализация концепции', 'из документа']
+ORDER = ['исходники фотосессий', 'сайт', 'Диск «САЙТ 2025»', 'фото участка', 'визуализация концепции', 'из документа']
 kinds = [k for k in ORDER if any(i['kind'] == k for i in items)] + sorted({i['kind'] for i in items} - set(ORDER))
 items.sort(key=lambda i: (kinds.index(i['kind']), i['source'], i['file']))
 

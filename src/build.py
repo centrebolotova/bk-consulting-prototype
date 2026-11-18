@@ -1,6 +1,7 @@
 # Собирает цельные страницы: стили и скрипты вшиваются в каждый HTML,
 # чтобы страница не зависела от отдельных css/js. Фото и видео лежат в img/ рядом.
 import pathlib
+import re
 
 src = pathlib.Path(__file__).parent
 out = src.parent
@@ -40,6 +41,18 @@ def link_cases(s, name):
 LOGO_HDR = '<a href="index.html" class="logo" aria-label="BK consulting"><img class="logo-l" src="img/logo-light.png" alt="BK consulting"><img class="logo-d" src="img/logo-dark.png" alt=""></a>'
 LOGO_FTR = '<div class="logo"><img src="img/logo-full-light.png" alt="BK consulting — ключ для вашего бизнеса" style="height:64px;width:auto"></div>'
 ICONS = '<link rel="icon" type="image/png" href="img/favicon.png"><link rel="apple-touch-icon" href="img/apple-touch-icon.png">'
+
+# фото с сайта (сжатые копии с Тильды) → исходники фотосессий того же кадра, если есть
+def _norm(n):
+    return re.sub(r'(_\d+)+$', '', n).lower()
+ISH = {}
+for _p in (out / 'library' / 'ish').glob('*/*.jpg'):
+    ISH.setdefault(_norm(_p.stem), 'library/ish/' + _p.parent.name + '/' + _p.name)
+ISH_MAP = {}
+for _p in (out / 'library' / 'sait').glob('*.jpg'):
+    k = _norm(_p.stem)
+    if k in ISH and k.startswith(('dsc_', '_mg_', '00', '02', 'img_19')):
+        ISH_MAP['library/sait/' + _p.name] = ISH[k]
 
 NOINDEX = '<meta name="robots" content="noindex, nofollow">'
 
@@ -97,6 +110,8 @@ for f in sorted(p for p in src.glob('*.html') if not p.name.startswith('_')):
     s = re.sub(r'<a href="[^"]*" class="logo">.*?</a>', LOGO_HDR, s, count=1, flags=re.S)
     s = s.replace('<div class="logo">BK consulting</div>', LOGO_FTR)
     s = s.replace('</head>', ICONS + '</head>', 1)
+    for a, z in ISH_MAP.items():
+        s = s.replace(a, z)
     s = fix_links(s, f.name)
     (out / f.name).write_text(s, encoding='utf-8')
     print('собрано', f.name, len(s))
