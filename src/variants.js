@@ -35,7 +35,7 @@
   el.querySelector('.vtoggle').onclick=function(){el.classList.toggle('open')};
   el.querySelectorAll('[data-h]').forEach(function(b){b.onclick=function(){setHero(b.dataset.h)}});
   el.querySelectorAll('[data-p]').forEach(function(b){b.onclick=function(){setPal(b.dataset.p)}});
-  var saved=get('hero','forest');if(!HERO.some(function(x){return x[0]===saved}))saved='forest';if(hasHero)setHero(saved);
+  var saved=get('hero','video:wellness');if(!HERO.some(function(x){return x[0]===saved}))saved='video:wellness';if(hasHero)setHero(saved);
   setPal(get('pal','cream'));
 })();
 

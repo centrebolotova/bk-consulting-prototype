@@ -12,7 +12,7 @@ import json as _json
 CDN_MAP = {i['note']: i['file'] for i in _json.loads((out / 'library' / 'photos.json').read_text(encoding='utf-8')) if i.get('note', '').startswith('http')}
 
 # первый экран выбран сразу при загрузке (без чёрной вспышки до запуска скриптов)
-EARLY_HERO = "<script>try{var h=localStorage.getItem('bk-hero')||'forest';document.body.dataset.hero=h.split(':')[0];document.body.dataset.heroFull=h}catch(e){document.body.dataset.hero='forest'}</script>"
+EARLY_HERO = "<script>try{var h=localStorage.getItem('bk-hero')||'video:wellness';document.body.dataset.hero=h.split(':')[0];document.body.dataset.heroFull=h}catch(e){document.body.dataset.hero='video'}</script>"
 
 # ссылки из карточек кейсов на страницы проектов (порядок важен: частные раньше общих)
 CASE_KEYS = [('Горно-Алтайск', 'gorno-altaysk'), ('200 га', 'velnes-200-ga'), ('Оздоровительный', 'velnes-200-ga'), ('велнес', 'velnes-200-ga'),
