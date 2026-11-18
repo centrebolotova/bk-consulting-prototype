@@ -116,20 +116,25 @@ P = [
 ISH_EXTRA = {'galereya': 'galereya', 'kensington': 'kensington', 'aleon': 'aleon', 'gostika': 'gostika', 'loft': 'loft', 'slava': 'slava', 'losiny-ostrov': 'losiny'}
 
 
-def ish_photos(slug, have, limit=15):
+def ish_photos(slug, have, total=10):
+    """Добирает исходники до total кадров: берём равномерно по серии, чтобы не было подряд похожих."""
     d = SRC.parent / 'library' / 'ish' / ISH_EXTRA.get(slug, '_')
-    if not d.exists():
+    need = total - len(have)
+    if not d.exists() or need <= 0:
         return []
-    seen, outl = set(re.sub(r'(_\d+)+$', '', pathlib.Path(h).stem).lower() for h in have), []
+    key = lambda st: (re.match(r'(.*?\d{3,})', st) or re.match(r'(.*)', st)).group(1).lower()  # номер кадра без суффиксов -1, _2
+    seen = set(key(pathlib.Path(h).stem) for h in have)
+    uniq = []
     for f in sorted(d.glob('*.jpg')):
-        base = re.sub(r'[-_]\d+$', '', f.stem).lower()  # дубли одного кадра (-1, -2, _2)
+        base = key(f.stem)
         if base in seen:
             continue
         seen.add(base)
-        outl.append('library/ish/' + d.name + '/' + f.name)
-        if len(outl) >= limit:
-            break
-    return outl
+        uniq.append('library/ish/' + d.name + '/' + f.name)
+    if len(uniq) <= need:
+        return uniq
+    step = len(uniq) / need
+    return [uniq[int(i * step)] for i in range(need)]
 
 
 def img(x):
