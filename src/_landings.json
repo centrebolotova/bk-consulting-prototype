@@ -1,0 +1,205 @@
+[
+ {
+  "slug": "proekt-bazy-otdyha",
+  "type": "база отдыха",
+  "service": "Проект",
+  "h1": "Проект базы отдыха",
+  "branch": "glamping"
+ },
+ {
+  "slug": "stroitelstvo-bazy-otdyha",
+  "type": "база отдыха",
+  "service": "Открытие под ключ",
+  "h1": "Строительство базы отдыха под ключ",
+  "branch": "glamping"
+ },
+ {
+  "slug": "biznes-plan-bazy-otdyha",
+  "type": "база отдыха",
+  "service": "Бизнес-план",
+  "h1": "Бизнес-план базы отдыха",
+  "branch": "glamping"
+ },
+ {
+  "slug": "okupaemost-bazy-otdyha",
+  "type": "база отдыха",
+  "service": "Сколько стоит и окупаемость",
+  "h1": "Сколько стоит построить базу отдыха и когда она окупится",
+  "branch": "glamping"
+ },
+ {
+  "slug": "upravlenie-bazoj-otdyha",
+  "type": "база отдыха",
+  "service": "Управление",
+  "h1": "Управление базой отдыха",
+  "branch": "glamping"
+ },
+ {
+  "slug": "proekt-turbazy",
+  "type": "турбаза",
+  "service": "Проект",
+  "h1": "Проект турбазы",
+  "branch": "glamping"
+ },
+ {
+  "slug": "stroitelstvo-turbazy",
+  "type": "турбаза",
+  "service": "Открытие под ключ",
+  "h1": "Строительство турбазы под ключ",
+  "branch": "glamping"
+ },
+ {
+  "slug": "biznes-plan-turbazy",
+  "type": "турбаза",
+  "service": "Бизнес-план",
+  "h1": "Бизнес-план турбазы",
+  "branch": "glamping"
+ },
+ {
+  "slug": "proekt-kempinga",
+  "type": "кемпинг",
+  "service": "Проект",
+  "h1": "Проект кемпинга",
+  "branch": "glamping"
+ },
+ {
+  "slug": "otkryt-kemping",
+  "type": "кемпинг",
+  "service": "Открытие под ключ",
+  "h1": "Как открыть кемпинг: сопровождение от участка до первых гостей",
+  "branch": "glamping"
+ },
+ {
+  "slug": "biznes-plan-kempinga",
+  "type": "кемпинг",
+  "service": "Бизнес-план",
+  "h1": "Бизнес-план кемпинга",
+  "branch": "glamping"
+ },
+ {
+  "slug": "biznes-plan-gostevogo-doma",
+  "type": "гостевой дом",
+  "service": "Бизнес-план",
+  "h1": "Бизнес-план гостевого дома",
+  "branch": "hotel"
+ },
+ {
+  "slug": "otkryt-gostevoj-dom",
+  "type": "гостевой дом",
+  "service": "Открытие под ключ",
+  "h1": "Как открыть гостевой дом",
+  "branch": "hotel"
+ },
+ {
+  "slug": "upravlenie-gostevym-domom",
+  "type": "гостевой дом",
+  "service": "Управление",
+  "h1": "Управление гостевым домом",
+  "branch": "hotel"
+ },
+ {
+  "slug": "grant-na-gostevoj-dom",
+  "type": "гостевой дом",
+  "service": "Грант",
+  "h1": "Грант на гостевой дом: бизнес-план и документы",
+  "branch": "hotel"
+ },
+ {
+  "slug": "proekt-mini-gostinicy",
+  "type": "мини-гостиница",
+  "service": "Проект",
+  "h1": "Проект мини-гостиницы",
+  "branch": "hotel"
+ },
+ {
+  "slug": "otkryt-mini-gostinicu",
+  "type": "мини-гостиница",
+  "service": "Открытие под ключ",
+  "h1": "Как открыть мини-гостиницу",
+  "branch": "hotel"
+ },
+ {
+  "slug": "proekt-turisticheskogo-kompleksa",
+  "type": "туристический комплекс",
+  "service": "Проект",
+  "h1": "Проект туристического комплекса",
+  "branch": "glamping"
+ },
+ {
+  "slug": "apart-otel",
+  "type": "апарт-отель",
+  "service": "Открытие под ключ",
+  "h1": "Апарт-отель: проект, строительство и управление",
+  "branch": "hotel"
+ },
+ {
+  "slug": "upravlenie-apart-otelem",
+  "type": "апарт-отель",
+  "service": "Управление",
+  "h1": "Управление апарт-отелем",
+  "branch": "hotel"
+ },
+ {
+  "slug": "proekt-eko-otelya",
+  "type": "эко-отель",
+  "service": "Проект",
+  "h1": "Проект эко-отеля",
+  "branch": "glamping"
+ },
+ {
+  "slug": "proekt-park-otelya",
+  "type": "парк-отель",
+  "service": "Проект",
+  "h1": "Проект парк-отеля",
+  "branch": "glamping"
+ },
+ {
+  "slug": "otkryt-hostel",
+  "type": "хостел",
+  "service": "Открытие под ключ",
+  "h1": "Как открыть хостел",
+  "branch": "hotel"
+ },
+ {
+  "slug": "zagorodnyj-otel",
+  "type": "загородный отель",
+  "service": "Проект",
+  "h1": "Загородный отель: концепция и проект",
+  "branch": "hotel"
+ },
+ {
+  "slug": "upravlenie-zagorodnym-otelem",
+  "type": "загородный отель",
+  "service": "Управление",
+  "h1": "Управление загородным отелем",
+  "branch": "hotel"
+ },
+ {
+  "slug": "stroitelstvo-gostinicy",
+  "type": "гостиница",
+  "service": "Открытие под ключ",
+  "h1": "Строительство гостиницы: сопровождение заказчика",
+  "branch": "hotel"
+ },
+ {
+  "slug": "proektirovanie-gostinic",
+  "type": "гостиница",
+  "service": "Проект",
+  "h1": "Проектирование гостиниц: концепция и техническое задание",
+  "branch": "hotel"
+ },
+ {
+  "slug": "upravlenie-glempingom",
+  "type": "глэмпинг",
+  "service": "Управление",
+  "h1": "Управление глэмпингом",
+  "branch": "glamping"
+ },
+ {
+  "slug": "okupaemost-glempinga",
+  "type": "глэмпинг",
+  "service": "Сколько стоит и окупаемость",
+  "h1": "Сколько стоит построить глэмпинг и когда он окупится",
+  "branch": "glamping"
+ }
+]
